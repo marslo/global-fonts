@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           marslo ( ubuntu )
 @namespace      marslo.github.io
-@version        1.0.15
+@version        1.0.16
 @description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
 @author         marslo.jiao@gmail.com
 @homepageUrl    https://github.com/marslo/font-ubuntu
@@ -393,39 +393,6 @@
     display: block;
     padding: 12px 12px 1px 12px;
     margin: 0px;
-  }
-
-
-  /****************************************************************************************
-   * google search
-  ****************************************************************************************/
-  div.sbtc, .gsfi, .lst {
-    font-family: "Monaco", "Menlo", "Ubuntu", "Ubuntu Mono", "Consolas", "Monaco";
-  }
-  .g, .std, a.k8XOCe *, a.fl, div.ZOyvub, div.m0uvVb *, div.P1usbc *,
-  .wrBvFf > a, .HiHjCd > a, cite.iUh30, cite.iUh30 > span, span.go,
-  table.CFNMfb *
-  {
-    font-family: "Ubuntu", "Titillium", "Gisha", "Candara";
-  }
-  .wrBvFf > a, .HiHjCd > a, cite.iUh30, cite.iUh30 > span, span.go {
-    font-size: 14px !important;
-  }
-  /* google transfer */
-  table.CFNMfb span.kgnlhe {
-    color: #5f6368 !important;
-  }
-  .FvchS {
-    position: relative;
-  }
-  .ita-kd-inputtools-div:hover .ita-kd-icon-button, .ita-kd-icon-button.ita-kd-selected.ita-kd-dropdown, .ita-kd-icon-button.ita-kd-selected.ita-kd-inputtool-icon, .ita-kd-dropdown-menu {
-    background: #e2e2e2 !important;
-  }
-  .Rj2Mlf:not(:disabled), .gwGW9e {
-    background: #efefef !important;
-  }
-  .ita-kd-menuitem {
-    color: #333 !important;
   }
 
 
