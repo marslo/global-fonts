@@ -1,10 +1,10 @@
 /* ==UserStyle==
 @name           marslo ( ubuntu )
 @namespace      marslo.github.io
-@version        1.0.16
+@version        1.0.17
 @description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
 @author         marslo.jiao@gmail.com
-@homepageUrl    https://github.com/marslo/font-ubuntu
+@homepageURL    https://github.com/marslo/font-ubuntu
 ==/UserStyle== */
 
 @-moz-document regexp("https?://(.*jenkins(?:-staging)?(?:-dev)?\\.[^\\.]+.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
@@ -395,7 +395,6 @@
     margin: 0px;
   }
 
-
   /****************************************************************************************
    * .editor, * div.ace_content * {
    *   font-family: "Ubuntu Mono" !important;
@@ -745,13 +744,13 @@
     font-family: "controlIcons" !important;
   }
   span > i[class*='fa'] {      /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
-    font-family: "Font Awesome 5 Pro", "FontAwesome" !important;
+    font-family: "Font Awesome 5 Pro", "FontAwesome", "Font Awesome 5 Free" !important;
   }
   #anchor-navigation-ex-navbar > i[class*='fa'],
   #anchorNavigationExGoTop > i[class*='fa'],
   a.navigation > i[class*='fa'],
   a > i[class*='fa'] {         /** https://marslo.github.io/ibook/ **/
-    font-family: 'FontAwesome' !important;
+    font-family: 'FontAwesome', "Font Awesome 5 Free" !important;
   }
   button[class*="vjs-"], .video-js {
     font-family: "VideoJS" !important;
