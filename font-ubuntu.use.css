@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           marslo ( ubuntu )
 @namespace      marslo.github.io
-@version        1.0.18
+@version        1.0.19
 @description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/font-ubuntu
@@ -835,6 +835,7 @@
   .markdown-section h2 > code,
   .markdown-body h3,
   .markdown-section h3,
+  .markdown-section h3 code,
   .markdown-section h3 > mark,
   .markdown-section h3 > a:not([class*="btn"]) {
     font-size: 24px !important;
