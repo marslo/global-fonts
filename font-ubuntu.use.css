@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           marslo ( ubuntu )
 @namespace      marslo.github.io
-@version        1.0.17
+@version        1.0.18
 @description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/font-ubuntu
@@ -810,17 +810,17 @@
     font-size: 34px !important;
     font-weight: 500 !important;
   }
+
+  /* *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]), */
   h1:is([class*="text-normal"]):not([id*="summary-val"]),            /* gist.github.com */
   .header h1[data-v-03dd129c],                                       /* ⌍               */
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],            /* ⌏  artifactory  */
-  h2:not([class*="style-name"]):not([dir*="auto"]):not([class*="panel-title"]):not([data-v-0b7a2eac]):not([id*="blob-path"]):not([class*="spanh2"]):not([class*="fontBodyMedium"]):not([class*="css-"]),
   h2:not([class*="css-"]) > a:not([class*="css-"]),
   h2[dir*="auto"] > code,                                            /* https://plugins.jenkins.io/kubernetes/ */
-  h2:not([class*="style-name"]):not([id*="blob-path"]):not([class*="spanh2"]):not([id*="directions-mode-group-"]) > :is(a:not([class*="btn"]), span:not([class*="btn"]):not([class*="separator"]):not([class*="js-path"], a:not([class*="btn"]))),
-  h2 > :not(a[class*="btn"]),
+  *:not(blockquote) > h2:not([dir*="auto"]):not([class*="panel-title"]):not([data-v-0b7a2eac]):not([id*="blob-path"]):not([class*="spanh2"]):not([class*="fontBodyMedium"]):not([class*="css-"]),
+  *:not(blockquote) > h2:not([class*="style-name"]):not([id*="blob-path"]):not([class*="spanh2"]):not([id*="directions-mode-group-"]) > :is(a:not([class*="btn"]), span:not([class*="btn"]):not([class*="separator"]):not([class*="js-path"], a:not([class*="btn"]))),
   h2 span:not([class*="PpN7xc"]),
-  /* *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]), */
-  h2:not([id*="directions-mode-group"]) *,
+  *:not(blockquote) > h2:not([id*="directions-mode-group"]) > *:not(code),
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
