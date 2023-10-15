@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           marslo ( ubuntu )
 @namespace      marslo.github.io
-@version        2.0.2
+@version        2.0.3
 @description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/font-ubuntu
@@ -25,8 +25,9 @@
     --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
-    --font-size-normal: "16px";
-    --font-big-mono: "18px";
+    --font-size-normal-sans: "18px";
+    --font-size-normal-mono: "17px";
+    --font-size-big-mono: "19px";
     --font-size-h1: "34px";
     --font-size-h2: "26px";
     --font-size-h3: "24px";
@@ -104,7 +105,7 @@
 
   tr.app-summary>td>pre>code>ul>li * {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
   div#main-panel a[name="skip2content"]+h1 {
     font-size: 28px !important;
@@ -130,7 +131,7 @@
   errorList problem *,
   [data-theme*=material-] #main-panel > pre {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
 
   /**.ace-tomorrow {
@@ -173,7 +174,7 @@
   caption.caption table.diffLineTable *,
   span[class*='pipeline-node']::before {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-big-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
 
@@ -222,7 +223,7 @@
     .activity-actions-container,
     .Header-pageTabs,
     .development-footer {
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
 
   select {
@@ -249,8 +250,8 @@
     --font-family-mono: "Rec Mono Casual", "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
-    --font-size-normal: "16px";
-    --font-big-mono: "18px";
+    --font-size-normal-mono: "16px";
+    --font-size-big-mono: "18px";
     --font-size-h1: "34px";
     --font-size-h2: "26px";
     --font-size-h3: "24px";
@@ -343,7 +344,7 @@
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
 
 
@@ -355,7 +356,7 @@
   span.target, details.sections-list li, h2.style-name *,
   div[class*="CodeMirror-"] *, pre[class*="s-code-"] *, div[class*="cm-"] * {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
   details[class*="ignore-pref-if-compact"] h2 {
     font-size: 2em !important;
@@ -381,7 +382,7 @@
   [class*="ace_"], [class*="ace_"]~div, [class*="ace_"]~div, [class*="ace_"]+div, [class*="ace_"] *,
   div#playground-container * {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
 
 
@@ -455,7 +456,7 @@ a.gr-diff-view,
   div.textarea-container *,
   div.gr-editable-content a[rel*="noopener"] {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
   td.changesLink.style-scope.gr-repo-list,
   td.repositoryBrowser.style-scope.gr-repo-list {
@@ -504,7 +505,7 @@ a.gr-diff-view,
   .gr-formatted-text-0 gr-linked-text.pre.gr-formatted-text,
   gr-linked-text[class*="pre"], gr-linked-text[class*="pre"] #output {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
   .gr-formatted-text-0 gr-linked-text.pre.gr-formatted-text,
   gr-linked-text[class*="pre"] {
@@ -535,7 +536,7 @@ a.gr-diff-view,
   .jsonpOpener, td.wysiwyg-macro-body *, .timestamp,  /* Json Viewer */
   li.blockList {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
 
   /****************************************************************************************
@@ -602,7 +603,7 @@ a.gr-diff-view,
   }
   /** for selection dismatches issue **/
   textarea#read-only-cursor-text-area {
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
     font-family: var(--font-family-mono) !important;
   }
   table.js-code-nav-container > tbody *,
@@ -718,7 +719,7 @@ a.gr-diff-view,
   [class*="s-view-dd-"],
   [class*="aui-dropdown"] strong {
     font-family: var(--font-family-sans) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-sans) !important;
   }
   div[class*="ghx-key"] > a, td.issuekey,
   .user-content-block :is(code, code *, pre code),
@@ -727,7 +728,7 @@ a.gr-diff-view,
   .mod-content :where(code, code *, pre),
   textarea[class*="cke_source"] {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
   /* div.field-group input:not([type*="password"], [type*="submit"], [name*="user"], [id*="customfield_"] */
   div.aui-page-header-main > h1#summary-val,
@@ -745,7 +746,7 @@ a.gr-diff-view,
   .mod-content *:not(pre)>code {
     color: #d63384 !important;
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal) !important;
+    font-size: var(--font-size-normal-mono) !important;
     /* font-style: italic; */
   }
   body.cke_editable :where(p, a, code, pre),
