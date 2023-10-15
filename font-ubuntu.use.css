@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           marslo ( ubuntu )
 @namespace      marslo.github.io
-@version        2.0
+@version        2.0.1
 @description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/font-ubuntu
@@ -24,7 +24,7 @@
     --font-family-sans: "Ubuntu", "Candara", "Gisha", "Titillium";
     --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
     --font-size-normal: "16px";
     --font-big-mono: "18px";
     --font-size-h1: "34px";
@@ -248,7 +248,7 @@
     --font-family-sans: "Ubuntu", "Candara", "Gisha", "Titillium";
     --font-family-mono: "Rec Mono Casual", "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
     --font-size-normal: "16px";
     --font-big-mono: "18px";
     --font-size-h1: "34px";
@@ -891,66 +891,34 @@ a.gr-diff-view,
    * i.s-fa-external-link, i.s-fa-info-circle       jira
    * i[class*="material-icons-"]                    google search
    * , i[class*="-icon"]
+   * .codicon[class*="codicon-"]{ font: normal normal normal 16px/1 codicon !important; }
   ****************************************************************************************/
   ::before, ::after, button, button.btn, span.fa-angle-up * {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-family: inherit;
   }
-  span[class*="style_Navbar"], span[class*="avatar"], span[class*="icon-"] {
-    font-family: 'ReadMe-Icons', 'streamline' !important;
+
+  span[class*="glyphicon"],
+  span[class*="style_Navbar"], span[class*="avatar"], span[class*="icon-"],
+  span > i[class*='fa'],            /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
+  i.fa-clone, i.fa-check,
+  i[class*="s-fa-"],
+  i[class*="material-icons-"],
+  i[class*="google-material-icons"],
+  i[class*="iconfont"],
+  i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530,
+  /** https://marslo.github.io/ibook/ **/
+  #anchor-navigation-ex-navbar > i[class*='fa'], #anchorNavigationExGoTop > i[class*='fa'], a.navigation > i[class*='fa'], a > i[class*='fa'],
+  button[class*="vjs-"], .video-js ,
+  button[class*="zm-button"], i[class^=zm-icon-], i[class^=zm-dialog] ,
+  [class*="g-button-right"] > [class*="icon-"] ,
+  [class^="u-icon-"] ,
+  .codicon[class*="codicon-"] ,      /** gitpod **/
+  span[class^="icon"]::before {      /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
+    font-family: var(--font-family-icon) !important;
   }
-  i.fa-clone, i.fa-check {
-    font-family: "FontAwesome" !important;
-  }
-  i[class*="s-fa-"] {
-    font-family: "StructureFontAwesome" !important;
-  }
-  i[class*="material-icons-"] {
-    font-family: 'Material Icons Extended' !important;
-  }
-  i[class*="google-material-icons"] {
-    font-family: 'Google Material Icons' !important;
-  }
-  i[class*="iconfont"] {
-    font-family: "iconfont" !important;
-  }
-  i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530 {
-    font-family: "controlIcons" !important;
-  }
-  span > i[class*='fa'] {      /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
-    font-family: "Font Awesome 5 Pro", "FontAwesome", "Font Awesome 5 Free" !important;
-  }
-  #anchor-navigation-ex-navbar > i[class*='fa'],
-  #anchorNavigationExGoTop > i[class*='fa'],
-  a.navigation > i[class*='fa'],
-  a > i[class*='fa'] {         /** https://marslo.github.io/ibook/ **/
-    font-family: 'FontAwesome', "Font Awesome 5 Free" !important;
-  }
-  button[class*="vjs-"], .video-js {
-    font-family: "VideoJS" !important;
-  }
-  span[class*="glyphicon"] {
-    font-family: "Glyphicons Halflings" !important;
-  }
-  /** for zoom **/
-  button[class*="zm-button"],
-  i[class^=zm-icon-],
-  i[class^=zm-dialog] {
-    font-family: 'icozoom' !important;
-  }
-  [class*="g-button-right"] > [class*="icon-"] {
-    font-family: "yunfont" !important;
-  }
-  [class^="u-icon-"] {
-    font-family: "union-design-icons" !important;
-  }
-  .codicon[class*="codicon-"] {  /** gitpod **/
-    font: normal normal normal 16px/1 codicon !important;
-  }
-  span[class^="icon"]::before {  /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
-    font-family: 'streamline', 'Adgs Icons', 'retina_icons' !important;
-  }
+
 
   /****************************************************************************************
    * global settings
