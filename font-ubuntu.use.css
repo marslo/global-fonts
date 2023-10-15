@@ -1,7 +1,7 @@
 /* ==UserStyle==
 @name           marslo ( ubuntu )
 @namespace      marslo.github.io
-@version        2.0.3
+@version        2.0.4
 @description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/font-ubuntu
@@ -21,17 +21,17 @@
   **/
 
   html {
-    --font-family-sans: "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium";
+    --font-family-sans: "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
     --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
-    --font-size-normal-sans: "18px";
-    --font-size-normal-mono: "17px";
-    --font-size-big-mono: "19px";
-    --font-size-h1: "34px";
-    --font-size-h2: "26px";
-    --font-size-h3: "24px";
-    --font-size-h4: "20px";
+    --font-size-normal-sans: 18px;
+    --font-size-normal-mono: 17px;
+    --font-size-big-mono: 19px;
+    --font-size-h1: 34px;
+    --font-size-h2: 26px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
   }
 
   :root {
@@ -246,16 +246,17 @@
   **/
 
   html {
-    --font-family-sans: "Recursive", "Ubuntu", "Candara", "Gisha", "Titillium";
+    --font-family-sans: "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
     --font-family-mono: "Rec Mono Casual", "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
-    --font-size-normal-mono: "16px";
-    --font-size-big-mono: "18px";
-    --font-size-h1: "34px";
-    --font-size-h2: "26px";
-    --font-size-h3: "24px";
-    --font-size-h4: "20px";
+    --font-size-normal-sans: 18px;
+    --font-size-normal-mono: 17px;
+    --font-size-big-mono: 19px;
+    --font-size-h1: 34px;
+    --font-size-h2: 26px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
   }
 
   /**
