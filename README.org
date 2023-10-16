@@ -11,7 +11,7 @@
   [[./screenshots/font-ubuntu-v2.0.3-marslo.png]]
 
 ** installation
-+ install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus]] | [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Chrome]], [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]]
++ install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus for Chrome]] | [[https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe][Stylish for Chrome]] | [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Chrome]], [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]]
 + click to install 📦 [[https://userstyles.world/api/style/5264.user.css][global fonts (marslo)]]
 
 ** fonts download
