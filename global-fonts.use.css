@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.0
+@version        2.1.1
 @namespace      github.com/marslo
 @description    global-wild font customization.
 @author         marslo.jiao@gmail.com
@@ -82,7 +82,7 @@
   [class*="jenkins-checkbox"] *,
   div.textarea-preview-container,
   :root:not([class*="ace"]):not(pre>code *):not([class*="jenkins-input"]) {
-    font-family: "Ubuntu", "Gisha", "Titillium" !important;
+    font-family: var(--font-family-sans) !important;
   }
 
   /**
@@ -523,8 +523,8 @@ a.gr-diff-view,
 
   /****************************************************************************************
    * .editor, * div.ace_content * {
-   *   font-family: "Ubuntu Mono" !important;
-   *   font-size: 16px !important
+   *   font-family: var(--font-family-mono) !important;
+   *   font-size: var(--font-size-normal-mono) !important
    * }
   ****************************************************************************************/
   /* ol li, */
@@ -618,7 +618,7 @@ a.gr-diff-view,
   span.js-repo-root,
   div.vcard-names-container h1 .vcard-fullname,
   [data-hovercard-type="user"]  span.AppHeader-context-item-label {
-    font-family: Papyrus, fantasy !important;
+    font-family: var(--font-family-handwritten) !important;
     font-size: 24px !important;
   }
   h3.text-normal a.author {
@@ -832,14 +832,12 @@ a.gr-diff-view,
   #click-to-connect :is(h2),
   div#course-title :is(h3),
   div.step :is(h4),
-  div#course-details+h1
-  {
+  div#course-details+h1 {
     font-size: 20px !important;
   }
   div#course-details i[class*="fa"] {
-    font-family: "Font Awesome 5 Free" !important;
+    font-family: var(--font-family-icon) !important;
   }
-
 
   /****************************************************************************************
    * others:
