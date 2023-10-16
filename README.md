@@ -3,6 +3,7 @@
 **Table of Contents**  *generated with [DocToc](https://github.com/thlorenz/doctoc)*
 
 - [marslo ( ubuntu )](#marslo--ubuntu-)
+  - [v2.0.5](#v205)
   - [v2.0.4](#v204)
   - [v2.0.3](#v203)
 - [some features](#some-features)
@@ -11,6 +12,10 @@
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 ## [marslo ( ubuntu )](https://userstyles.world/style/5264/marslo-ubuntu)
+
+### v2.0.5
+
+![Recursive Sans Linear Static (sans) + Rec Mono Casual(mono) in gitbook](screenshots/font-ubuntu-v2.0.5-marslo.png)
 
 ### v2.0.4
 
