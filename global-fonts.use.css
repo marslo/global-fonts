@@ -1,10 +1,12 @@
 /* ==UserStyle==
-@name           marslo ( ubuntu )
-@namespace      marslo.github.io
-@version        2.0.5
-@description    personal userstyle by using ubuntu font. https://userstyles.world/style/5264/marslo-ubuntu
+@name           global fonts ( marslo )
+@version        2.1.0
+@namespace      github.com/marslo
+@description    global-wild font customization.
+@preprocessor   stylus
 @author         marslo.jiao@gmail.com
-@homepageURL    https://github.com/marslo/font-ubuntu
+@homepageURL    https://github.com/marslo/global-fonts
+@updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.use.css
 ==/UserStyle== */
 
 @-moz-document regexp("https?://(.*jenkins(?:-staging)?(?:-dev)?\\.[^\\.]+.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
