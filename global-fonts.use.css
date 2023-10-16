@@ -3,7 +3,6 @@
 @version        2.1.0
 @namespace      github.com/marslo
 @description    global-wild font customization.
-@preprocessor   stylus
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.use.css
@@ -895,7 +894,7 @@ a.gr-diff-view,
    * i.s-fa-external-link, i.s-fa-info-circle       jira
    * i[class*="material-icons-"]                    google search
    * , i[class*="-icon"]
-   * .codicon[class*="codicon-"]{ font: normal normal normal 16px/1 codicon !important; }
+   * .codicon[class*="codicon-"] font: normal normal normal 16px/1 codicon !important;
   ****************************************************************************************/
   ::before, ::after, button, button.btn, span.fa-angle-up * {
     -webkit-box-sizing: border-box;
@@ -905,21 +904,23 @@ a.gr-diff-view,
 
   span[class*="glyphicon"],
   span[class*="style_Navbar"], span[class*="avatar"], span[class*="icon-"],
-  span > i[class*='fa'],             /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
+  span > i[class*='fa'],                         /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
   i.fa-clone, i.fa-check,
   i[class*="s-fa-"],
   i[class*="material-icons-"],
   i[class*="google-material-icons"],
   i[class*="iconfont"],
   i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530,
-  /** https://marslo.github.io/ibook/ **/
-  #anchor-navigation-ex-navbar > i[class*='fa'], #anchorNavigationExGoTop > i[class*='fa'], a.navigation > i[class*='fa'], a > i[class*='fa'],
+  #anchor-navigation-ex-navbar > i[class*='fa'], /** ⌍                                **/
+  #anchorNavigationExGoTop > i[class*='fa'],     /** ⋮ https://marslo.github.io/ibook **/
+  a.navigation > i[class*='fa'],                 /** ⋮                                **/
+  a > i[class*='fa'],                            /** ⌏                                **/
   button[class*="vjs-"], .video-js,
   button[class*="zm-button"], i[class^=zm-icon-], i[class^=zm-dialog],
   [class*="g-button-right"] > [class*="icon-"],
   [class^="u-icon-"],
-  .codicon[class*="codicon-"],       /** gitpod **/
-  span[class^="icon"]::before        /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
+  .codicon[class*="codicon-"],                   /** gitpod **/
+  span[class^="icon"]::before                    /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
   {
     font-family: var(--font-family-icon) !important;
   }

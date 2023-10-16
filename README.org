@@ -1,0 +1,88 @@
+#+title: global fonts ( marslo )
+#+description: global-wild font customization
+#+author:[[mailto:marslo.jiao@gmail.com][Marslo Jiao]]
+
+** [[https://userstyles.world/style/5264/global-fonts-marslo][global fonts ( marslo )]]
++ ~v2.0.5~
+  [[./screenshots/font-ubuntu-v2.0.5-marslo.png]]
++ ~v2.0.4~
+  [[./screenshots/font-ubuntu-v2.0.4-marslo.png]]
++ ~v2.0.3~
+  [[./screenshots/font-ubuntu-v2.0.3-marslo.png]]
+
+** installation
++ install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus]] | [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Chrome]], [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]]
++ click to install 📦 [[https://userstyles.world/api/style/5264.user.css][global fonts (marslo)]]
+
+** fonts download
+
+#+BEGIN_QUOTE
++ more detals : [[https://marslo.github.io/ibook/][iMarlso: fonts]]
+#+END_QUOTE
+
+*** sans
++ [[https://design.ubuntu.com/font][ubuntu]] | [[https://fonts.google.com/specimen/Ubuntu][preview]]
++ [[https://www.recursive.design/][Recursive]] | [[https://github.com/arrowtype/recursive][arrowtype/recursive]] | [[https://fonts.google.com/specimen/Recursive][preview]]
++ [[https://www.dafontfree.io/candara-font][Candara]]
++ [[https://learn.microsoft.com/en-us/typography/font-list/gisha][Gisha]]
++ [[https://fonts.adobe.com/fonts/titillium-web][Titillium]] | [[https://fonts.google.com/specimen/Titillium+Web][preview]]
+
+*** mono
++ [[https://www.cufonfonts.com/font/monaco][Monaco]]
++ [[https://github.com/arrowtype/recursive/tree/main/fonts/ArrowType-Recursive-1.085/Recursive_Code][Rec Mono Causal]]
++ [[https://dtinth.github.io/comic-mono-font/][Comic Mono]]
++ [[https://github.com/ryanoasis/nerd-fonts/tree/master/patched-fonts/Gohu][Gohu]]
++ more:
+  + [[https://www.nerdfonts.com/font-downloads][nerd-font]] | [[https://github.com/ryanoasis/nerd-fonts][ryanoasis/nerd-fonts]]
+  + [[https://github.com/powerline/fonts][powerline/fonts]]
+
+** features
+*** gerrit code review
+
++ ~background: #083750~ : for [[https://ethanschoonover.com/solarized/][solarized color style]]
+  [[./screenshots/gerrit-comments-solarized.png]]
++ ~background: #303030~ : for dark background
+  [[./screenshots/gerrit-comments-dark.png]]
++ ~background: #3a122e~ : for ubuntu style background
+  [[./screenshots/gerrit-comments-ubuntu.png]]
+
++ [[https://github.com/marslo/global-fonts/blob/main/global-fonts.use.css#L507][css]]
+  #+BEGIN_SRC css
+  html {
+    --font-family-sans: "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
+    --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
+  }
+  .gr-formatted-text-0 gr-linked-text.pre.gr-formatted-text,
+  gr-linked-text[class*="pre"], gr-linked-text[class*="pre"] #output {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
+  }
+  .gr-formatted-text-0 gr-linked-text.pre.gr-formatted-text,
+  gr-linked-text[class*="pre"] {
+    color: #c8c8c8 !important;
+    background: #272727 !important;       /** 083750: solarized; 3a122e: ubuntu **/
+    border-radius: .75em !important;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    overflow: auto;
+    display: block;
+    padding: 12px 12px 1px 12px;
+    margin: 0px;
+  }
+  #+END_SRC
+
+  #+BEGIN_COMMENT
+  gr-linked-text[class*="pre"],
+  .gr-formatted-text-0 gr-linked-text.pre.gr-formatted-text,
+  gr-linked-text[class*="pre"] #output {
+    font-family: "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas" !important;
+    color: #eee !important;
+    background: #083750 !important;                 /* solarized style */
+    /* background: #303030 !important; */           /* dark background */
+    border-radius: .75em !important;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    overflow: auto;
+    display: block;
+    padding: 8px;
+    margin: -5px;
+  }
+  #+END_COMMENT

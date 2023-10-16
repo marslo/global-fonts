@@ -22,15 +22,15 @@
 
 ### v2.0.5
 
-![Recursive Sans Linear Static (sans) + Rec Mono Casual(mono) in gitbook](screenshots/font-ubuntu-v2.0.5-marslo.png)
+![Recursive Sans Linear Static (sans) + Rec Mono Casual(mono) in gitbook](../screenshots/font-ubuntu-v2.0.5-marslo.png)
 
 ### v2.0.4
 
-![Ubuntu (sans) + Rec Mono Casual(mono) in gitbook](screenshots/font-ubuntu-v2.0.4-marslo.png)
+![Ubuntu (sans) + Rec Mono Casual(mono) in gitbook](../screenshots/font-ubuntu-v2.0.4-marslo.png)
 
 ### v2.0.3
 
-![Recursive (sans) + Rec Mono Casual(mono) in gitbook](screenshots/font-ubuntu-v2.0.3-marslo.png)
+![Recursive (sans) + Rec Mono Casual(mono) in gitbook](../screenshots/font-ubuntu-v2.0.3-marslo.png)
 
 ## fonts download
 
@@ -79,10 +79,10 @@ gr-linked-text[class*="pre"] #output {
 
 - result
   - ubuntu
-    ![ubuntu](./screenshots/gerrit-comments-ubuntu.png)
+    ![ubuntu](../screenshots/gerrit-comments-ubuntu.png)
 
   - solarized
-    ![solarized](./screenshots/gerrit-comments-solarized.png)
+    ![solarized](../screenshots/gerrit-comments-solarized.png)
 
   - dark
-    ![dark](./screenshots/gerrit-comments-dark.png)
+    ![dark](../screenshots/gerrit-comments-dark.png)
