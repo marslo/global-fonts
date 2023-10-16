@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.1
+@version        2.1.2
 @namespace      github.com/marslo
 @description    global-wild font customization.
 @author         marslo.jiao@gmail.com
@@ -900,19 +900,22 @@ a.gr-diff-view,
     font-family: inherit;
   }
 
+  /**
+   * i.fa-clone, i.fa-check,
+   * #anchor-navigation-ex-navbar > i[class*='fa'], ⌍
+   * #anchorNavigationExGoTop > i[class*='fa'],     ⋮ https://marslo.github.io/ibook
+   * a.navigation > i[class*='fa'],                 ⋮
+   * a > i[class*='fa'],                            ⌏
+   * span > i[class*='fa'],                         https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
+  **/
+  i[class*="fa-"],
   span[class*="glyphicon"],
   span[class*="style_Navbar"], span[class*="avatar"], span[class*="icon-"],
-  span > i[class*='fa'],                         /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
-  i.fa-clone, i.fa-check,
   i[class*="s-fa-"],
   i[class*="material-icons-"],
   i[class*="google-material-icons"],
   i[class*="iconfont"],
   i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530,
-  #anchor-navigation-ex-navbar > i[class*='fa'], /** ⌍                                **/
-  #anchorNavigationExGoTop > i[class*='fa'],     /** ⋮ https://marslo.github.io/ibook **/
-  a.navigation > i[class*='fa'],                 /** ⋮                                **/
-  a > i[class*='fa'],                            /** ⌏                                **/
   button[class*="vjs-"], .video-js,
   button[class*="zm-button"], i[class^=zm-icon-], i[class^=zm-dialog],
   [class*="g-button-right"] > [class*="icon-"],
@@ -922,7 +925,6 @@ a.gr-diff-view,
   {
     font-family: var(--font-family-icon) !important;
   }
-
 
   /****************************************************************************************
    * global settings
