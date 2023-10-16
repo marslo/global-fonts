@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.2
+@version        2.1.3
 @namespace      github.com/marslo
 @description    global-wild font customization.
 @author         marslo.jiao@gmail.com
@@ -28,17 +28,19 @@
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
     --font-size-normal-sans: 18px;
     --font-size-normal-mono: 17px;
-    --font-size-big-mono: 19px;
+    --font-size-big-mono: 20px;
     --font-size-h1: 34px;
     --font-size-h2: 26px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
   }
 
+  /** :root cannot take value from var(..) **/
   :root {
-    --font-family-sans: var(--font-family-sans) !important;
-    --font-family-mono: var(--font-family-mono) !important;
+    --font-family-sans: "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium" !important;
+    --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas" !important;
   }
+
   *:not(pre):not(code):not(textarea):not(button):not(select):not(option):not(kbd):not(icon):not(input):not(i):not(cursor):not(::before):not(::after):not([role=presentation]):not(pre code):not(pre code *):not(li code):not(li code *):not(code *):not(textarea *):not(* code):not(* pre *):not(* code *):not(div.ace_editor):not([class*="ace_"]):not([class*="ace_"] *):not(canvas.graph-cursor-pointer):not([class*="icon"]):not([class*="fa-"]):not([class*="octicon"]):not([class*="win-icon"]):not([class*="icon-"]):not([class*="ico"]):not([class*="pc"]):not([class*="DPvwYc"]):not([class*="para"]):not([class*="ms-Icon"]):not([class*="sort-caret"]):not([class*="Da"]):not([class*="drop"]):not([class*="bowtie-"]):not([class*="view-"]):not([class*="pl-"]):not([class*=".fa-clone"]):not([class*=".fa-check"]):not([class*="avatar-"]):not([class*='wysiwyg-macro-*']):not([class*="-line"]):not([class*="CodeMirror-"]):not([class*="cm-"]):not([class*="setting-"]):not([class*="gr-"]):not([class*="s-code-"]):not([class*="code"]):not([class*="w3-"]):not([class*="language-"]):not([class*="hljs"]):not([class*="post-"]):not([class*="code"]):not([clas*="line"]):not([class*="js-post"]):not([class*="editor"]):not([class="setting-main"]):not([class*="resizable"]) {
     font-family: var(--font-family-sans) !important;
   }
@@ -51,9 +53,6 @@
    * }
    * :not(div.ace_editor) ,
    * div#main-panel * ,
-  **/
-
-  /**
    * .pane-content                                     build history
    * h1.page-headline, div.cbwf-stage-view *,      ⌝
    * h2.permalinks-header, ul.permalinks-list *    ⌟   job page
@@ -91,9 +90,8 @@
   **/
   div.login a.model-link,
   div#main-panel a[name="skip2content"]+h1,
-  ul#breadcrumbs > li.item:first-of-type > a.model-link
-  {
-    font-family: Papyrus, fantasy !important;
+  ul#breadcrumbs > li.item:first-of-type > a.model-link {
+    font-family: var(--font-family-handwritten) !important;
     font-size: 18px !important;
     text-transform: none !important;
   }
@@ -132,7 +130,7 @@
   errorList problem *,
   [data-theme*=material-] #main-panel > pre {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
   }
 
   /**.ace-tomorrow {
@@ -210,7 +208,7 @@
   }
 
   span.jenkins-icon-adjacent {
-    font-family: var(--font-family-sans)
+    font-family: var(--font-family-handwritten)
     font-size: 100% !important;
   }
 
@@ -230,9 +228,10 @@
   select {
     outline: 0 !important;
   }
+
   /**
   div.alert-danger {
-    background-color: #A8021B!important;
+    background-color: #A8021B !important;
   }
   **/
 } /** @-moz-document regexp : for jenkins hosts **/
@@ -906,7 +905,7 @@ a.gr-diff-view,
    * #anchorNavigationExGoTop > i[class*='fa'],     ⋮ https://marslo.github.io/ibook
    * a.navigation > i[class*='fa'],                 ⋮
    * a > i[class*='fa'],                            ⌏
-   * span > i[class*='fa'],                         https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
+   * span > i[class*='fa'],                         https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
   **/
   i[class*="fa-"],
   span[class*="glyphicon"],
