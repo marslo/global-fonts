@@ -905,7 +905,7 @@ a.gr-diff-view,
 
   span[class*="glyphicon"],
   span[class*="style_Navbar"], span[class*="avatar"], span[class*="icon-"],
-  span > i[class*='fa'],            /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
+  span > i[class*='fa'],             /** https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads **/
   i.fa-clone, i.fa-check,
   i[class*="s-fa-"],
   i[class*="material-icons-"],
@@ -914,12 +914,13 @@ a.gr-diff-view,
   i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530,
   /** https://marslo.github.io/ibook/ **/
   #anchor-navigation-ex-navbar > i[class*='fa'], #anchorNavigationExGoTop > i[class*='fa'], a.navigation > i[class*='fa'], a > i[class*='fa'],
-  button[class*="vjs-"], .video-js ,
-  button[class*="zm-button"], i[class^=zm-icon-], i[class^=zm-dialog] ,
-  [class*="g-button-right"] > [class*="icon-"] ,
-  [class^="u-icon-"] ,
-  .codicon[class*="codicon-"] ,      /** gitpod **/
-  span[class^="icon"]::before {      /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
+  button[class*="vjs-"], .video-js,
+  button[class*="zm-button"], i[class^=zm-icon-], i[class^=zm-dialog],
+  [class*="g-button-right"] > [class*="icon-"],
+  [class^="u-icon-"],
+  .codicon[class*="codicon-"],       /** gitpod **/
+  span[class^="icon"]::before        /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
+  {
     font-family: var(--font-family-icon) !important;
   }
 
