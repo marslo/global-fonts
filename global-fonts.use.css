@@ -1,8 +1,8 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.3
+@version        2.1.4
 @namespace      github.com/marslo
-@description    global-wild font customization.
+@description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.use.css
@@ -28,7 +28,7 @@
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
     --font-size-normal-sans: 18px;
     --font-size-normal-mono: 17px;
-    --font-size-big-mono: 20px;
+    --font-size-big-mono: 19px;
     --font-size-h1: 34px;
     --font-size-h2: 26px;
     --font-size-h3: 24px;
@@ -111,6 +111,12 @@
   }
 
   /**
+   * tabbar
+  **/
+  .tabBar .tab a {
+    font-size: var(--font-size-normal-sans) !important
+  }
+  /**
    * setting-* ; div.setting-main *                    configuration
    * textarea.jenkins-input                            snippet output
    * "ace_"                                            Jenkins Pipeline Script Textarea
@@ -121,6 +127,7 @@
   [class*="ace_"],
   [class*="ace_"] *,
   div.setting-main,
+  .jenkins-form-label,
   .setting-main > textarea,
   td.setting-main,
   textarea.ace_text-input,
@@ -237,7 +244,7 @@
 } /** @-moz-document regexp : for jenkins hosts **/
 
 
-@-moz-document regexp("^((?!.*\\-jenkins(-staging)?(-dev)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|fonts.*|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|34.233..*.*|3.230.*.*).)*$") {
+@-moz-document regexp("^((?!.*\\-jenkins(-staging)?(-dev)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|fonts.+|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|34.233..*.*|3.230.*.*).)*$") {
 
   /**
    * regexp("^((?!.*\\-jenkins(-dev)?(-staging)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|.*api|marslo.github.*|shields.io|127.0.0.1|0.0.0.0|localhost).)*$")
@@ -532,7 +539,8 @@ a.gr-diff-view,
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
-  .line, .line-number, .gr-diff,                      /* github Codeblock */
+  .line, .line-number, .gr-diff,                      /* github codeblock */
+  div.QueryBuilder-StyledInputContainer,              /* github search input box */
   pre.span *, pre *, #confluenceTd, .blockInner,      /* confluence */
   .jsonpOpener, td.wysiwyg-macro-body *, .timestamp,  /* Json Viewer */
   li.blockList {
