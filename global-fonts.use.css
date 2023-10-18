@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.4
+@version        2.1.5
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -26,7 +26,7 @@
     --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
-    --font-size-normal-sans: 18px;
+    --font-size-normal-sans: 17px;
     --font-size-normal-mono: 17px;
     --font-size-big-mono: 19px;
     --font-size-h1: 34px;
@@ -124,8 +124,6 @@
    * div.pretty-print                                  config.xml
    *
   **/
-  [class*="ace_"],
-  [class*="ace_"] *,
   div.setting-main,
   .jenkins-form-label,
   .setting-main > textarea,
@@ -137,7 +135,7 @@
   errorList problem *,
   [data-theme*=material-] #main-panel > pre {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-big-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
 
   /**.ace-tomorrow {
@@ -152,7 +150,7 @@
   kbd,
   option, option *,
   canvas, canvas *,
-  pre, pre *,
+  pre, pre *:not([class*="console-output"]) ,
   pre code, pre code *,
   pre code ul li *,
   pre span, pre span *,
@@ -161,7 +159,6 @@
   select, select *,
   script, script *,
   textarea, textarea *,
-  #main-panel>pre, #main-panel>pre *, pre#main-panel, pre#main-panel *, div#main-panel>pre, div#main-panel>pre *, div#main-panel>pre code, div#main-panel>pre code *,
   #view-message>pre, #view-message>pre *, div#view-message>pre, div#view-message>pre *,
   #side-pannel>pre, #side-pannel>pre *, div#side-pannel>pre, div#side-pannel>pre *,
   .code, .code *, .CodeMirror, .CodeMirror *, div.code *, table.code, table.code *, table.pre, table.pre *, .CodeMirror-lines *,
@@ -172,16 +169,25 @@
   select.setting-input, select.setting-input *, select.setting-input.validated,
   input.combobox2.setting-input, input.setting-input,
   textarea.jenkins-input, textarea.setting-input,
-  pre.console-output *,
-  .console-output, .console-output *,
   #terminal, #terminal *,
   .lineNum, div.CodeMirror-lines *, tr.line_holder *, .code-line, span[class*=cm-],
   div.help *,
   caption.caption table.diffLineTable *,
   span[class*='pipeline-node']::before {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-big-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
     line-height: 1.5em !important;
+  }
+
+  [class*="ace_"],
+  [class*="ace_"] *,
+  [class*="console-output"] *,
+  .console-output, .console-output *,
+  #main-panel>pre, #main-panel>pre *,
+  pre#main-panel, pre#main-panel *,
+  div#main-panel>pre, div#main-panel>pre *, div#main-panel>pre code, div#main-panel>pre code * {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
   }
 
   /* buttons in system configuration */
@@ -244,7 +250,7 @@
 } /** @-moz-document regexp : for jenkins hosts **/
 
 
-@-moz-document regexp("^((?!.*\\-jenkins(-staging)?(-dev)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|fonts.+|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|34.233..*.*|3.230.*.*).)*$") {
+@-moz-document regexp("^((?!.*\\-jenkins(-staging)?(-dev)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|34.233..*.*|3.230.*.*).)*$") {
 
   /**
    * regexp("^((?!.*\\-jenkins(-dev)?(-staging)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|.*api|marslo.github.*|shields.io|127.0.0.1|0.0.0.0|localhost).)*$")
