@@ -2,6 +2,10 @@
 #+description: global-wild font customization
 #+author:[[mailto:marslo.jiao@gmail.com][Marslo Jiao]]
 
+** installation
++ install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus for Chrome]] | [[https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe][Stylish for Chrome]] | [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]]
++ click to install 📦 [[https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css][marslo/global-fonts]] | [[https://userstyles.world/api/style/5264.user.css][global fonts (marslo)]]
+
 ** [[https://userstyles.world/style/5264/global-fonts-marslo][global fonts ( marslo )]]
 + ~v2.0.5~
   [[./screenshots/font-ubuntu-v2.0.5-marslo.png]]
@@ -10,14 +14,10 @@
 + ~v2.0.3~
   [[./screenshots/font-ubuntu-v2.0.3-marslo.png]]
 
-** installation
-+ install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus for Chrome]] | [[https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe][Stylish for Chrome]] | [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Chrome]], [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]]
-+ click to install 📦 [[https://userstyles.world/api/style/5264.user.css][global fonts (marslo)]]
-
 ** fonts download
 
 #+BEGIN_QUOTE
-+ more detals : [[https://marslo.github.io/ibook/][iMarlso: fonts]]
++ more detals : [[https://marslo.github.io/ibook/tools/fonts.html][iMarlso: fonts]]
 #+END_QUOTE
 
 *** sans
@@ -46,7 +46,7 @@
 + ~background: #3a122e~ : for ubuntu style background
   [[./screenshots/gerrit-comments-ubuntu.png]]
 
-+ [[https://github.com/marslo/global-fonts/blob/main/global-fonts.use.css#L507][css]]
++ [[https://github.com/marslo/global-fonts/blob/main/global-fonts.user.css#L532-L550][css]]
   #+BEGIN_SRC css
   html {
     --font-family-sans: "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";

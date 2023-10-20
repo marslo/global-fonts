@@ -1,11 +1,11 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.5
+@version        2.1.6
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
-@updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.use.css
+@updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
 ==/UserStyle== */
 
 @-moz-document regexp("https?://(.*jenkins(?:-staging)?(?:-dev)?\\.[^\\.]+.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
@@ -128,9 +128,6 @@
   .jenkins-form-label,
   .setting-main > textarea,
   td.setting-main,
-  textarea.ace_text-input,
-  .ace_active-line,
-  cursor,
   div.pretty-print,
   errorList problem *,
   [data-theme*=material-] #main-panel > pre {
@@ -181,6 +178,9 @@
 
   [class*="ace_"],
   [class*="ace_"] *,
+  textarea.ace_text-input,
+  .ace_active-line,
+  cursor,
   [class*="console-output"] *,
   .console-output, .console-output *,
   #main-panel>pre, #main-panel>pre *,
@@ -250,7 +250,7 @@
 } /** @-moz-document regexp : for jenkins hosts **/
 
 
-@-moz-document regexp("^((?!.*\\-jenkins(-staging)?(-dev)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|34.233..*.*|3.230.*.*).)*$") {
+@-moz-document regexp("^((?!.*(\\-jenkins(-staging)?(-dev)?|jenkins)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|34.233..*.*|3.230.*.*).)*$") {
 
   /**
    * regexp("^((?!.*\\-jenkins(-dev)?(-staging)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|.*api|marslo.github.*|shields.io|127.0.0.1|0.0.0.0|localhost).)*$")
@@ -265,6 +265,7 @@
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont";
     --font-size-normal-sans: 18px;
     --font-size-normal-mono: 17px;
+    --font-size-small-mono: 16px;
     --font-size-big-mono: 19px;
     --font-size-h1: 34px;
     --font-size-h2: 26px;
@@ -480,7 +481,7 @@ a.gr-diff-view,
   gr-endpoint-decorator.gr-main-header *,
   h2.logo + div.page_header > a:not([href*="git"]) {
     font-family: var(--font-family-handwritten) !important;
-    font-size: 18px !important;
+    font-size: 20px !important;
     text-transform: none !important;
   }
   span.title,
@@ -494,7 +495,17 @@ a.gr-diff-view,
   a.gr-change-list-item,
   .gr-admin-view,
   .branches.name {
-    font-size: 1.15rem !important;
+    font-size: var(--font-size-small-mono) !important;
+    font-family: var(--font-family-sans) !important;
+  }
+  .gr-change-list-item-0 th.gr-change-list-item:not(.label),
+  .gr-change-list-item-0 .cell.gr-change-list-item:not(.label) {
+    padding-right: 2px !important;
+  }
+  td:is([title*="Valid-Commit-Message"]),
+  td:is([title*="Non-Author-Code-Review"]),
+  td:is([title*="Verified"]) {
+    background: #212121 !important;
   }
   label.gr-editable-label,
   span.headerSubject,
@@ -511,7 +522,12 @@ a.gr-diff-view,
     text-decoration: none;
   }
   div.reviewed > label.gr-file-list > span.markReviewed {
-    font-size: 14px !important;
+    font-size: 16px !important;
+  }
+  .gr-file-list-1.reviewed.gr-file-list ,
+  .gr-file-list-0 .reviewed.gr-file-list {
+    margin-left: 2px !important;
+    width: 18em !important;
   }
   /**
    * gerrit code block
