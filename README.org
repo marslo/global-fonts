@@ -7,6 +7,12 @@
 + click to install 📦 [[https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css][marslo/global-fonts]] | [[https://userstyles.world/api/style/5264.user.css][global fonts (marslo)]]
 
 ** [[https://userstyles.world/style/5264/global-fonts-marslo][global fonts ( marslo )]]
++ ~v2.1.7~ Recursive Sans Casual Static
+  [[./screenshots/font-ubuntu-v2.1.7-marslo.png]]
+  + ~v2.1.7~ MFeltPenPRC
+    [[./screenshots/font-ubuntu-v2.1.7-marslo-MFeltPenPRC.png]]
+  + ~v2.1.7~ Grandstander
+    [[./screenshots/font-ubuntu-v2.1.7-marslo-Grandstander.png]]
 + ~v2.0.5~
   [[./screenshots/font-ubuntu-v2.0.5-marslo.png]]
 + ~v2.0.4~
