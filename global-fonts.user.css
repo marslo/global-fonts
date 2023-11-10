@@ -524,9 +524,9 @@ a.gr-diff-view,
   div.reviewed > label.gr-file-list > span.markReviewed {
     font-size: 16px !important;
   }
-  .gr-file-list-1.reviewed.gr-file-list ,
+  .gr-file-list-1 .reviewed.gr-file-list ,
   .gr-file-list-0 .reviewed.gr-file-list {
-    margin-left: 2px !important;
+    margin-left: 1em !important;
     width: 18em !important;
   }
   /**
