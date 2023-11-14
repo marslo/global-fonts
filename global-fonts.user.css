@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.7
+@version        2.1.8
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -211,7 +211,7 @@
 
   /** icon **/
   ::before, ::after {
-    font-family: 'FontAwesome' !important;
+    font-family: var(--font-family-icon) !important;
   }
   .glyphicon::before {
     font-family: "Glyphicons Halflings" !important;
