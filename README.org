@@ -1,6 +1,9 @@
 #+title: global fonts ( marslo )
 #+description: global-wild font customization
 #+author:[[mailto:marslo.jiao@gmail.com][Marslo Jiao]]
+#+BEGIN_COMMENT
++ earlier version [[https://userstyles.org/styles/148804/marslo][September 28, 2017]]
+#+END_COMMENT
 
 ** installation
 + install stylus extension for [[https://chrome.google.com/webstore/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne][Stylus for Chrome]] | [[https://chrome.google.com/webstore/detail/stylish-custom-themes-for/fjnbnpbmkenffdnngjfgmeleoegfcffe][Stylish for Chrome]] | [[https://addons.mozilla.org/pt-BR/firefox/addon/styl-us/][Firefox]]
