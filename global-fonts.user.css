@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.12
+@version        2.1.13
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -147,7 +147,7 @@
   kbd,
   option, option *,
   canvas, canvas *,
-  pre, pre *:not([class*="console-output"]) ,
+  pre, pre *:not([class*="console-output"]),
   pre code, pre code *,
   pre code ul li *,
   pre span, pre span *,
@@ -355,7 +355,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"] *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"]) *:not([class*="con"], [class*="fa"]),
+  [class*="code"] *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"]) *:not([class*="con"], [class*="fa"], [class*="btn"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
@@ -632,6 +632,9 @@ a.gr-diff-view,
   div.d-none.d-sm-block > span:is([class*="js-path-segment"]):not([class*="js-repo-root"]) > a  {
     font-family: var(--font-family-sans) !important;
   }
+  .markdown-body code {
+    border-radius: 6px !important;
+  }
   /** for selection dismatches issue **/
   textarea#read-only-cursor-text-area {
     font-size: var(--font-size-normal-mono) !important;
@@ -864,7 +867,8 @@ a.gr-diff-view,
   div#course-details+h1 {
     font-size: 20px !important;
   }
-  div#course-details i[class*="fa"] {
+  div#course-details i[class*="fa"],
+  .fa, .button, .btn, .section-directions, .fontHeadlineLarge, .file-name-idw {
     font-family: var(--font-family-icon) !important;
   }
 
@@ -977,8 +981,8 @@ a.gr-diff-view,
   }
   /** .page-header, **/
   h1.page-header :not([class*="hidden-"]),
-  h1:not([class*="button"]):not([class*="btn"]):not([id*="section-directions"]):not([class*="fontHeadlineLarge"]):not([id*="file-name-id"]),
-  h1 > a:not([class*="btn"]), h1 > code,
+  h1 > a:not([class*="btn"]),
+  h1 > code,
   h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="aui-dropdown2"] *),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
@@ -1004,7 +1008,8 @@ a.gr-diff-view,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2 > mark,
-  .markdown-section h2 > a:not([class*="btn"]) {
+  .markdown-section h2 > a:not([class*="btn"]),
+  h2 > code {
     font-size: var(--font-size-h2) !important;
     font-weight: 400 !important;
   }
@@ -1012,7 +1017,7 @@ a.gr-diff-view,
   h3 > code, h3#gh-pages code,
   .content h2,                                              /* https://plugins.jenkins.io/kubernetes/ */
   .markdown-section h2 > code,
-  .markdown-body h3,
+  .markdown-body h3 *,
   .markdown-section h3,
   .markdown-section h3 code,
   .markdown-section h3 > mark,
@@ -1027,8 +1032,8 @@ a.gr-diff-view,
   section[role*="region"] h3,
   .blockList > h3,
   .markdown-section h3 > code,
-  .markdown-body h4,
-  .markdown-section h4,
+  .markdown-body h4 *,
+  .markdown-section h4 *,
   .markdown-section h4 > mark,
   .markdown-section h4 > a:not([class*="btn"]) {
     font-size: var(--font-size-h4) !important;
