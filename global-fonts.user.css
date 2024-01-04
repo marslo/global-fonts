@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.13
+@version        2.1.14
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -22,10 +22,10 @@
   **/
 
   html {
-    --font-family-sans: "Recursive Sans Casual Static", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
+    --font-family-sans: "Recursive Sans Casual Static", "MFeltPen HK", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
     --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands";
     --font-size-normal-sans: 17px;
     --font-size-normal-mono: 17px;
     --font-size-big-mono: 19px;
@@ -37,7 +37,7 @@
 
   /** :root cannot take value from var(..) **/
   :root {
-    --font-family-sans: "Recursive Sans Casual Static", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium" !important;
+    --font-family-sans: "Recursive Sans Casual Static", "MFeltPen HK", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
     --font-family-mono: "Rec Mono Casual", "Monaco", "Comic Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas" !important;
   }
 
@@ -259,10 +259,10 @@
   **/
 
   html {
-    --font-family-sans: "Recursive Sans Casual Static", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
+    --font-family-sans: "Recursive Sans Casual Static", "MFeltPen HK", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
     --font-family-mono: "Rec Mono Casual", "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands";
     --font-size-normal-sans: 18px;
     --font-size-normal-mono: 17px;
     --font-size-small-mono: 16px;
