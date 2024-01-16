@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.15
+@version        2.1.16
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -869,7 +869,7 @@ a.gr-diff-view,
   }
   div#course-details i[class*="fa"],
   .fa, .button, .btn, .section-directions, .fontHeadlineLarge, .file-name-idw {
-    font-family: var(--font-family-icon) !important;
+    font-family: var(--font-family-icon) var(--font-family-sans) !important;
   }
 
   /****************************************************************************************
