@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.17
+@version        2.1.18
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -268,9 +268,9 @@
     --font-family-handwritten: "Papyrus", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons";
     --font-size-normal-sans: 18px;
-    --font-size-normal-mono: 17px;
-    --font-size-small-mono: 16px;
-    --font-size-big-mono: 19px;
+    --font-size-normal-mono: 18px;
+    --font-size-small-mono: 17px;
+    --font-size-big-mono: 20px;
     --font-size-h1: 34px;
     --font-size-h2: 26px;
     --font-size-h3: 24px;
@@ -363,7 +363,7 @@
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
   }
 
 
@@ -680,7 +680,7 @@ a.gr-diff-view,
    * https://idratherbewriting.com/documentation-theme-jekyll/index.html
   ****************************************************************************************/
   .markdown-section *:not(mark) {
-    font-size: 14px !important;
+    font-size: 16px !important;
   }
   .markdown-section a,
   .book-summary a,
