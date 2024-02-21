@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.18
+@version        2.1.19
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -275,6 +275,10 @@
     --font-size-h2: 26px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
+    --fontStack-monospace: var(--font-family-mono) !important;
+    --fontStack-system: var(--font-family-sans) !important;
+    --fontStack-sansSerif: var(--font-family-sans) !important;
+    /** --body-font-size: var(--font-size-normal-mono) !important; **/
   }
 
   /**
@@ -571,7 +575,7 @@ a.gr-diff-view,
   .jsonpOpener, td.wysiwyg-macro-body *, .timestamp,  /* Json Viewer */
   li.blockList {
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-normal-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
   }
 
   /****************************************************************************************
@@ -636,14 +640,14 @@ a.gr-diff-view,
   div.d-none.d-sm-block > span:is([class*="js-path-segment"]):not([class*="js-repo-root"]) > a  {
     font-family: var(--font-family-sans) !important;
   }
-  .markdown-body code {
-    border-radius: 6px !important;
-  }
+  .markdown-body code { border-radius: 6px !important; }
   /** for selection dismatches issue **/
-  textarea#read-only-cursor-text-area {
-    font-size: var(--font-size-normal-mono) !important;
+  textarea#read-only-cursor-text-area, [class*='react-line'], .react-code-lines * {
+    font-size: var(--font-size-big-mono) !important;
     font-family: var(--font-family-mono) !important;
   }
+  /** for first line in code text-area **/
+  .ePiodO { line-height: 0.8 !important; }
   table.js-code-nav-container > tbody *,
   .QueryBuilder-StyledInputContainer * {                /* github search/query input */
     font-family: var(--font-family-mono) !important;
