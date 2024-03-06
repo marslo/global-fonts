@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.20
+@version        2.1.21
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -25,7 +25,7 @@
     --font-family-sans: "Recursive Sans Casual Static", "OperatorPro Nerd Font", "MFeltPen HK", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
     --font-family-mono: "OperatorMono Nerd Font", "Rec Mono Casual", "JetBrainsMono Nerd Font Mono", "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons";
     --font-size-normal-sans: 17px;
     --font-size-normal-mono: 17px;
     --font-size-big-mono: 20px;
@@ -266,7 +266,7 @@
     --font-family-sans: "Recursive Sans Casual Static", "OperatorPro Nerd Font", "MFeltPen HK", "MFeltPen PRC", "Grandstander", "Recursive Sans Linear Static", "Ubuntu", "Recursive", "Candara", "Gisha", "Titillium";
     --font-family-mono: "OperatorMono Nerd Font", "Rec Mono Casual", "JetBrainsMono Nerd Font Mono", "Monaco", "Menlo", "Andale Mono", "Ubuntu Mono", "monofur", "Consolas";
     --font-family-handwritten: "Papyrus", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons";
     --font-size-normal-sans: 18px;
     --font-size-normal-mono: 18px;
     --font-size-small-mono: 17px;
@@ -368,6 +368,7 @@
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
   }
 
 
@@ -419,6 +420,21 @@
    * }
    * [class*="style"] *, [class*="style"], [rel="noopener"], div[class*="gr-"] *, .style-scope *
    *
+   * background colors
+   *
+   * td:is([title*="Valid-Commit-Message"]),
+   * td:is([title*="Non-Author-Code-Review"]),
+   * td:is([title*="Verified"]),
+   * .gr-change-list-item {
+   *   background: #212121 !important;
+   * }
+   *
+   * padding
+   *
+   * .gr-change-list-item-0 th.gr-change-list-item:not(.label),
+   * .gr-change-list-item-0 .cell.gr-change-list-item:not(.label) {
+   *   padding-right: 2px !important;
+   * }
   ****************************************************************************************/
   .gr-app,
   .webLink,
@@ -463,8 +479,8 @@
   gr-commit-info *,
   gr-date-formatter *,
   gr-diff *,
-a.gr-change-view,
-a.gr-diff-view,
+  a.gr-change-view,
+  a.gr-diff-view,
   h3.gr-access-section,
   td.gr-diff,
   div.stats > span,
@@ -506,16 +522,7 @@ a.gr-diff-view,
     font-size: var(--font-size-small-mono) !important;
     font-family: var(--font-family-sans) !important;
   }
-  .gr-change-list-item-0 th.gr-change-list-item:not(.label),
-  .gr-change-list-item-0 .cell.gr-change-list-item:not(.label) {
-    padding-right: 2px !important;
-  }
-  td:is([title*="Valid-Commit-Message"]),
-  td:is([title*="Non-Author-Code-Review"]),
-  td:is([title*="Verified"]),
-  .gr-change-list-item {
-    background: #212121 !important;
-  }
+
   label.gr-editable-label,
   span.headerSubject,
   span.breadcrumbText,
@@ -538,6 +545,14 @@ a.gr-diff-view,
     margin-left: 1em !important;
     width: 18em !important;
   }
+  .gr-change-list-item,
+  td.cell.style-scope.gr-change-list,
+  .gr-change-list gr-change-list-item[selected].gr-change-list,
+  .gr-change-list gr-change-list-item.gr-change-list:focus,
+  .gr-change-list-item-0:hover {
+      background-color: #212121 !important;
+  }
+
   /**
    * gerrit code block
   **/
