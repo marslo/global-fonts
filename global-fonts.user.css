@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.21
+@version        2.1.22
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -192,6 +192,7 @@
   .lineNum, .code-line {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
   }
 
   /* buttons in system configuration */
@@ -592,6 +593,7 @@
   li.blockList {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
   }
 
   /****************************************************************************************
@@ -661,6 +663,7 @@
   textarea#read-only-cursor-text-area, [class*='react-line'], .react-code-lines * {
     font-size: var(--font-size-big-mono) !important;
     font-family: var(--font-family-mono) !important;
+    line-height: 1.5em !important;
   }
   /** for first line in code text-area **/
   .ePiodO { line-height: 0.8 !important; }
