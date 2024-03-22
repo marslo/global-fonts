@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.23
+@version        2.1.24
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -276,10 +276,18 @@
     --font-size-h2: 26px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
+
+    /** github cursor position issue **/
+    --font-size-github-mono: var(--font-size-big-mono);
     --fontStack-monospace: var(--font-family-mono) !important;
     --fontStack-system: var(--font-family-sans) !important;
     --fontStack-sansSerif: var(--font-family-sans) !important;
-    /** --body-font-size: var(--font-size-normal-mono) !important; **/
+    --body-font-size: var(--font-size-github-mono) !important;
+    --font-size-small: var(--font-size-github-mono) !important;
+  }
+
+  body {
+    font-family: var(--font-family-sans), var(--font-family-mono) !important;
   }
 
   /**
@@ -364,7 +372,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"] *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"]) *:not([class*="con"], [class*="fa"], [class*="btn"]),
+  [class*="code"]:not([class*="react"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"]) *:not([class*="con"], [class*="fa"], [class*="btn"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
@@ -643,8 +651,13 @@
 
 
   /****************************************************************************************
-   * github
+   * github.com
    * [class*="text"],
+   *
+   * # fix the issue for Last line obscured
+   * div[tabindex="0"] { padding-bottom: 10px !important; }
+   * # for first line in code text-area
+   * .ePiodO { line-height: 0.8 !important; }
   ****************************************************************************************/
   .markdown-title,
   .markdown-section :is(p, h1, h2, h3, h4),
@@ -662,14 +675,15 @@
     font-family: var(--font-family-sans) !important;
   }
   .markdown-body code { border-radius: 6px !important; }
-  /** for selection dismatches issue **/
-  textarea#read-only-cursor-text-area, [class*='react-line'], .react-code-lines * {
-    font-size: var(--font-size-big-mono) !important;
+  /** for selection dismatches issue [class*="code"]:not([class*="react"]) **/
+  textarea#read-only-cursor-text-area,
+  [class*='react-line'],
+  [class*='react-code'],
+  .react-code-lines *,
+  div[tabindex="0"] * {
+    font-size: var(--font-size-github-mono) !important;
     font-family: var(--font-family-mono) !important;
-    line-height: 1.2em !important;
   }
-  /** for first line in code text-area **/
-  .ePiodO { line-height: 0.8 !important; }
   table.js-code-nav-container > tbody *,
   .QueryBuilder-StyledInputContainer * {                /* github search/query input */
     font-family: var(--font-family-mono) !important;
@@ -692,8 +706,7 @@
   .markdown-body.js-comment-body p,
   h3.text-normal a.author,
   .d-none.d-sm-block,
-  h2:is([id*="blob-path"])
-  {
+  h2:is([id*="blob-path"]) {
     font-size: 18px !important;
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"] {
@@ -723,7 +736,6 @@
   div[class*="language-liquid"]~table * {
     font-family: var(--font-family-sans) !important;
   }
-
 
   /****************************************************************************************
    * slack
@@ -814,11 +826,10 @@
     /* font-style: italic; */
   }
   body.cke_editable :where(p, a, code, pre),
-  div.cke_contents textarea                            /* comments input box */
-  {
+  div.cke_contents textarea {                          /* comments input box */
     font-size: 18px !important;
   }
-  /*div.gadget-container > div.dashboard-item-header > h3,                      assigned to me */
+  /* div.gadget-container > div.dashboard-item-header > h3,                                                         assigned to me      */
   /* .mod-content li.people-details span:where([id*="reporter"], [id*="assignee"]) > span[id*="issue_summary"]      assignee & reporter */
   div.aui-page-header > div.aui-page-header-inner > div.aui-page-header-main > h1, /* system dashboard */
   h1 > span.subnav-container > span#subnav-title > span.subnavigator-title,  /* sprint - xx */
@@ -872,8 +883,7 @@
   div.xterm-screen canvas,
   canvas.xterm-text-layer .terminal *,
   .terminal-container, .terminal, .terminal[style],
-  #xterm-text-layer *
-  {
+  #xterm-text-layer * {
     font-family: var(--font-family-mono) !important;
     /* font-size: 1.25em !important; */
   }
@@ -910,12 +920,10 @@
   ****************************************************************************************/
   time, h2[class*="bottom"], .lwptoc_item,
   .book.font-size-2 .book-body .page-inner section,    /* https://psyteachr.github.io */
-  .MuiGrid-container h2                                /* https://onecompiler.com/ */
-  {
+  .MuiGrid-container h2 {                              /* https://onecompiler.com/ */
     font-size: 14px !important;
   }
-  .page-header a>b                                     /* https://ci.jenkins.io/ */
-  {
+  .page-header a>b {                                   /* https://ci.jenkins.io/ */
     font-size: 20px !important;
   }
   [data-target*="readme-toc.content"] *,
@@ -945,7 +953,6 @@
   /** zoom.us **/
   h1.r-title * {
     font-size: 22px !important;
-
   }
 
 
@@ -1045,7 +1052,7 @@
   }
   h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"]),
   h3 > code, h3#gh-pages code,
-  .content h2,                                              /* https://plugins.jenkins.io/kubernetes/ */
+  .content h2,                                                       /* https://plugins.jenkins.io/kubernetes/ */
   .markdown-section h2 > code,
   .markdown-body h3 *,
   .markdown-section h3,
@@ -1055,8 +1062,8 @@
     font-size: var(--font-size-h3) !important;
     font-weight: 400 !important;
   }
-  div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],               /* artifactory repo name */
-  .c-title.t.tts-title a,                                   /* baidu title */
+  div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],                        /* artifactory repo name */
+  .c-title.t.tts-title a,                                            /* baidu title */
   h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]),
   h4 > code, h4#gh-pages code,
   section[role*="region"] h3,
