@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.27
+@version        2.1.28
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -594,7 +594,7 @@
   /* ol li, */
   td ol,
   select,
-  input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"]),
+  input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [name*="user-code-"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
   .line, .line-number, .gr-diff,                      /* github codeblock */
@@ -914,7 +914,7 @@
   }
   div#course-details i[class*="fa"],
   .fa, .button, .btn, .section-directions, .fontHeadlineLarge, .file-name-idw {
-    font-family: var(--font-family-icon) var(--font-family-sans) !important;
+    font-family: var(--font-family-icon) !important;
   }
 
   /****************************************************************************************
