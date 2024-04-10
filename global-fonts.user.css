@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.26
+@version        2.1.27
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -686,6 +686,10 @@
   table.js-code-nav-container > tbody *,
   .QueryBuilder-StyledInputContainer * {                /* github search/query input */
     font-family: var(--font-family-mono) !important;
+  }
+  span.pl-c,                                            /* github comment code */
+  span.token.comment {                                  /* gitbook comment code */
+    font-style: italic !important;
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"],
   header.pagehead h1,
