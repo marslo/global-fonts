@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.1.28
+@version        2.1.29
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -594,7 +594,7 @@
   /* ol li, */
   td ol,
   select,
-  input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [name*="user-code-"]),
+  input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
   .line, .line-number, .gr-diff,                      /* github codeblock */
@@ -715,7 +715,15 @@
   .d-flex.flex-wrap.flex-justify-end [rel*="author"] {
     font-size: 24px !important;
   }
-
+   /** payment method **/
+  .FormControl-input, .FormControl-select, .FormControl-textarea {
+    font-size: var(--text-body-size-medium, 0.875rem) !important;
+    line-height: var(--text-body-lineHeight-medium, 1.4285) !important;
+  }
+  select.select-input {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
 
   /****************************************************************************************
    * github pager
