@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.1
+@version        2.2.2
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -22,7 +22,7 @@
   **/
 
   html {
-    --font-family-sans: "Recursive Sans Casual Static Nerd Font", "MFeltPenHKSemi Nerd Font", "MFeltPenPRC Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font";
+    --font-family-sans: "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font";
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", "Consolas";
     --font-family-handwritten: "Papyrus Nerd Font", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP";
@@ -264,7 +264,7 @@
   **/
 
   html {
-    --font-family-sans: "Recursive Sans Casual Static Nerd Font", "MFeltPenHKSemi Nerd Font", "MFeltPenPRC Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font";
+    --font-family-sans: "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font";
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", "Consolas";
     --font-family-handwritten: "Papyrus Nerd Font", "fantasy";
     --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP";
@@ -647,6 +647,10 @@
   .mainEntity :is(code, pre),
   div#question-mini-list [class*="-number"] {
     font-family: var(--font-family-mono) !important;
+  }
+  /** comments in stackoverflow code block **/
+  .hljs-comment {
+    font-style: italic !important;
   }
 
 
