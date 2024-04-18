@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.2
+@version        2.2.3
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -25,9 +25,9 @@
     --font-family-sans: "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font";
     --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", "Consolas";
     --font-family-handwritten: "Papyrus Nerd Font", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP", "Support MDL2 Assets";
     --font-size-normal-sans: 17px;
-    --font-size-normal-mono: 17px;
+    --font-size-normal-mono: 18px;
     --font-size-big-mono: 20px;
     --font-size-h1: 34px;
     --font-size-h2: 26px;
@@ -247,6 +247,10 @@
     outline: 0 !important;
   }
 
+  span.pipeline-new-node {
+    font-style: italic !important;
+  }
+
   /**
   div.alert-danger {
     background-color: #A8021B !important;
@@ -265,9 +269,9 @@
 
   html {
     --font-family-sans: "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font";
-    --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", "Consolas";
+    --font-family-mono: "OperatorMonoLig Nerd Font Mono", "OperatorMonoSSmLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", "Consolas";
     --font-family-handwritten: "Papyrus Nerd Font", "fantasy";
-    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP";
+    --font-family-icon: "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP", "Support MDL2 Assets";
     --font-size-normal-sans: 18px;
     --font-size-normal-mono: 18px;
     --font-size-small-mono: 17px;
@@ -480,7 +484,8 @@
   div.hideOnOpen,
   [class*="gr-*-list"],
   blockquote[class*="gr-formatted-text"] *,
-  input[id*="b_signin"] {
+  input[id*="b_signin"],
+  td.link, td.selflink {
     font-family: var(--font-family-sans) !important;
   }
   gr-linked-text[class*="pre"] #output,
@@ -590,10 +595,11 @@
    *   font-family: var(--font-family-mono) !important;
    *   font-size: var(--font-size-normal-mono) !important
    * }
+   * .form-select : github drop-down list
   ****************************************************************************************/
   /* ol li, */
   td ol,
-  select,
+  select:not([class*="form-select"]),
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
@@ -753,7 +759,8 @@
   div.tags>b,
   input[type=checkbox]+label,
   .commento-submit-button,
-  div[class*="language-liquid"]~table * {
+  div[class*="language-liquid"]~table *,
+  .book.font-family-1 {
     font-family: var(--font-family-sans) !important;
   }
 
