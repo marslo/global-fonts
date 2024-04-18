@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.3
+@version        2.2.4
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -247,8 +247,11 @@
     outline: 0 !important;
   }
 
-  span.pipeline-new-node {
+  span.pipeline-new-node, .ace-tm .ace_comment {
     font-style: italic !important;
+  }
+  .ace-tm .ace_comment {
+    color: darkgray !important;
   }
 
   /**
@@ -259,7 +262,7 @@
 } /** @-moz-document regexp : for jenkins hosts **/
 
 
-@-moz-document regexp("^((?!.*(\\-jenkins(-staging)?(-dev)?|jenkins)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
+@-moz-document regexp("^((?!.*(\-jenkins(-staging)?(-dev)?|jenkins)\.[^\\.]+\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
 
   /**
    * regexp("^((?!.*\\-jenkins(-dev)?(-staging)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|.*api|marslo.github.*|shields.io|127.0.0.1|0.0.0.0|localhost).)*$")
@@ -598,7 +601,7 @@
    * .form-select : github drop-down list
   ****************************************************************************************/
   /* ol li, */
-  td ol,
+  /* td ol, */
   select:not([class*="form-select"]),
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"]),
   a.jstree-anchor, pre.console-output,
