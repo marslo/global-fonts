@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.4
+@version        2.2.5
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -394,7 +394,7 @@
   ****************************************************************************************/
   .CodeMirror-line, *.CodeMirror-lines *, *.CodeMirror *, .CodeMirror *,
   span.target, details.sections-list li, h2.style-name *,
-  div[class*="CodeMirror-"] *, pre[class*="s-code-"] *, div[class*="cm-"] * {
+  div[class*="CodeMirror-"] *, pre[class*="s-code-"] *, div[class^="cm-"] * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
