@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.6
+@version        2.2.7
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -171,6 +171,7 @@
   tr.line_holder *, span[class*=cm-],
   div.help *,
   caption.caption table.diffLineTable *,
+  .healthReportDetails td:is([align*="right"]), .coverage-cell-link, .coverage-cell-inner,      /* code coverage tolltip */
   span[class*='pipeline-node']::before {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
@@ -291,6 +292,13 @@
     --fontStack-sansSerif: var(--font-family-sans) !important;
     --body-font-size: var(--font-size-github-mono) !important;
     --font-size-small: var(--font-size-github-mono) !important;
+  }
+
+  /** https://javadoc.jenkins.i **/
+  :root{
+    --code-font-family: var(--font-family-mono) !important;
+    --body-font-family: var(--font-family-sans) !important;
+    --block-font-family: var(--font-family-sans) !important;
   }
 
   body {
@@ -1041,6 +1049,7 @@
    *   [class*="answer_title"],                   ⋮
    *   ul.code_language_large *, .a-center        ⌏ https://www.codegrepper.com/
    *   aui-dropdown2                                jira
+   *   text-xs, text-sm                             https://app.codecov.io/gh/jenkinsci/code-coverage-api-plugin
   ****************************************************************************************/
   p, h1, h2, h3, h4, h5,
   code :where(h1, h2, h3, h4, h5),
@@ -1056,7 +1065,7 @@
   h1.page-header :not([class*="hidden-"]),
   h1 > a:not([class*="btn"]),
   h1 > code,
-  h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="aui-dropdown2"] *),
+  h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
   div[class*="headline"] *:not([class*="btn"]),
@@ -1073,7 +1082,7 @@
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],            /* ⌏  artifactory  */
   h2:not([class*="css-"]) > a:not([class*="css-"]),
   h2[dir*="auto"] > code,                                            /* https://plugins.jenkins.io/kubernetes/ */
-  *:not(blockquote) > h2:not([dir*="auto"]):not([class*="panel-title"]):not([data-v-0b7a2eac]):not([id*="blob-path"]):not([class*="spanh2"]):not([class*="fontBodyMedium"]):not([class*="css-"]),
+  *:not(blockquote) > h2:not([dir*="auto"]):not([class*="panel-title"]):not([data-v-0b7a2eac]):not([id*="blob-path"]):not([class*="spanh2"]):not([class*="fontBodyMedium"]):not([class*="css-"]):not([class*="text-sm"]),
   *:not(blockquote) > h2:not([class*="style-name"]):not([id*="blob-path"]):not([class*="spanh2"]):not([id*="directions-mode-group-"]) > :is(a:not([class*="btn"]), span:not([class*="btn"]):not([class*="separator"]):not([class*="js-path"], a:not([class*="btn"]))),
   h2 span:not([class*="PpN7xc"]),
   *:not(blockquote) > h2:not([id*="directions-mode-group"]) > *:not(code),
