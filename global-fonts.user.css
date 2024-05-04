@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.8
+@version        2.2.9
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -248,10 +248,10 @@
     outline: 0 !important;
   }
 
-  span.pipeline-new-node, .ace-tm .ace_comment {
+  span.pipeline-new-node, .ace-tm .ace_comment, span.cm-comment {
     font-style: italic !important;
   }
-  .ace-tm .ace_comment {
+  .ace-tm .ace_comment, span.cm-comment {
     color: darkgray !important;
   }
 
@@ -677,6 +677,9 @@
   /** comments in stackoverflow code block **/
   .hljs-comment {
     font-style: italic !important;
+  }
+  .s-btn.s-btn__filled {
+    color: var(--blue-300) !important;
   }
 
 
