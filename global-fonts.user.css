@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.7
+@version        2.2.8
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -8,7 +8,7 @@
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
 ==/UserStyle== */
 
-@-moz-document regexp("https?://(.*jenkins(?:-staging)?(?:-dev)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
+@-moz-document regexp("https?://(.*jenkins(?:-staging)?(?:-dev)?(?:-ip-sw-rel)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
 
   /**
    * regexp("^.*\\-jenkins\\.[^\\.]+\\.com.*$")
@@ -299,6 +299,11 @@
     --code-font-family: var(--font-family-mono) !important;
     --body-font-family: var(--font-family-sans) !important;
     --block-font-family: var(--font-family-sans) !important;
+
+    /** linkedin **/
+    --artdeco-reset-typography-font-family-sans: var(--font-family-sans) !important;
+    --artdeco-typography-sans: var(--font-family-sans) !important;
+    --artdeco-typography-mono: var(--font-family-mono) !important;
   }
 
   body {
@@ -1080,12 +1085,13 @@
   h1:is([class*="text-normal"]):not([id*="summary-val"]),            /* gist.github.com */
   .header h1[data-v-03dd129c],                                       /* ⌍               */
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],            /* ⌏  artifactory  */
-  h2:not([class*="css-"]) > a:not([class*="css-"]),
   h2[dir*="auto"] > code,                                            /* https://plugins.jenkins.io/kubernetes/ */
-  *:not(blockquote) > h2:not([dir*="auto"]):not([class*="panel-title"]):not([data-v-0b7a2eac]):not([id*="blob-path"]):not([class*="spanh2"]):not([class*="fontBodyMedium"]):not([class*="css-"]):not([class*="text-sm"]),
-  *:not(blockquote) > h2:not([class*="style-name"]):not([id*="blob-path"]):not([class*="spanh2"]):not([id*="directions-mode-group-"]) > :is(a:not([class*="btn"]), span:not([class*="btn"]):not([class*="separator"]):not([class*="js-path"], a:not([class*="btn"]))),
-  h2 span:not([class*="PpN7xc"]),
-  *:not(blockquote) > h2:not([id*="directions-mode-group"]) > *:not(code),
+  *:not(blockquote):not([class*="-card-"]) >
+    h2:not([id*="directions-mode-group"]):not([dir*="auto"]):not([class*="panel-title"]):not([data-v-0b7a2eac]):not([id*="blob-path"]):not([class*="spanh2"]):not([class*="fontBodyMedium"]):not([class*="css-"]):not([class*="text-sm"]):not([class*="t-"]):not([class*="style-name"]):not([id*="blob-path"]):not([class*="spanh2"]):not([id*="directions-mode-group-"]) >
+    :is( a:not([class*="btn"]):not([class*="css-"]):not([class*="btn"]),
+         span::not([class*="PpN7xc"]):not([class*="-name"]):not([class*="btn"]):not([class*="separator"]):not([class*="js-path"]),
+         *:not(code)
+    ),
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
