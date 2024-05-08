@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.11
+@version        2.2.12
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -392,7 +392,8 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="react"]):not([class*="select-sm"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"]) *:not([class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
+  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"])
+    *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
@@ -1095,11 +1096,11 @@
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],            /* ⌏  artifactory  */
   h2[dir*="auto"] > code,                                            /* https://plugins.jenkins.io/kubernetes/ */
   *:not(blockquote):not([class*="-card-"]) >
-    h2:not([id*="directions-mode-group"]):not([dir*="auto"]):not([class*="panel-title"]):not([data-v-0b7a2eac]):not([id*="blob-path"]):not([class*="spanh2"]):not([class*="fontBodyMedium"]):not([class*="css-"]):not([class*="text-sm"]):not([class*="t-"]):not([class*="style-name"]):not([id*="blob-path"]):not([class*="spanh2"]):not([id*="directions-mode-group-"]) >
-    :is( a:not([class*="btn"]):not([class*="css-"]):not([class*="btn"]),
-         span::not([class*="PpN7xc"]):not([class*="-name"]):not([class*="btn"]):not([class*="separator"]):not([class*="js-path"]),
-         *:not(code)
-    ),
+    h2:not([id*="directions-mode-group"], [dir*="auto"], [class*="panel-title"], [id*="blob-path"], [class*="spanh2"], [class*="fontBodyMedium"], [class*="css-"], [class*="text-sm"], [class*="t-"], [class*="style-name"], [id*="blob-path"], [class*="spanh2"], [id*="directions-mode-group-"]):not([data-v-0b7a2eac]) >
+    :is(a:not([class*="btn"], [class*="css-"]),
+        span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
+        *:not(code)
+       ),
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
