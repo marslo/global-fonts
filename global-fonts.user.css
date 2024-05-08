@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.9
+@version        2.2.10
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -381,7 +381,7 @@
   .markdown-body :is(code, code *, pre, pre *),
   .highlight :is(pre, code),
   .blob-code, .blob-code-inner, .blob-num,
-  .editor, div.ace_content,
+  .editor *:not(span):not([class*="confluence"]), div.ace_content,
   .blob-code-addition *, .blob-code-inner *,
   .solarized-dark,
   .EnlighterJS *,
@@ -616,6 +616,7 @@
    *   font-size: var(--font-size-normal-mono) !important
    * }
    * .form-select : github drop-down list
+   * td.wysiwyg-macro-body *        : for json viewer, but impacted the confluence page
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
@@ -626,7 +627,7 @@
   .line, .line-number, .gr-diff,                      /* github codeblock */
   div.QueryBuilder-StyledInputContainer,              /* github search input box */
   pre.span *, pre *, #confluenceTd, .blockInner,      /* confluence */
-  .jsonpOpener, td.wysiwyg-macro-body *, .timestamp,  /* Json Viewer */
+  .jsonpOpener, .timestamp,                           /* Json Viewer */
   li.blockList {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
@@ -1007,6 +1008,10 @@
     font-size: 22px !important;
   }
 
+  /** csdn.net **/
+  .htmledit_views code ol {
+    padding-bottom: 5px !important;
+  }
 
   /****************************************************************************************
    * for content: "\f19d";
