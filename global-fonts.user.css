@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.12
+@version        2.2.13
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -308,6 +308,10 @@
 
   body {
     font-family: var(--font-family-sans), var(--font-family-mono) !important;
+
+    /** vi.stackexchange.com **/
+    --ff-sans: var(--font-family-sans) !important;
+    --ff-mono: var(--font-family-mono) !important;
   }
 
   /**
@@ -392,8 +396,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"])
-    *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
+  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
@@ -676,9 +679,19 @@
   div#question-mini-list [class*="-number"] {
     font-family: var(--font-family-mono) !important;
   }
-  /** comments in stackoverflow code block **/
+  /** comments in stackoverflow && Jira code block **/
   .hljs-comment {
     font-style: italic !important;
+    color: darkgray;
+  }
+  .hljs-addition {
+    color: #2b91af !important;
+  }
+  .hljs-deletion {
+    color: #a31515 !important;
+  }
+  .hljs-meta {
+    color: hsl(252, 38%, 56%) !important;
   }
   .s-btn.s-btn__filled {
     color: var(--blue-300) !important;
