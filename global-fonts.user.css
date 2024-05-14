@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.14
+@version        2.2.15
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -248,7 +248,7 @@
     outline: 0 !important;
   }
 
-  span.pipeline-new-node, .ace-tm .ace_comment, span.cm-comment {
+  span.pipeline-new-node, span.cm-comment, .ace-tomorrow .ace_comment {
     font-style: italic !important;
   }
   .ace-tm .ace_comment, span.cm-comment {
@@ -312,6 +312,11 @@
     /** vi.stackexchange.com **/
     --ff-sans: var(--font-family-sans) !important;
     --ff-mono: var(--font-family-mono) !important;
+
+    /** **/
+    --code-font-family: var(--font-family-mono) !important;
+    --body-font-family: var(--font-family-sans) !important;
+
   }
 
   /**
@@ -396,7 +401,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
+  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
@@ -493,7 +498,6 @@
   div.desktop :is(a, p),
   span.gr-change-metadata,
   div.gr-change-status,
-  span.title,
   a.gr-dropdown,
   aper-item.gr-dropdown-list div,
   div.gr-dropdown-list div[class*="gr-dropdown-list"],
@@ -542,7 +546,7 @@
     font-size: 20px !important;
     text-transform: none !important;
   }
-  span.title,
+  *:not([class*="vjs-"]) > span.title,
   .gr-message,
   .gr-file-list,
   span.gr-main-header,
@@ -619,7 +623,8 @@
    *   font-family: var(--font-family-mono) !important;
    *   font-size: var(--font-size-normal-mono) !important
    * }
-   * .form-select : github drop-down list
+   * .form-select                   : github drop-down list
+   * .form-control                  : service now - Incident
    * td.wysiwyg-macro-body *        : for json viewer, but impacted the confluence page
   ****************************************************************************************/
   /* ol li, */
@@ -638,6 +643,10 @@
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
+  .form-control {                                     /* service now - Incident */
+    padding: 1px 9px !important;
+  }
+
 
   /****************************************************************************************
    * stackoverflow
@@ -975,10 +984,6 @@
   div#course-details+h1 {
     font-size: 20px !important;
   }
-  div#course-details i[class*="fa"],
-  .fa, .button, .btn, .section-directions, .fontHeadlineLarge, .file-name-idw {
-    font-family: var(--font-family-icon) !important;
-  }
 
   /****************************************************************************************
    * others:
@@ -1022,7 +1027,6 @@
   h1.r-title * {
     font-size: 22px !important;
   }
-
   /** csdn.net **/
   .htmledit_views code ol {
     padding-bottom: 5px !important;
@@ -1033,7 +1037,7 @@
    * .fa i.fa-clone, i.fa-check                     github pager
    * i.s-fa-external-link, i.s-fa-info-circle       jira
    * i[class*="material-icons-"]                    google search
-   * , i[class*="-icon"]
+   * i[class*="-icon"]
    * .codicon[class*="codicon-"] font: normal normal normal 16px/1 codicon !important;
   ****************************************************************************************/
   ::before, ::after, button, button.btn, span.fa-angle-up * {
@@ -1058,16 +1062,30 @@
   i[class*="google-material-icons"],
   i[class*="iconfont"],
   i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530,
-  button[class*="vjs-"], .video-js,
+  button[class*="vjs-"], .video-js,              /** zoom.us **/
   button[class*="zm-button"], i[class^=zm-icon-], i[class^=zm-dialog],
   [class*="g-button-right"] > [class*="icon-"],
   [class^="u-icon-"],
   .codicon[class*="codicon-"],                   /** gitpod **/
   span[class^="icon"]::before,                   /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
-  .docon                                         /** microsoft doc **/
-  {
+  .docon {                                       /** microsoft doc **/
     font-family: var(--font-family-icon) !important;
   }
+  /**
+   * https://kubernetes.io/docs/tutorials/kubernetes-basics/create-cluster/cluster-interactive/
+   *   `form_`: service now incident
+  **/
+  div#course-details i[class*="fa"],
+  .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
+  .button:not([class*="aui-"]), .btn:not([class*="form_"]) {
+    font-family: var(--font-family-icon) !important;
+  }
+
+  /** for zoom.us video control bar **/
+  .video-js .vjs-control-bar {
+    font-family: var(--font-family-mono) !important;
+  }
+
 
   /****************************************************************************************
    * global settings
