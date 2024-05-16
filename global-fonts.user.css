@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.15
+@version        2.2.16
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -380,6 +380,7 @@
    *   markdown-body *:is(pre, pre *),
    *   [class*="line-"] *, #content,
    *   pre span, pre span *                 handled by pre *
+   *   [class*="escape"]                    https://en.wikipedia.org/wiki/ANSI_escape_code
   ****************************************************************************************/
   kbd,
   pre, pre *, pre.code *,
@@ -401,7 +402,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
+  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
     font-family: var(--font-family-mono) !important;
@@ -626,11 +627,12 @@
    * .form-select                   : github drop-down list
    * .form-control                  : service now - Incident
    * td.wysiwyg-macro-body *        : for json viewer, but impacted the confluence page
+   * ..P2c8Dd                       : google color picker
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
   select:not([class*="form-select"]),
-  input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"]),
+  input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
   .line-number, .gr-diff,                             /* github codeblock */
@@ -1010,8 +1012,12 @@
   }
   /* https://www.wikiwand.com/en/Web_colors */
   .mw-parser-output .color-chart-x11-table td:nth-child(2),
+  .mw-parser-output .color-chart-x11-table td:nth-child(3),
   .entry pre>code {
     font-family: var(--font-family-mono) !important;
+  }
+  .wm_content__0bruk div {
+    font-family: var(--font-family-sans) !important;
   }
   /** service now **/
   ul[ng-if*="::user.logged_in"] span:where([class*="navbar-avatar"], [class*="visible-lg-inline"]),
@@ -1044,6 +1050,19 @@
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     font-family: inherit;
+  }
+
+  /** google color picker **/
+  .KJEUee {
+    line-height: 0.85 !important;
+  }
+  .B678Hb {
+    font-size: 8px !important;
+    font-family: var(--font-family-sans) !important;
+  }
+  .P2c8Dd {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-small-mono) !important;
   }
 
   /**
