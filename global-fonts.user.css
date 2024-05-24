@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.16
+@version        2.2.17
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -381,6 +381,9 @@
    *   [class*="line-"] *, #content,
    *   pre span, pre span *                 handled by pre *
    *   [class*="escape"]                    https://en.wikipedia.org/wiki/ANSI_escape_code
+   *   [id*="breadcrumbs"] *,               ╮
+   *   [class*="toolbar-split"] *,          ├ confluence edit page
+   *   [class*="macro"]                     ╯
   ****************************************************************************************/
   kbd,
   pre, pre *, pre.code *,
@@ -391,7 +394,8 @@
   .markdown-body :is(code, code *, pre, pre *),
   .highlight :is(pre, code),
   .blob-code, .blob-code-inner, .blob-num,
-  .editor *:not(span):not([class*="confluence"]), div.ace_content,
+  .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *),
+  div.ace_content,
   .blob-code-addition *, .blob-code-inner *,
   .solarized-dark,
   .EnlighterJS *,
@@ -402,9 +406,9 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
+  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
-  [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]){
+  [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]) {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
@@ -1130,7 +1134,7 @@
   h1.page-header :not([class*="hidden-"]),
   h1 > a:not([class*="btn"]),
   h1 > code,
-  h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *),
+  h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
   div[class*="headline"] *:not([class*="btn"]),
@@ -1146,7 +1150,10 @@
   .header h1[data-v-03dd129c],                                       /* ⌍               */
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],            /* ⌏  artifactory  */
   h2[dir*="auto"] > code,                                            /* https://plugins.jenkins.io/kubernetes/ */
-  *:not(blockquote):not([class*="-card-"]) >
+  /**
+   * [class*="innerCell"]: confluence page
+  **/
+  *:not(blockquote):not([class*="-card-"]):not([class*="innerCell"]) >
     h2:not([id*="directions-mode-group"], [dir*="auto"], [class*="panel-title"], [id*="blob-path"], [class*="spanh2"], [class*="fontBodyMedium"], [class*="css-"], [class*="text-sm"], [class*="t-"], [class*="style-name"], [id*="blob-path"], [class*="spanh2"], [id*="directions-mode-group-"]):not([data-v-0b7a2eac]) >
     :is(a:not([class*="btn"], [class*="css-"]),
         span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
