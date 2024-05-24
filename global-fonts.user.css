@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.17
+@version        2.2.18
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -8,7 +8,7 @@
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
 ==/UserStyle== */
 
-@-moz-document regexp("https?://(.*jenkins(?:-staging)?(?:-dev)?(?:-ip-sw-rel)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
+@-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
 
   /**
    * regexp("^.*\\-jenkins\\.[^\\.]+\\.com.*$")
@@ -534,7 +534,7 @@
   span.value,
   .branches.revision,
   div.page_path *,
-  div.page_body *,
+  div.page_body :is(code, pre),
   div.textarea-container *,
   div.gr-editable-content a[rel*="noopener"] {
     font-family: var(--font-family-mono) !important;
@@ -692,7 +692,8 @@
   }
   .comment-body code,
   .mainEntity :is(code, pre),
-  div#question-mini-list [class*="-number"] {
+  div#question-mini-list [class*="-number"],
+  textarea#wmd-input, .s-textarea {
     font-family: var(--font-family-mono) !important;
   }
   /** comments in stackoverflow && Jira code block **/
@@ -1040,6 +1041,11 @@
   /** csdn.net **/
   .htmledit_views code ol {
     padding-bottom: 5px !important;
+  }
+
+  /** https://bingehacking.blogspot.com **/
+  span[style*="font-family"], .PopularPosts, .post-title a {
+    font-family: var(--font-family-sans) !important;
   }
 
   /****************************************************************************************
