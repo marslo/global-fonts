@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        2.2.18
+@version        2.2.19
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -263,7 +263,7 @@
 } /** @-moz-document regexp : for jenkins hosts **/
 
 
-@-moz-document regexp("^((?!.*(-jenkins(-dev|-staging)?|jenkins(-ip.+)?)\.[^\\.]+\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
+@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
 
   /**
    * regexp("^((?!.*\\-jenkins(-dev)?(-staging)?\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|.*api|marslo.github.*|shields.io|127.0.0.1|0.0.0.0|localhost).)*$")
