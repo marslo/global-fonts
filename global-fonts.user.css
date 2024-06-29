@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.1
+@version        3.0.2
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
-@advanced       text font-family-sans        "Sans Fonts"        ""Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font""
+@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", "Consolas""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", "fantasy""
 @advanced       text font-family-icon        "Icon Fonts"        "entypo, "Adgs Icons", "Recursive Sans Casual Static Nerd Font", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP", "Support MDL2 Assets", marvell-icons, icomoon"
@@ -19,7 +19,7 @@
     --font-family-mono: /*[[font-family-mono]]*/;
     --font-family-handwritten: /*[[font-family-handwritten]]*/;
     --font-family-icon: /*[[font-family-icon]]*/;
-    --font-size-normal-sans: 17px;
+    --font-size-normal-sans: 18px;
     --font-size-normal-mono: 18px;
     --font-size-big-mono: 20px;
     --font-size-h1: 34px;
@@ -371,6 +371,7 @@
    *   [id*="breadcrumbs"] *,               ╮
    *   [class*="toolbar-split"] *,          ├ confluence edit page
    *   [class*="macro"]                     ╯
+   *   .cm-editor *,                        https://gwc-experiment.appspot.com Groovy Web Console
   ****************************************************************************************/
   kbd,
   pre, pre *, pre.code *,
@@ -384,6 +385,7 @@
   .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *),
   div.ace_content,
   .blob-code-addition *, .blob-code-inner *,
+  .cm-editor *,
   .solarized-dark,
   .EnlighterJS *,
   .js-file-line *,
@@ -622,7 +624,7 @@
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  select:not([class*="form-select"]),
+  select:not([class*="form-select"], [class*="version"]),
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
