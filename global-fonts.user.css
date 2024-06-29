@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.2
+@version        3.0.3
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -385,7 +385,6 @@
   .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *),
   div.ace_content,
   .blob-code-addition *, .blob-code-inner *,
-  .cm-editor *,
   .solarized-dark,
   .EnlighterJS *,
   .js-file-line *,
@@ -621,10 +620,11 @@
    * .form-control                  : service now - Incident
    * td.wysiwyg-macro-body *        : for json viewer, but impacted the confluence page
    * ..P2c8Dd                       : google color picker
+   * id*="version|astPhase"         : https://gwc-experiment.appspot.com Groovy Web Console
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  select:not([class*="form-select"], [class*="version"]),
+  select:not([class*="form-select"], [id*="version"], [id*="astPhase"]),
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
@@ -1203,4 +1203,28 @@
     font-weight: 400 !important;
   }
 
-}  /** @-moz-document regexp : for non jenkins hosts **/
+} /** @-moz-document regexp : for non jenkins hosts **/
+
+@-moz-document domain("gwc-experiment.appspot.com") {
+
+  html {
+    --font-size-big-mono: 22px;
+  }
+
+  .cm-editor *,
+  div[class^="cm-"] *,
+  [class*=cm-] {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
+  }
+
+  [class*='cm-'] > span.ͼw {
+    font-style: italic !important;
+  }
+
+  button {
+    font-family: var(--font-family-icon) !important;
+  }
+
+} /** @-moz-document domain : groovy web console**/
