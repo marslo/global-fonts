@@ -1,15 +1,15 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.3
+@version        3.0.4
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font", "Titillium Nerd Font""
-@advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", "Menlo", "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", "Consolas""
-@advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", "fantasy""
-@advanced       text font-family-icon        "Icon Fonts"        "entypo, "Adgs Icons", "Recursive Sans Casual Static Nerd Font", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "FontAwesome", "Glyphicons Halflings", "Google Material Icons", "Material Icons Extended", "ReadMe-Icons", "StructureFontAwesome", "VideoJS", "codicon", "controlIcons", "iconfont", "icozoom", "retina_icons", "streamline", "union-design-icons", "yunfont", "okticon", "docons", "zipformplus", "Font Awesome 6 Brands", "octicons", "perforceIcons", "FontADP", "Support MDL2 Assets", marvell-icons, icomoon"
+@advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
+@advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
+@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, sans-serif"
 ==/UserStyle== */
 
 @-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
@@ -47,8 +47,8 @@
    * :not(div.ace_editor) ,
    * div#main-panel * ,
    * .pane-content                                     build history
-   * h1.page-headline, div.cbwf-stage-view *,      ⌝
-   * h2.permalinks-header, ul.permalinks-list *    ⌟   job page
+   * h1.page-headline, div.cbwf-stage-view *,      ╮
+   * h2.permalinks-header, ul.permalinks-list *    ╯   job page
    * div.pane-frame *,                                 impact the ace_
    * button,
   **/
@@ -220,7 +220,7 @@
   }
 
   span.jenkins-icon-adjacent {
-    font-family: var(--font-family-handwritten)
+    font-family: var(--font-family-handwritten);
     font-size: 100% !important;
   }
 
