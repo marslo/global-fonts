@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.5
+@version        3.0.6
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -12,7 +12,7 @@
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, sans-serif"
 ==/UserStyle== */
 
-@-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
+@-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
@@ -255,7 +255,7 @@
   **/
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
+@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
 
 
   html {
@@ -1048,6 +1048,11 @@
     font-family: var(--font-family-mono) !important;
   }
 
+  /** https://groovy-lang.org **/
+  i.conum {
+    line-height: 20px !important;
+  }
+
 
 
   /****************************************************************************************
@@ -1140,9 +1145,9 @@
   }
   /** .page-header, **/
   h1.page-header :not([class*="hidden-"]),
-  h1 > a:not([class*="btn"]),
   h1 > code,
-  h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *),
+  /** *:not([class*="content"]) > h1 > a:not([class*="btn"]), **/
+  *:not([class*="content"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
   div[class*="headline"] *:not([class*="btn"]),
@@ -1235,9 +1240,26 @@
     color: #172b4d !important;
   }
   code, code *,
-  pre, pre * {
+  pre, pre *,
+  [class*="highlight"] :where(pre, code) {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-small-mono) !important;
-    line-height: 1em !important;
+    line-height: 1.5em !important;
+  }
+  .wiki-content h1 {
+    font-size: var(--font-size-h1) !important;
+  }
+  .wiki-content h2 {
+    font-size: var(--font-size-h2) !important;
+  }
+  .wiki-content h3 {
+    font-size: var(--font-size-h3) !important;
+  }
+  .wiki-content h4 {
+    font-size: var(--font-size-h4) !important;
+  }
+  .space-information-container > div.name,
+  .ia-secondary-header-title > span.label {
+    font-family: var(--font-family-handwritten) !important
   }
 } /** @-moz-document regexp : for ewiki hosts -- private hostname **/
