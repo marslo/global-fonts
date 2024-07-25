@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.7
+@version        3.0.8
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -979,6 +979,14 @@
   div.step :is(h4),
   div#course-details+h1 {
     font-size: 20px !important;
+  }
+
+  /****************************************************************************************
+   * Play With Kubernetes
+   * https://labs.play-with-k8s.com/
+  ****************************************************************************************/
+  div.terminal-instance * {
+    font-family: var(--font-family-mono) !important;
   }
 
   /****************************************************************************************
