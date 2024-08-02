@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.8
+@version        3.0.9
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -627,6 +627,7 @@
   select:not([class*="form-select"], [id*="version"], [id*="astPhase"]),
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
   a.jstree-anchor, pre.console-output,
+  div.eIjUrw, div.qQkTK,                              /* github search repositories */
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
   .line-number, .gr-diff,                             /* github codeblock */
   .line:not([id*="table"]),                           /* github codeblock && https://codeberg.org/vhs/jekyll-money **/
