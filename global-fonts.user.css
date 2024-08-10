@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.9
+@version        3.0.10
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -255,7 +255,7 @@
   **/
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|.*/calendar|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
+@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
 
 
   html {
@@ -1276,3 +1276,22 @@
     color: darkgray !important;
   }
 } /** @-moz-document regexp : for ewiki hosts -- private hostname **/
+
+@-moz-document domain("github.com") {
+  /* icon in search box */
+  .form-control {
+    padding: 1px 1.5em !important;
+  }
+
+  /* .AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-search-kbd */
+ .AppHeader-search-kbd {
+    align-content: center !important;
+    height: var(--font-size-big-mono) !important;
+    font-size: var(-font-size-big-mono) !important;
+  }
+
+  /* type `/` to search */
+  .AppHeader-searchButton {
+    padding-left: 2em !important;
+  }
+} /** @-moz-document domain : github.com **/
