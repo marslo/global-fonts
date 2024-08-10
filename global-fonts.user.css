@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.10
+@version        3.0.11
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -13,6 +13,10 @@
 ==/UserStyle== */
 
 @-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
+
+  /*******************
+   * jenkins domains
+  *******************/
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
@@ -257,6 +261,9 @@
 
 @-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*).)*$") {
 
+  /*******************
+   * non-jenkins domains
+  *******************/
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
@@ -616,7 +623,6 @@
    *   font-family: var(--font-family-mono) !important;
    *   font-size: var(--font-size-normal-mono) !important
    * }
-   * .form-select                   : github drop-down list
    * .form-control                  : service now - Incident
    * td.wysiwyg-macro-body *        : for json viewer, but impacted the confluence page
    * ..P2c8Dd                       : google color picker
@@ -627,11 +633,7 @@
   select:not([class*="form-select"], [id*="version"], [id*="astPhase"]),
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
   a.jstree-anchor, pre.console-output,
-  div.eIjUrw, div.qQkTK,                              /* github search repositories */
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
-  .line-number, .gr-diff,                             /* github codeblock */
-  .line:not([id*="table"]),                           /* github codeblock && https://codeberg.org/vhs/jekyll-money **/
-  div.QueryBuilder-StyledInputContainer,              /* github search input box */
   pre.span *, pre *, #confluenceTd, .blockInner,      /* confluence */
   .jsonpOpener, .timestamp,                           /* Json Viewer */
   li.blockList {
@@ -702,111 +704,6 @@
   }
   .s-btn.s-btn__filled {
     color: var(--blue-300) !important;
-  }
-
-
-  /****************************************************************************************
-   * github.com
-   * [class*="text"],
-   *
-   * # fix the issue for Last line obscured
-   * div[tabindex="0"] { padding-bottom: 10px !important; }
-   * # for first line in code text-area
-   * .ePiodO { line-height: 0.8 !important; }
-  ****************************************************************************************/
-  .markdown-title,
-  .markdown-section :is(p, h1, h2, h3, h4),
-  .markdown-body, .markdown-body :is(p, h1, h2, h3, h4),
-  div.list-style-none,
-  .page-header,
-  div[class*="style_CardRow"] h1,
-  .d-flex.flex-self-stretch,
-  a.dropdown-item,
-  [class*="headline"],
-  [class*="footer"],
-  .d-flex.flex-wrap.flex-justify-end,
-  label.header-search-wrapper > input,
-  div.d-none.d-sm-block > span:is([class*="js-path-segment"]):not([class*="js-repo-root"]) > a  {
-    font-family: var(--font-family-sans) !important;
-  }
-  .markdown-body code { border-radius: 6px !important; }
-  /** for selection dismatches issue [class*="code"]:not([class*="react"]) **/
-  textarea#read-only-cursor-text-area,
-  [class*='react-line'],
-  [class*='react-code'],
-  .react-code-lines * {
-    font-size: var(--font-size-github-mono) !important;
-    font-family: var(--font-family-mono) !important;
-  }
-  table.js-code-nav-container > tbody *,
-  .QueryBuilder-StyledInputContainer * {                /* github search/query input */
-    font-family: var(--font-family-mono) !important;
-  }
-  span.pl-c,                                            /* github comment code */
-  span.token.comment,                                   /* gitbook comment code */
-  span.cm-comment {                                     /* gist edit comment code */
-    font-style: italic !important;
-  }
-  .d-flex.flex-wrap.flex-justify-end [rel*="author"],
-  header.pagehead h1,
-  h1.wb-break-word.f3 > span.author > a, h3.text-normal a.author,       /* gist.github.com */
-  span.js-repo-root,
-  div.vcard-names-container h1 .vcard-fullname,
-  [data-hovercard-type="user"]  span.AppHeader-context-item-label {
-    font-family: var(--font-family-handwritten) !important;
-    font-size: 24px !important;
-  }
-  h3.text-normal a.author {
-    padding-top: 0px !important;
-  }
-  h2.breadcrumb, .separator {
-    font-size: 16px !important;
-  }
-  .markdown-body.js-comment-body p,
-  h3.text-normal a.author,
-  .d-none.d-sm-block,
-  h2:is([id*="blob-path"]) {
-    font-size: 18px !important;
-  }
-  .d-flex.flex-wrap.flex-justify-end [rel*="author"] {
-    font-size: 24px !important;
-  }
-   /** payment method **/
-  .FormControl-input, .FormControl-select, .FormControl-textarea {
-    font-size: var(--text-body-size-medium, 0.875rem) !important;
-    line-height: var(--text-body-lineHeight-medium, 1.4285) !important;
-  }
-  select.select-input {
-    font-size: 14px !important;
-    line-height: 20px !important;
-  }
-  /** gist select drop-down list **/
-  .select-sm {
-    font-size: 12px !important;
-  }
-
-  /****************************************************************************************
-   * github pager
-   * https://idratherbewriting.com/documentation-theme-jekyll/index.html
-  ****************************************************************************************/
-  .markdown-section *:not(mark):not(span):not(h1):not(h2):not(h3):not(h4) {
-    font-size: 16px !important;
-  }
-  .markdown-section a,
-  .book-summary a,
-  div[type*="text"],
-  li li,
-  ul li,
-  ol li,
-  #book-search-input>input,
-  textarea[id*="commento-textarea"],
-  a.btn,
-  div.tags>b,
-  input[type=checkbox]+label,
-  .commento-submit-button,
-  div[class*="language-liquid"]~table *,
-  .book.font-family-1 {
-    font-family: var(--font-family-sans) !important;
   }
 
   /****************************************************************************************
@@ -993,11 +890,15 @@
   /****************************************************************************************
    * others:
    * .lwptoc_item,                  stackoverflow
-   * .book.font-size-2              https://psyteachr.github.io
    * .MuiGrid-container             https://onecompiler.com/
   ****************************************************************************************/
+  ::before, ::after, button, button.btn, span.fa-angle-up * {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    font-family: inherit;
+  }
+
   time, h2[class*="bottom"], .lwptoc_item,
-  .book.font-size-2 .book-body .page-inner section,    /* https://psyteachr.github.io */
   .MuiGrid-container h2 {                              /* https://onecompiler.com/ */
     font-size: 14px !important;
   }
@@ -1009,7 +910,6 @@
   ul.blockListLast > li.blockList,                     /* groovy doc */
   time-ago,
   td.colLast > div.block,                              /* https://javadoc.jenkins.io */
-  a.wb-break-all strong,                               /* gist.github.com */
   h4.line * {
     font-family: var(--font-family-sans) !important;
   }
@@ -1040,42 +940,22 @@
   .htmledit_views code ol {
     padding-bottom: 5px !important;
   }
-
   /** https://bingehacking.blogspot.com **/
   span[style*="font-family"], .PopularPosts, .post-title a {
     font-family: var(--font-family-sans) !important;
   }
-
   /** https://click.palletsprojects.com/en/8.1.x/api/ **/
   span.pre {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
-
   /** python api book **/
   div[class*="highlight-"] pre {
     font-family: var(--font-family-mono) !important;
   }
-
   /** https://groovy-lang.org **/
   i.conum {
     line-height: 20px !important;
-  }
-
-
-
-  /****************************************************************************************
-   * for content: "\f19d";
-   * .fa i.fa-clone, i.fa-check                     github pager
-   * i.s-fa-external-link, i.s-fa-info-circle       jira
-   * i[class*="material-icons-"]                    google search
-   * i[class*="-icon"]
-   * .codicon[class*="codicon-"] font: normal normal normal 16px/1 codicon !important;
-  ****************************************************************************************/
-  ::before, ::after, button, button.btn, span.fa-angle-up * {
-    -webkit-box-sizing: border-box;
-    -moz-box-sizing: border-box;
-    font-family: inherit;
   }
 
   /** google color picker **/
@@ -1091,14 +971,20 @@
     font-size: var(--font-size-small-mono) !important;
   }
 
-  /**
-   * i.fa-clone, i.fa-check,
-   * #anchor-navigation-ex-navbar > i[class*='fa'], ⌍
-   * #anchorNavigationExGoTop > i[class*='fa'],     ⋮ https://marslo.github.io/ibook
-   * a.navigation > i[class*='fa'],                 ⋮
-   * a > i[class*='fa'],                            ⌏
-   * span > i[class*='fa'],                         https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
-  **/
+  /****************************************************************************************
+   * icons settings:
+   *
+   *   i.fa-clone, i.fa-check,
+   *   #anchor-navigation-ex-navbar > i[class*='fa'], ⌍
+   *   #anchorNavigationExGoTop > i[class*='fa'],     ⋮ https://marslo.github.io/ibook
+   *   a.navigation > i[class*='fa'],                 ⋮
+   *   a > i[class*='fa'],                            ⌏
+   *   span > i[class*='fa'],                         https://developer.arm.com/downloads/-/arm-gnu-toolchain-downloads
+   *   i[class*="material-icons-"]                    google search
+   *   i.s-fa-external-link, i.s-fa-info-circle       jira
+   *   i[class*="-icon"]
+   *   .codicon[class*="codicon-"] font: normal normal normal 16px/1 codicon !important;
+  ****************************************************************************************/
   i[class*="fa-"],
   span[class*="glyphicon"],
   span[class*="style_Navbar"], span[class*="avatar"], span[class*="icon-"],
@@ -1168,7 +1054,6 @@
   }
 
   /* *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]), */
-  h1:is([class*="text-normal"]):not([id*="summary-val"]),            /* gist.github.com */
   .header h1[data-v-03dd129c],                                       /* ⌍               */
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],            /* ⌏  artifactory  */
   h2[dir*="auto"] > code,                                            /* https://plugins.jenkins.io/kubernetes/ */
@@ -1221,6 +1106,10 @@
 
 @-moz-document domain("gwc-experiment.appspot.com") {
 
+  /*******************
+   * groovy web console
+  *******************/
+
   html {
     --font-size-big-mono: 22px;
   }
@@ -1243,7 +1132,173 @@
 
 } /** @-moz-document domain : groovy web console **/
 
+@-moz-document regexp("https?://[^\\/]*github\\.(com|io).*") {
+
+  /*******************
+   * github.com/github.io
+  *******************/
+
+  /****************************************************************************************
+   * github.com
+   * [class*="text"],
+   *
+   * # fix the issue for Last line obscured
+   * div[tabindex="0"] { padding-bottom: 10px !important; }
+   * # for first line in code text-area
+   * .ePiodO { line-height: 0.8 !important; }
+  ****************************************************************************************/
+  .markdown-title,
+  .markdown-section :is(p, h1, h2, h3, h4),
+  .markdown-body, .markdown-body :is(p, h1, h2, h3, h4),
+  div.list-style-none,
+  .page-header,
+  div[class*="style_CardRow"] h1,
+  .d-flex.flex-self-stretch,
+  a.dropdown-item,
+  [class*="headline"],
+  [class*="footer"],
+  .d-flex.flex-wrap.flex-justify-end,
+  label.header-search-wrapper > input,
+  div.d-none.d-sm-block > span:is([class*="js-path-segment"]):not([class*="js-repo-root"]) > a  {
+    font-family: var(--font-family-sans) !important;
+  }
+  .markdown-body code { border-radius: 6px !important; }
+  /** for selection dismatches issue [class*="code"]:not([class*="react"]) **/
+  textarea#read-only-cursor-text-area,
+  [class*='react-line'],
+  [class*='react-code'],
+  .react-code-lines * {
+    font-size: var(--font-size-github-mono) !important;
+    font-family: var(--font-family-mono) !important;
+  }
+  table.js-code-nav-container > tbody *,
+  .QueryBuilder-StyledInputContainer * {                /* github search/query input */
+    font-family: var(--font-family-mono) !important;
+  }
+  span.token.comment {                                  /* gitbook comment code */
+    font-style: italic !important;
+  }
+  .d-flex.flex-wrap.flex-justify-end [rel*="author"],
+  header.pagehead h1,
+  span.js-repo-root,
+  div.vcard-names-container h1 .vcard-fullname,
+  [data-hovercard-type="user"]  span.AppHeader-context-item-label {
+    font-family: var(--font-family-handwritten) !important;
+    font-size: 24px !important;
+  }
+  h3.text-normal a.author {
+    padding-top: 0px !important;
+  }
+  h2.breadcrumb, .separator {
+    font-size: 16px !important;
+  }
+  .markdown-body.js-comment-body p,
+  h3.text-normal a.author,
+  .d-none.d-sm-block,
+  h2:is([id*="blob-path"]) {
+    font-size: 18px !important;
+  }
+  .d-flex.flex-wrap.flex-justify-end [rel*="author"] {
+    font-size: 24px !important;
+  }
+   /** payment method **/
+  .FormControl-input, .FormControl-select, .FormControl-textarea {
+    font-size: var(--text-body-size-medium, 0.875rem) !important;
+    line-height: var(--text-body-lineHeight-medium, 1.4285) !important;
+  }
+  select.select-input {
+    font-size: 14px !important;
+    line-height: 20px !important;
+  }
+  .book.font-size-2 .book-body .page-inner section {          /* https://psyteachr.github.io */
+    font-size: 14px !important;
+  }
+
+  /**
+   * search icon padding
+   *  - .AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-search-kbd
+   *  - .form-select                   : github drop-down list
+  **/
+  div.eIjUrw, div.qQkTK,                                      /* github search repositories */
+  .line-number, .gr-diff,                                     /* github codeblock */
+  .line:not([id*="table"]),                                   /* github codeblock && https://codeberg.org/vhs/jekyll-money **/
+  div.QueryBuilder-StyledInputContainer {                     /* github search input box */
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
+  }
+  .form-control {                                             /* icon in search box */
+    padding: 1px 1.5em !important;
+  }
+ .AppHeader-search-kbd {
+    align-content: center !important;
+    height: var(--font-size-big-mono) !important;
+    font-size: var(-font-size-big-mono) !important;
+  }
+  .AppHeader-searchButton {                                   /* type `/` to search */
+    padding-left: 2em !important;
+  }
+
+  /**
+   * others
+  **/
+  span.cm-comment,                                            /* gist edit comment code */
+  span.pl-c {                                                 /* github comment code */
+    font-style: italic !important;
+  }
+
+  /**
+   * gist.github.com
+  **/
+  .select-sm {                                                /* gist select drop-down list */
+    font-size: 12px !important;
+  }
+  a.wb-break-all strong {                                     /* gist.github.com */
+    font-family: var(--font-family-sans) !important;
+  }
+  h1.wb-break-word.f3 > span.author > a,                      /* ╮                 */
+  h3.text-normal a.author {                                   /* ╯ gist.github.com */
+    font-family: var(--font-family-handwritten) !important;
+    font-size: 24px !important;
+  }
+  h1:is([class*="text-normal"]):not([id*="summary-val"]) {    /* gist.github.com */
+    font-size: var(--font-size-h2) !important;
+    font-weight: 400 !important;
+  }
+
+  /****************************************************************************************
+   * github.io                                      github pager
+   * https://idratherbewriting.com/documentation-theme-jekyll/index.html
+   *
+   * for content: "\f19d":
+   * .fa i.fa-clone, i.fa-check
+  ****************************************************************************************/
+  .markdown-section *:not(mark):not(span):not(h1):not(h2):not(h3):not(h4) {
+    font-size: 16px !important;
+  }
+  .markdown-section a,
+  .book-summary a,
+  div[type*="text"],
+  li li,
+  ul li,
+  ol li,
+  #book-search-input>input,
+  textarea[id*="commento-textarea"],
+  a.btn,
+  div.tags>b,
+  input[type=checkbox]+label,
+  .commento-submit-button,
+  div[class*="language-liquid"]~table *,
+  .book.font-family-1 {
+    font-family: var(--font-family-sans) !important;
+  }
+} /** @-moz-document regexp : github.com && github.io **/
+
 @-moz-document regexp("https?://(ewiki\\.).+\\.com.*") {
+
+  /*******************
+   * confluence pages
+  *******************/
 
   html {
     color: #172b4d !important;
@@ -1277,21 +1332,3 @@
   }
 } /** @-moz-document regexp : for ewiki hosts -- private hostname **/
 
-@-moz-document domain("github.com") {
-  /* icon in search box */
-  .form-control {
-    padding: 1px 1.5em !important;
-  }
-
-  /* .AppHeader .AppHeader-globalBar .AppHeader-search .AppHeader-search-kbd */
- .AppHeader-search-kbd {
-    align-content: center !important;
-    height: var(--font-size-big-mono) !important;
-    font-size: var(-font-size-big-mono) !important;
-  }
-
-  /* type `/` to search */
-  .AppHeader-searchButton {
-    padding-left: 2em !important;
-  }
-} /** @-moz-document domain : github.com **/
