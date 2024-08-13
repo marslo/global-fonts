@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.11
+@version        3.0.12
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -15,7 +15,7 @@
 @-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
 
   /*******************
-   * jenkins domains
+   * jenkins controllers
   *******************/
 
   html {
@@ -197,6 +197,10 @@
   .yui-button button, button, .url-button {
     display: inline-block !important;
     font-size: 0.75rem !important;
+  }
+  /** 2.462.1+ console output `Copy` button **/
+  .jenkins-button {
+    display: inline-flex !important;
   }
   /* 2.361.3+ copy button */
   button.jenkins-button > span {
