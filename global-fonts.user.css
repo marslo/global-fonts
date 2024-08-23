@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.13
+@version        3.0.14
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -631,10 +631,11 @@
    * td.wysiwyg-macro-body *        : for json viewer, but impacted the confluence page
    * ..P2c8Dd                       : google color picker
    * id*="version|astPhase"         : https://gwc-experiment.appspot.com Groovy Web Console
+   * id*="select-ember41"           : vault
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  select:not([class*="form-select"], [id*="version"], [id*="astPhase"]),
+  select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"]),
   input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
@@ -1163,7 +1164,8 @@
   [class*="footer"],
   .d-flex.flex-wrap.flex-justify-end,
   label.header-search-wrapper > input,
-  div.d-none.d-sm-block > span:is([class*="js-path-segment"]):not([class*="js-repo-root"]) > a  {
+  div.d-none.d-sm-block > span:is([class*="js-path-segment"]):not([class*="js-repo-root"]) > a,
+  input:is([id*="password"], [id*="login"]) {
     font-family: var(--font-family-sans) !important;
   }
   .markdown-body code { border-radius: 6px !important; }
@@ -1232,7 +1234,7 @@
     line-height: 1.5em !important;
   }
   .form-control {                                             /* icon in search box */
-    padding: 1px 1.5em !important;
+    padding: 1px 1em !important;
   }
  .AppHeader-search-kbd {
     align-content: center !important;
