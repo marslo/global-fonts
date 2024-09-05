@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.15
+@version        3.0.16
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -402,6 +402,7 @@
   .solarized-dark,
   .EnlighterJS *,
   .js-file-line *,
+  .font-mono,                  /** highlightjs.org */
   .changeset-message,
   .node-log-frame,
   .lines-content *,
@@ -1341,7 +1342,7 @@
   }
 } /** @-moz-document regexp : for ewiki hosts -- private hostname **/
 
-@-moz-document regexp("https?://.+-re-dashboard.+") {
+@-moz-document regexp("https?://(.+-re-dashboard.+|10.110.136.104).+") {
 
   /*******************
    * re dashboard pages
