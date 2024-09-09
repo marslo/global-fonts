@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.16
+@version        3.0.17
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -539,7 +539,9 @@
   div.page_path *,
   div.page_body :is(code, pre),
   div.textarea-container *,
-  div.gr-editable-content a[rel*="noopener"] {
+  div.gr-editable-content a[rel*="noopener"],
+  .hidden-phone,                                                          /** gitblit blame sha1 **/
+  .lineCommit, .lineNumber > span, .lineContent.sha1 {                    /** gitblit blame **/
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
