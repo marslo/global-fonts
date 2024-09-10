@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.17
+@version        3.0.18
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -642,7 +642,7 @@
   /* ol li, */
   /* td ol, */
   select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"]),
-  input:not([name*="password"], [name*="username"], [class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
+  input:not([class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
   pre.span *, pre *, #confluenceTd, .blockInner,      /* confluence */
@@ -652,9 +652,11 @@
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
-  .form-control {                                     /* service now - Incident */
+  /**
+  .form-control {                                     / service now - Incident /
     padding: 1px 9px !important;
   }
+  **/
 
 
   /****************************************************************************************
@@ -1143,7 +1145,7 @@
 
 } /** @-moz-document domain : groovy web console **/
 
-@-moz-document regexp("https?://[^\\/]*github\\.(com|io).*") {
+@-moz-document regexp("https?://[^\\/]*github\\.(com|io)((?!\\/login\\/device.*).)*$") {
 
   /*******************
    * github.com/github.io
