@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.18
+@version        3.0.19
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -38,8 +38,8 @@
     --font-family-mono: /*[[font-family-mono]]*/ !important;
   }
 
-  ::placeholder { font-style: italic !important; font-family: var(--font-family-sans) !important; }
-  ::-ms-input-placeholder { font-style: italic !important; font-family: var(--font-family-sans) !important; }
+  ::placeholder { font-style: italic !important; font-family: var(--font-family-mono) !important; }
+  ::-ms-input-placeholder { font-style: italic !important; font-family: var(--font-family-mono) !important; }
 
   *:not(pre):not(code):not(textarea):not(button):not(select):not(option):not(kbd):not(icon):not(input):not(i):not(cursor):not(::before):not(::after):not([role=presentation]):not(pre code):not(pre code *):not(li code):not(li code *):not(code *):not(textarea *):not(* code):not(* pre *):not(* code *):not(div.ace_editor):not([class*="ace_"]):not([class*="ace_"] *):not(canvas.graph-cursor-pointer):not([class*="icon"]):not([class*="fa-"]):not([class*="octicon"]):not([class*="win-icon"]):not([class*="icon-"]):not([class*="ico"]):not([class*="pc"]):not([class*="DPvwYc"]):not([class*="para"]):not([class*="ms-Icon"]):not([class*="sort-caret"]):not([class*="Da"]):not([class*="drop"]):not([class*="bowtie-"]):not([class*="view-"]):not([class*="pl-"]):not([class*=".fa-clone"]):not([class*=".fa-check"]):not([class*="avatar-"]):not([class*='wysiwyg-macro-*']):not([class*="-line"]):not([class*="CodeMirror-"]):not([class*="cm-"]):not([class*="setting-"]):not([class*="gr-"]):not([class*="s-code-"]):not([class*="code"]):not([class*="w3-"]):not([class*="language-"]):not([class*="hljs"]):not([class*="post-"]):not([class*="code"]):not([clas*="line"]):not([class*="js-post"]):not([class*="editor"]):not([class="setting-main"]):not([class*="resizable"]) {
     font-family: var(--font-family-sans) !important;
@@ -258,6 +258,12 @@
   .ace-tm .ace_comment, span.cm-comment {
     color: darkgray !important;
   }
+  /*
+  input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
+    font-style: italic !important;
+    font-family: var(--font-family-mono) !important;
+  }
+  */
 
   /**
   div.alert-danger {
@@ -386,6 +392,7 @@
    *   [class*="toolbar-split"] *,          ├ confluence edit page
    *   [class*="macro"]                     ╯
    *   .cm-editor *,                        https://gwc-experiment.appspot.com Groovy Web Console
+   *   .CodeBlock pre[class*=language-]>code https://docs.nvidia.com
   ****************************************************************************************/
   kbd,
   pre, pre *, pre.code *,
@@ -411,7 +418,8 @@
   div[class*=".comment"] code,
   [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
-  [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]) {
+  [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]),
+  .CodeBlock pre[class*=language-]>code * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
