@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.21
+@version        3.0.22
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -9,7 +9,7 @@
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
-@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, sans-serif"
+@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", sans-serif"
 ==/UserStyle== */
 
 @-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
@@ -25,6 +25,7 @@
     --font-family-icon: /*[[font-family-icon]]*/;
     --font-size-normal-sans: 18px;
     --font-size-normal-mono: 18px;
+    --font-size-small-mono: 16px;
     --font-size-big-mono: 20px;
     --font-size-h1: 34px;
     --font-size-h2: 26px;
@@ -171,11 +172,15 @@
   tr.line_holder *, span[class*=cm-],
   div.help *,
   caption.caption table.diffLineTable *,
-  .healthReportDetails td:is([align*="right"]), .coverage-cell-link, .coverage-cell-inner,      /* code coverage tolltip */
-  span[class*='pipeline-node']::before {
+  .healthReportDetails td:is([align*="right"]), .coverage-cell-link, .coverage-cell-inner {      /* code coverage tolltip */
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
     line-height: 1.5em !important;
+  }
+  span[class*='pipeline-node']::before {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-small-mono) !important;
+    font-style: italic !important;
   }
 
   [class*="ace_"],
@@ -419,7 +424,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"]),
+  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code * {
@@ -648,18 +653,19 @@
    * td.wysiwyg-macro-body *        : for json viewer, but impacted the confluence page
    * ..P2c8Dd                       : google color picker
    * id*="version|astPhase"         : https://gwc-experiment.appspot.com Groovy Web Console
-   * id*="select-ember41"           : vault
-   * class*="is-fullwidt"           : vault
+   * id*="select-ember41"           : ⌍ vault
+   * class*="is-fullwidt"           : ⌏
    * name*="searchString"           : jira
+   * id="f_user|f_pass"             : gerrit
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  *:not([class*="is-fullwidt"]) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"]),
-  input:not([class*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"]),
+  *:not([class*="is-fullwidt"]) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"]),
+  input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"]),
   a.jstree-anchor, pre.console-output,
-  div.line-numbers *, .line-numbers, .js-line-number, /* artifactory tree list */
-  pre.span *, pre *, #confluenceTd, .blockInner,      /* confluence */
-  .jsonpOpener, .timestamp,                           /* Json Viewer */
+  div.line-numbers *, .line-numbers, .js-line-number,        /* artifactory tree list */
+  pre.span *, pre *, #confluenceTd, .blockInner,             /* confluence */
+  .jsonpOpener, .timestamp:not([class*="timestamp-top"], [data-cy*="post-timestamp"]),    /* Json Viewer; not in discussions.apple.com */
   li.blockList {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
@@ -730,6 +736,11 @@
   }
   .s-btn.s-btn__filled {
     color: var(--blue-300) !important;
+  }
+  .s-prose a:not(.s-tag):not(.post-tag):not(.badge-tag):not(.s-link__visited):not(.s-btn):not(.s-editor-btn),
+  .popout-code a {
+    font-size: 12px !important;
+    font-family: var(--font-family-sans) !important;
   }
 
   /****************************************************************************************
@@ -1025,6 +1036,7 @@
   [class^="u-icon-"],
   .codicon[class*="codicon-"],                   /** gitpod **/
   span[class^="icon"]::before,                   /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
+  div.content-post-body-content p,
   .docon {                                       /** microsoft doc **/
     font-family: var(--font-family-icon) !important;
   }
