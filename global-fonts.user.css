@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.25
+@version        3.0.26
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -538,7 +538,9 @@
   [class*="gr-*-list"],
   blockquote[class*="gr-formatted-text"] *,
   input[id*="b_signin"],
-  td.link, td.selflink {
+  td.link, td.selflink,
+  [class*="com-google-gerrit"] select,
+  [class*="com-google-gerrit"] button div {
     font-family: var(--font-family-sans) !important;
   }
   gr-linked-text[class*="pre"] #output,
@@ -628,6 +630,12 @@
   span.com {
     color: #696969 !important;
   }
+  .searchPanel .searchDropdown {
+    height: 20px !important;
+  }
+  [class*="com-google-gerrit"] button div {
+    line-height: unset !important;
+  }
 
   /**
    * gerrit code block
@@ -665,7 +673,7 @@
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  *:not([class*="is-fullwidt"]) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"]),
+  *:not([class*="is-fullwidt"], [class*="gerrit"]) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"]),
   input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,        /* artifactory tree list */
@@ -1437,7 +1445,7 @@
   }
 
   /** :root cannot take value from var(..) **/
-  :root, [data-bs-theme=light] {
+  :root, [data-bs-theme=light], [data-bs-theme=dark] {
     --bs-font-sans-serif: /*[[font-family-sans]]*/ !important;
     --bs-font-monospace: /*[[font-family-mono]]*/ !important;
   }
@@ -1448,8 +1456,7 @@
   .nav-link {
     white-space: nowrap !important;
   }
-
-}
+} /** @-moz-document regexp("https?://(.+-re-dashboard.+|10.110.136.104).+") **/
 
 @-moz-document regexp("^https?://jqplay.org.*$") {
 
@@ -1474,4 +1481,4 @@
     font-size: var(--font-size-big-mono) !important;
     /** line-height: 1em !important; **/
   }
-}
+} /** @-moz-document regexp("^https?://jqplay.org.*$") **/
