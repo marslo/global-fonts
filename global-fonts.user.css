@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.24
+@version        3.0.25
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -18,9 +18,10 @@
    * jenkins controllers
   *******************/
 
-  /*******************
-   * reg: https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*
-  *******************/
+  /**********************************************************
+   * reg:
+   * - https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*
+  **********************************************************/
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
@@ -318,6 +319,9 @@
     --artdeco-reset-typography-font-family-sans: var(--font-family-sans) !important;
     --artdeco-typography-sans: var(--font-family-sans) !important;
     --artdeco-typography-mono: var(--font-family-mono) !important;
+
+    /** cnn.com **/
+    --theme-font-family-ui: var(--font-family-sans) !important;
   }
 
   body {
@@ -666,7 +670,7 @@
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,        /* artifactory tree list */
   pre.span *, pre *, #confluenceTd, .blockInner,             /* confluence */
-  .jsonpOpener, .timestamp:not([class*="timestamp-top"], [data-cy*="post-timestamp"]),    /* Json Viewer; not in discussions.apple.com */
+  .jsonpOpener, .timestamp:not([class*="timestamp-top"], [data-cy*="post-timestamp"], [data-uri*="cnn.com"]),    /* Json Viewer; not in discussions.apple.com */
   li.blockList {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
@@ -1084,7 +1088,7 @@
   [class*="header"]:not([class*="content"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
-  div[class*="headline"] *:not([class*="btn"]),
+  div[class*="headline"]:not([class*="container__"]) *:not([class*="btn"], [class*="timestamp"], [class*="container__"], [class*="headline__"], [class*="byline__"]),
   div#click-to-connect > div > :not(h1):not(h2),
   div[class*="style_CardRow"] h1 {
     font-size: var(--font-size-h1) !important;
@@ -1287,6 +1291,7 @@
     font-size: 14px !important;
   }
 
+  /** < Prev 1 2 3 4 5 Next > pagination **/
   .gaSbTj[rel="prev"], .gaSbTj[rel="next"],
   .gaSbTj[rel="prev"]::before, .gaSbTj[rel="next"]::after {
     font-size: var(--font-size-small-sans) !important;
