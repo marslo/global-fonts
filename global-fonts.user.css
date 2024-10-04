@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.23
+@version        3.0.24
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -12,10 +12,14 @@
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
-@-moz-document regexp("https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*") {
+@-moz-document regexp("https?://([^/]*jenkins([^/]*)/?.*|0.0.0.0|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com).*") {
 
   /*******************
    * jenkins controllers
+  *******************/
+
+  /*******************
+   * reg: https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*
   *******************/
 
   html {
@@ -302,14 +306,6 @@
     --font-size-h2: 26px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
-
-    /** github cursor position issue **/
-    --font-size-github-mono: var(--font-size-big-mono);
-    --fontStack-monospace: var(--font-family-mono) !important;
-    --fontStack-system: var(--font-family-sans) !important;
-    --fontStack-sansSerif: var(--font-family-sans) !important;
-    --body-font-size: var(--font-size-github-mono) !important;
-    --font-size-small: var(--font-size-github-mono) !important;
   }
 
   /** https://javadoc.jenkins.i **/
@@ -1180,6 +1176,40 @@
    * github.com/github.io
   *******************/
 
+  html {
+    --font-family-sans: /*[[font-family-sans]]*/;
+    --font-family-mono: /*[[font-family-mono]]*/;
+    --font-family-handwritten: /*[[font-family-handwritten]]*/;
+    --font-family-icon: /*[[font-family-icon]]*/;
+    --font-size-normal-sans: 18px;
+    --font-size-normal-mono: 18px;
+    --font-size-small-mono: 17px;
+    --font-size-small-sans: 16px;
+    --font-size-big-mono: 20px;
+    --font-size-h1: 34px;
+    --font-size-h2: 26px;
+    --font-size-h3: 24px;
+    --font-size-h4: 20px;
+
+    /** github cursor position issue **/
+    --font-size-github-mono: var(--font-size-big-mono);
+    --fontStack-monospace: var(--font-family-mono) !important;
+    --fontStack-system: var(--font-family-sans) !important;
+    --fontStack-sansSerif: var(--font-family-sans) !important;
+    --body-font-size: var(--font-size-github-mono) !important;
+    --font-size-small: var(--font-size-github-mono) !important;
+  }
+
+  body {
+    /** github cursor position issue **/
+    --font-size-github-mono: var(--font-size-big-mono);
+    --fontStack-monospace: var(--font-family-mono) !important;
+    --fontStack-system: var(--font-family-sans) !important;
+    --fontStack-sansSerif: var(--font-family-sans) !important;
+    --body-font-size: var(--font-size-github-mono) !important;
+    --font-size-small: var(--font-size-github-mono) !important;
+  }
+
   /****************************************************************************************
    * github.com
    * [class*="text"],
@@ -1255,6 +1285,19 @@
   }
   .book.font-size-2 .book-body .page-inner section {          /* https://psyteachr.github.io */
     font-size: 14px !important;
+  }
+
+  .gaSbTj[rel="prev"], .gaSbTj[rel="next"],
+  .gaSbTj[rel="prev"]::before, .gaSbTj[rel="next"]::after {
+    font-size: var(--font-size-small-sans) !important;
+    font-family: var(--font-family-handwritten) !important;
+  }
+  .gaSbTj[rel="prev"]::before, .gaSbTj[rel="next"]::after {
+    padding-top: 20px !important;
+  }
+  .gaSbTj {
+    font-size: var(--font-size-small-sans) !important;
+    font-family: var(--font-family-sans) !important;
   }
 
   /**
@@ -1410,28 +1453,16 @@
   *******************/
 
   :host, html {
-    --font-family-sans: /*[[font-family-sans]]*/;
-    --font-family-mono: /*[[font-family-mono]]*/;
-    --font-family-handwritten: /*[[font-family-handwritten]]*/;
-    --font-family-icon: /*[[font-family-icon]]*/;
-    --font-size-normal-sans: 18px;
-    --font-size-normal-mono: 18px;
-    --font-size-small-mono: 17px;
-    --font-size-big-mono: 20px;
-    --font-size-h1: 34px;
-    --font-size-h2: 26px;
-    --font-size-h3: 24px;
-    --font-size-h4: 20px;
-
     /** https://jqplay.org **/
     --monaco-monospace-font: var(--font-family-mono) !important;
     font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-big-mono) !important;
   }
 
-  div.monaco-editor, .monaco-editor *,
-  div.margin, .margin *,
-  div.line-numbers, .line-numbers *,
-  div.active-line-number, .active-line-number *,
+  .monaco-editor, .monaco-editor *,
+  .margin, .margin *,
+  .line-numbers, .line-numbers *,
+  .active-line-number, .active-line-number *,
   div.current-line, .current-line * {
     font-family: var(--font-family-mono) !important;
     --monaco-monospace-font:  var(--font-family-mono) !important;
