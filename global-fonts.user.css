@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.26
+@version        3.0.27
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -84,7 +84,6 @@
   td a,
   td *,
   div.signupIntroDefault :is(div, p),
-  label.attach-previous.setting-checkbox,
   [class*="jenkins-checkbox"] *,
   div.textarea-preview-container,
   :root:not([class*="ace"]):not(pre>code *):not([class*="jenkins-input"]) {
@@ -131,7 +130,7 @@
    * div.pretty-print                                  config.xml
    *
   **/
-  div.setting-main,
+  div.setting-main *:not(label.attach-previous.setting-checkbox),
   .jenkins-form-label,
   .setting-main > textarea,
   td.setting-main,
@@ -1021,6 +1020,11 @@
     font-size: var(--font-size-small-mono) !important;
   }
 
+  /** docs.cloudbees.com **/
+  article.doc {
+    max-width: 1288px !important;
+  }
+
   /****************************************************************************************
    * icons settings:
    *
@@ -1390,6 +1394,11 @@
   div[class*="language-liquid"]~table *,
   .book.font-family-1 {
     font-family: var(--font-family-sans) !important;
+  }
+
+  /** gitbook **/
+  .page-inner {
+    max-width: 90% !important;
   }
 } /** @-moz-document regexp : github.com && github.io **/
 
