@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.27
+@version        3.0.28
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -84,6 +84,7 @@
   td a,
   td *,
   div.signupIntroDefault :is(div, p),
+  label.attach-previous.setting-checkbox,
   [class*="jenkins-checkbox"] *,
   div.textarea-preview-container,
   :root:not([class*="ace"]):not(pre>code *):not([class*="jenkins-input"]) {
@@ -1256,6 +1257,7 @@
   textarea#read-only-cursor-text-area,
   [class*='react-line'],
   [class*='react-code'],
+  div[class*="styled-input-content"],                          /* github issue search */
   .react-code-lines * {
     font-size: var(--font-size-github-mono) !important;
     font-family: var(--font-family-mono) !important;
@@ -1263,9 +1265,6 @@
   table.js-code-nav-container > tbody *,
   .QueryBuilder-StyledInputContainer * {                /* github search/query input */
     font-family: var(--font-family-mono) !important;
-  }
-  span.token.comment {                                  /* gitbook comment code */
-    font-style: italic !important;
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"],
   header.pagehead h1,
@@ -1397,8 +1396,24 @@
   }
 
   /** gitbook **/
+  span.token.comment {                                  /* comment code */
+    font-style: italic !important;
+    color: #586e75 !important;
+  }
+  span.token.punctuation {
+    color: #93a1a1 !important;
+  }
   .page-inner {
     max-width: 90% !important;
+  }
+  .token.entity {
+    background: #2d3143;
+  }
+  .panel-default>.panel-heading {
+    color: #eee8d5;
+  }
+  .code-wrapper pre > code > span.code-line:before {    /* line number */
+    font-family: var(--font-family-mono) !important;
   }
 } /** @-moz-document regexp : github.com && github.io **/
 
