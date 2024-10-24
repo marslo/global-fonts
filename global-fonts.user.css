@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.28
+@version        3.0.29
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
-@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font""
+@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
@@ -316,9 +316,11 @@
     --block-font-family: var(--font-family-sans) !important;
 
     /** linkedin **/
-    --artdeco-reset-typography-font-family-sans: var(--font-family-sans) !important;
-    --artdeco-typography-sans: var(--font-family-sans) !important;
-    --artdeco-typography-mono: var(--font-family-mono) !important;
+    --artdeco-reset-typography-font-family-sans: /*[[font-family-sans]]*/;
+    --artdeco-typography-sans: /*[[font-family-sans]]*/;
+    --artdeco-typography-mono: /*[[font-family-mono]]*/;
+    --font-family-sans: /*[[font-family-sans]]*/;
+    --font-family-mono: /*[[font-family-mono]]*/;
 
     /** cnn.com **/
     --theme-font-family-ui: var(--font-family-sans) !important;
@@ -411,6 +413,7 @@
   kbd,
   pre, pre *, pre.code *,
   code, code *, * code *, .code-line,
+  tt,                          /** jira **/
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
@@ -668,12 +671,13 @@
    * id*="version|astPhase"         : https://gwc-experiment.appspot.com Groovy Web Console
    * id*="select-ember41"           : ⌍ vault
    * class*="is-fullwidt"           : ⌏
-   * name*="searchString"           : jira
+   * name*="searchString"           : ⌍ jira
+   * class*="select"                : ⌏ jira dropdown list
    * id="f_user|f_pass"             : gerrit
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  *:not([class*="is-fullwidt"], [class*="gerrit"]) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"]),
+  *:not([class*="is-fullwidt"], [class*="gerrit"]) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"]),
   input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,        /* artifactory tree list */
@@ -805,7 +809,7 @@
   h1#summary-val,
   div#attachmentmodule *,
   input.aui-ss-field,
-  div.user-content-block *:not(code):not(pre>code *),
+  div.user-content-block *:not(tt):not(code):not(pre):not(pre>code *),        /** jira **/
   [class*="dashboard-item"] iframe *,
   [class*="applinks*messages"],
   [class*="jira-activity"] [class*="activity"], span.resolved-link,           /** jira **/
@@ -1130,7 +1134,7 @@
     font-size: var(--font-size-h2) !important;
     font-weight: 400 !important;
   }
-  h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"]),
+  h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"], [class*="truncate"]),
   h3 > code, h3#gh-pages code,
   .content h2,                                                       /* https://plugins.jenkins.io/kubernetes/ */
   .markdown-section h2 > code,
