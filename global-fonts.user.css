@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.29
+@version        3.0.30
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
-@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Gisha Nerd Font""
+@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
@@ -481,7 +481,7 @@
 
 
   /****************************************************************************************
-     * gerrit
+   * gerrit
    * .gr-change-metadata, .gr-related-changes-list, .gr-change-list-item, .gr-comment-list
    * td.u-red, td.u-green
    *
@@ -490,16 +490,24 @@
    * }
    * [class*="style"] *, [class*="style"], [rel="noopener"], div[class*="gr-"] *, .style-scope *
    *
-   * background colors
+   * ------ background colors ------
    *
-   * td:is([title*="Valid-Commit-Message"]),
-   * td:is([title*="Non-Author-Code-Review"]),
-   * td:is([title*="Verified"]),
-   * .gr-change-list-item {
-   *   background: #212121 !important;
+   * .gr-change-list-item,
+   * td.cell.style-scope.gr-change-list,
+   * .gr-change-list gr-change-list-item[selected].gr-change-list,
+   * .gr-change-list gr-change-list-item.gr-change-list:focus,
+   * .gr-change-list-item-0:hover {
+   *     background-color: #212121 !important;
    * }
    *
-   * padding
+   * ** td:is([title*="Valid-Commit-Message"]),
+   * ** td:is([title*="Non-Author-Code-Review"]),
+   * ** td:is([title*="Verified"]),
+   * ** .gr-change-list-item {
+   * **   background: #212121 !important;
+   * ** }
+   *
+   * ------ padding ------
    *
    * .gr-change-list-item-0 th.gr-change-list-item:not(.label),
    * .gr-change-list-item-0 .cell.gr-change-list-item:not(.label) {
@@ -618,13 +626,6 @@
   .gr-file-list-0 .reviewed.gr-file-list {
     margin-left: 1em !important;
     width: 18em !important;
-  }
-  .gr-change-list-item,
-  td.cell.style-scope.gr-change-list,
-  .gr-change-list gr-change-list-item[selected].gr-change-list,
-  .gr-change-list gr-change-list-item.gr-change-list:focus,
-  .gr-change-list-item-0:hover {
-      background-color: #212121 !important;
   }
   .gr-syntax-comment,
   span.com {
