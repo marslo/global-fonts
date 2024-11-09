@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.30
+@version        3.0.31
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -413,6 +413,7 @@
   kbd,
   pre, pre *, pre.code *,
   code, code *, * code *, .code-line,
+  .code, .command,             /** commandlineful.com **/
   tt,                          /** jira **/
   input :where(code, pre),
   textarea :where(code, pre),
@@ -420,7 +421,7 @@
   .markdown-body :is(code, code *, pre, pre *),
   .highlight :is(pre, code),
   .blob-code, .blob-code-inner, .blob-num,
-  .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *),
+  .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *):not([class*="aui-button"]),
   div.ace_content,
   .blob-code-addition *, .blob-code-inner *,
   .solarized-dark,
@@ -435,12 +436,19 @@
   div[class*=".comment"] code,
   [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
-  [class*="terminal"] *:not([class*="icon"]), #terminal *:not([class*="icon"]),
+  [class*="terminal"] *:not([class*="icon"], [class*="num-votes"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
+
+  /** commandlineful.com **/
+  span[class*="glyphicon-usd"]::before {
+    font-size: var(--font-size-big-mono) !important;
+    line-height: 1.5em !important;
+  }
+
 
   /****************************************************************************************
    * stylish/stylus editor
@@ -690,11 +698,15 @@
     line-height: 1.5em !important;
   }
   /**
-  .form-control {                                     / service now - Incident /
+  .form-control {                                            / service now - Incident /
     padding: 1px 9px !important;
   }
   **/
 
+  textarea:is([class*="background--black"]),
+  .monospaced {                                              /** artifactory log **/
+    font-family: var(--font-family-mono) !important;
+  }
 
   /****************************************************************************************
    * stackoverflow
