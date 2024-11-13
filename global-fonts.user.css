@@ -1,12 +1,12 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.31
+@version        3.0.32
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
-@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font""
+@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium"
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
@@ -192,7 +192,7 @@
   [class*="ace_"],
   [class*="ace_"] *,
   textarea.ace_text-input,
-  .ace_active-line,
+  .ace_active-line, .ace_editor,
   cursor,
   [class*="console-output"] *,
   .console-output, .console-output *,
@@ -268,7 +268,7 @@
     outline: 0 !important;
   }
 
-  span.pipeline-new-node, span.cm-comment, .ace-tomorrow .ace_comment {
+  span.pipeline-new-node, span.cm-comment, .ace-tomorrow .ace_comment, span.ace_comment {
     font-style: italic !important;
   }
   .ace-tm .ace_comment, span.cm-comment {
@@ -1081,7 +1081,8 @@
   **/
   div#course-details i[class*="fa"],
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
-  .button:not([class*="aui-"]), .btn:not([class*="form_"]) {
+  .button:not([class*="aui-"]),
+  .btn:not([class*="form_"], [class*="-link"], [class*="text-"], [class*="-outline-"], [data-name*="Latin"]) {
     font-family: var(--font-family-icon) !important;
   }
 
