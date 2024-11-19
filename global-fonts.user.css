@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.33
+@version        3.0.34
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -282,10 +282,15 @@
   */
 
   /**
-  div.alert-danger {
-    background-color: #A8021B !important;
-  }
+   * div.alert-danger { background-color: #A8021B !important; }
   **/
+
+  /** pipeline graph view **/
+  .css-9l3uo3 {
+    font-family: var(--font-family-mono) !important;
+    font-style: italic !important;
+    color: #c7c7c7 !important;
+  }
 } /** @-moz-document regexp : for jenkins hosts **/
 
 @-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*|.*re-dashboard|jqplay.org).)*$") {
@@ -425,7 +430,7 @@
   .markdown-body :is(code, code *, pre, pre *),
   .highlight :is(pre, code),
   .blob-code, .blob-code-inner, .blob-num,
-  .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *):not([class*="aui-button"]),
+  .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *):not([class*="aui-"] *),
   div.ace_content,
   .blob-code-addition *, .blob-code-inner *,
   .solarized-dark,
@@ -438,7 +443,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
+  [class*="code"]:not([class*="vs-code"], [class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"], [class*="num-votes"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code * {
