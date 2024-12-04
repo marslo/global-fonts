@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.34
+@version        3.0.35
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -178,14 +178,15 @@
   tr.line_holder *, span[class*=cm-],
   div.help *,
   caption.caption table.diffLineTable *,
+  .log-body p a.linenumber::before, .log-body .line,
   .healthReportDetails td:is([align*="right"]), .coverage-cell-link, .coverage-cell-inner {      /* code coverage tolltip */
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
     line-height: 1.5em !important;
   }
-  span[class*='pipeline-node']::before {
+  span[class*='pipeline-node']::before {           /** parallel nodename **/
     font-family: var(--font-family-mono) !important;
-    font-size: var(--font-size-small-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
     font-style: italic !important;
   }
 
@@ -255,12 +256,12 @@
    * bluetooth
   **/
   .result-item-label,
-    .TruncatingLabel,
-    [class*="RunDetailsHeader"] *,
-    [class*="JTable"],
-    .activity-actions-container,
-    .Header-pageTabs,
-    .development-footer {
+  .TruncatingLabel,
+  [class*="RunDetailsHeader"] *,
+  [class*="JTable"],
+  .activity-actions-container,
+  .Header-pageTabs,
+  .development-footer {
     font-size: var(--font-size-normal-mono) !important;
   }
 
@@ -268,20 +269,21 @@
     outline: 0 !important;
   }
 
+  /** comments **/
   span.pipeline-new-node, span.cm-comment, .ace-tomorrow .ace_comment, span.ace_comment {
     font-style: italic !important;
   }
-  .ace-tm .ace_comment, span.cm-comment {
+  .ace-tm .ace_comment, span.cm-comment {          /** comments **/
     color: darkgray !important;
   }
-  /*
-  input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
-    font-style: italic !important;
-    font-family: var(--font-family-mono) !important;
+  .console-output span.timestamp b {               /** console output timestamp **/
+    color: #696969 !important;
   }
-  */
-
   /**
+   * input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
+   *   font-style: italic !important;
+   *   font-family: var(--font-family-mono) !important;
+   * }
    * div.alert-danger { background-color: #A8021B !important; }
   **/
 
@@ -290,6 +292,7 @@
     font-family: var(--font-family-mono) !important;
     font-style: italic !important;
     color: #c7c7c7 !important;
+    font-size: 16px;
   }
 } /** @-moz-document regexp : for jenkins hosts **/
 
@@ -423,7 +426,6 @@
   pre, pre *, pre.code *,
   code, code *, * code *, .code-line,
   .code, .command,             /** commandlineful.com **/
-  tt,                          /** jira **/
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
@@ -842,6 +844,12 @@
     font-family: var(--font-family-sans) !important;
     font-size: var(--font-size-normal-sans) !important;
   }
+  /** edit content **/
+  body:is([class*="mce-content-body"]) {
+    font-size: var(--font-size-normal-sans) !important;
+  }
+
+  tt,
   div[class*="ghx-key"] > a, td.issuekey,
   .user-content-block :is(code, code *, pre code),
   .cke_editable :where(code, code *, pre),
@@ -1108,7 +1116,7 @@
   div#course-details i[class*="fa"],
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
   .button:not([class*="aui-"]),
-  .btn:not([class*="form_"], [class*="-link"], [class*="text-"], [class*="-outline-"], [data-name*="Latin"]) {
+  .btn:not([class*="form_"], [class*="-link"], [class*="text-"], [class*="-outline-"], [data-toggle="charmap"]) {
     font-family: var(--font-family-icon) !important;
   }
 
@@ -1473,7 +1481,8 @@
   }
   code, code *,
   pre, pre *,
-  [class*="highlight"] :where(pre, code) {
+  [class*="highlight"] :where(pre, code),
+  body:not(.specificity-inc):not(.specificity-inc):not(.specificity-inc) .wiki-edit-content textarea.wiki-textfield {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-small-mono) !important;
     line-height: 1.5em !important;
