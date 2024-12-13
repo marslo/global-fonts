@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.35
+@version        3.0.36
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -9,7 +9,7 @@
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
-@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
+@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
 @-moz-document regexp("https?://([^/]*jenkins([^/]*)/?.*|0.0.0.0|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com).*") {
@@ -184,7 +184,7 @@
     font-size: var(--font-size-normal-mono) !important;
     line-height: 1.5em !important;
   }
-  span[class*='pipeline-node']::before {           /** parallel nodename **/
+  span[class*='pipeline-node']::before {                      /** parallel nodename **/
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
     font-style: italic !important;
@@ -273,10 +273,10 @@
   span.pipeline-new-node, span.cm-comment, .ace-tomorrow .ace_comment, span.ace_comment {
     font-style: italic !important;
   }
-  .ace-tm .ace_comment, span.cm-comment {          /** comments **/
+  .ace-tm .ace_comment, span.cm-comment {                     /** comments **/
     color: darkgray !important;
   }
-  .console-output span.timestamp b {               /** console output timestamp **/
+  .console-output span.timestamp b {                          /** console output timestamp **/
     color: #696969 !important;
   }
   /**
@@ -296,7 +296,7 @@
   }
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|developer.arm.com|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*|.*re-dashboard|jqplay.org).)*$") {
+@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*|.*re-dashboard|jqplay.org).)*$") {
 
   /*******************
    * non-jenkins domains
@@ -425,7 +425,7 @@
   kbd,
   pre, pre *, pre.code *,
   code, code *, * code *, .code-line,
-  .code, .command,             /** commandlineful.com **/
+  .code *:not([class*="expand"], [class*="hide"]), .command,  /** commandlineful.com **/
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
@@ -438,7 +438,7 @@
   .solarized-dark,
   .EnlighterJS *,
   .js-file-line *,
-  .font-mono,                  /** highlightjs.org */
+  .font-mono,                                                 /** highlightjs.org */
   .changeset-message,
   .node-log-frame,
   .lines-content *,
@@ -593,8 +593,9 @@
   div.page_body :is(code, pre),
   div.textarea-container *,
   div.gr-editable-content a[rel*="noopener"],
-  .hidden-phone,                                                          /** gitblit blame sha1 **/
-  .lineCommit, .lineNumber > span, .lineContent.sha1 {                    /** gitblit blame **/
+  div#cgit a.ls-blob, div#cgit a.ls-dir, div#cgit .ls-mod,    /** https://git.yoctoproject.org/meta-arm/tree/meta-arm-toolchain/recipes-devtools/external-arm-toolchain?h=dunfell **/
+  .hidden-phone,                                              /** gitblit blame sha1 **/
+  .lineCommit, .lineNumber > span, .lineContent.sha1 {        /** gitblit blame **/
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
@@ -697,11 +698,11 @@
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  *:not([class*="is-fullwidt"], [class*="gerrit"]) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"]),
+  *:not([class*="is-fullwidt"], [class*="gerrit"]):not(p) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"]),
   input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"]),
   a.jstree-anchor, pre.console-output,
-  div.line-numbers *, .line-numbers, .js-line-number,        /* artifactory tree list */
-  pre.span *, pre *, #confluenceTd, .blockInner,             /* confluence */
+  div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
+  pre.span *, pre *, #confluenceTd, .blockInner,                         /* confluence */
   .jsonpOpener, .timestamp:not([class*="timestamp-top"], [data-cy*="post-timestamp"], [data-uri*="cnn.com"]),    /* Json Viewer; not in discussions.apple.com */
   li.blockList {
     font-family: var(--font-family-mono) !important;
@@ -709,13 +710,13 @@
     line-height: 1.5em !important;
   }
   /**
-  .form-control {                                            / service now - Incident /
+  .form-control {                                             / service now - Incident /
     padding: 1px 9px !important;
   }
   **/
 
   textarea:is([class*="background--black"]),
-  .monospaced {                                              /** artifactory log **/
+  .monospaced {                                               /** artifactory log **/
     font-family: var(--font-family-mono) !important;
   }
 
@@ -833,10 +834,10 @@
   h1#summary-val,
   div#attachmentmodule *,
   input.aui-ss-field,
-  div.user-content-block *:not(tt):not(code):not(pre):not(pre>code *),        /** jira **/
+  div.user-content-block *:not(tt):not(code):not(pre):not(pre>code *),   /** jira **/
   [class*="dashboard-item"] iframe *,
   [class*="applinks*messages"],
-  [class*="jira-activity"] [class*="activity"], span.resolved-link,           /** jira **/
+  [class*="jira-activity"] [class*="activity"], span.resolved-link,      /** jira **/
   div[class*="ghx-"],
   [id*="details-module"] *:not([class*="icon"]),
   [class*="s-view-dd-"],
@@ -879,7 +880,7 @@
     /* font-style: italic; */
   }
   body.cke_editable :where(p, a, code, pre),
-  div.cke_contents textarea {                          /* comments input box */
+  div.cke_contents textarea {                                 /* comments input box */
     font-size: 18px !important;
   }
   /* div.gadget-container > div.dashboard-item-header > h3,                                                         assigned to me      */
@@ -1000,17 +1001,17 @@
   }
 
   time, h2[class*="bottom"], .lwptoc_item,
-  .MuiGrid-container h2 {                              /* https://onecompiler.com/ */
+  .MuiGrid-container h2 {                                     /* https://onecompiler.com/ */
     font-size: 14px !important;
   }
-  .page-header a>b {                                   /* https://ci.jenkins.io/ */
+  .page-header a>b {                                          /* https://ci.jenkins.io/ */
     font-size: 20px !important;
   }
   [data-target*="readme-toc.content"] *,
   .css-truncate a, .BorderGrid-cell,
-  ul.blockListLast > li.blockList,                     /* groovy doc */
+  ul.blockListLast > li.blockList,                            /* groovy doc */
   time-ago,
-  td.colLast > div.block,                              /* https://javadoc.jenkins.io */
+  td.colLast > div.block,                                     /* https://javadoc.jenkins.io */
   h4.line * {
     font-family: var(--font-family-sans) !important;
   }
@@ -1099,14 +1100,14 @@
   i[class*="google-material-icons"],
   i[class*="iconfont"],
   i[class*="ms-Button-icon"], [class*="ms-Button"], .icon-530,
-  button[class*="vjs-"], .video-js,              /** zoom.us **/
+  button[class*="vjs-"], .video-js,                           /** zoom.us **/
   button[class*="zm-button"], i[class^=zm-icon-], i[class^=zm-dialog],
   [class*="g-button-right"] > [class*="icon-"],
   [class^="u-icon-"],
-  .codicon[class*="codicon-"],                   /** gitpod **/
-  span[class^="icon"]::before,                   /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
+  .codicon[class*="codicon-"],                                /** gitpod **/
+  span[class^="icon"]::before,                                /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
   div.content-post-body-content p,
-  .docon {                                       /** microsoft doc **/
+  .docon {                                                    /** microsoft doc **/
     font-family: var(--font-family-icon) !important;
   }
   /**
@@ -1149,7 +1150,7 @@
   /** .page-header, **/
   h1.page-header :not([class*="hidden-"]),
   h1 > code,
-  h1 span.pre,                                                       /** python doc, i.e.: https://docs.python.org/3/library/netrc.html **/
+  h1 span.pre,                                                /** python doc, i.e.: https://docs.python.org/3/library/netrc.html **/
   /** *:not([class*="content"]) > h1 > a:not([class*="btn"]), **/
   [class*="header"]:not([class*="content"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
   h1#gh-pages code,
@@ -1162,9 +1163,9 @@
   }
 
   /* *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]), */
-  .header h1[data-v-03dd129c],                                       /* ⌍               */
-  .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],            /* ⌏  artifactory  */
-  h2[dir*="auto"] > code,                                            /* https://plugins.jenkins.io/kubernetes/ */
+  .header h1[data-v-03dd129c],                                /* ⌍               */
+  .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],     /* ⌏  artifactory  */
+  h2[dir*="auto"] > code,                                     /* https://plugins.jenkins.io/kubernetes/ */
   /**
    * [class*="innerCell"]: confluence page
   **/
@@ -1185,7 +1186,7 @@
   }
   h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"], [class*="truncate"]),
   h3 > code, h3#gh-pages code,
-  .content h2,                                                       /* https://plugins.jenkins.io/kubernetes/ */
+  .content h2,                                                /* https://plugins.jenkins.io/kubernetes/ */
   .markdown-section h2 > code,
   .markdown-body h3 *,
   .markdown-section h3,
@@ -1195,9 +1196,9 @@
     font-size: var(--font-size-h3) !important;
     font-weight: 400 !important;
   }
-  div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],                        /* artifactory repo name */
-  .c-title.t.tts-title a,                                            /* baidu title */
-  h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]),
+  div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],                 /* artifactory repo name */
+  .c-title.t.tts-title a,                                     /* baidu title */
+  h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]):not([class*="name-copy"]),
   h4 > code, h4#gh-pages code,
   section[role*="region"] h3,
   .blockList > h3,
@@ -1310,13 +1311,13 @@
   textarea#read-only-cursor-text-area,
   [class*='react-line'],
   [class*='react-code'],
-  div[class*="styled-input-content"],                          /* github issue search */
+  div[class*="styled-input-content"],                         /* github issue search */
   .react-code-lines * {
     font-size: var(--font-size-github-mono) !important;
     font-family: var(--font-family-mono) !important;
   }
   table.js-code-nav-container > tbody *,
-  .QueryBuilder-StyledInputContainer * {                /* github search/query input */
+  .QueryBuilder-StyledInputContainer * {                      /* github search/query input */
     font-family: var(--font-family-mono) !important;
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"],
@@ -1449,7 +1450,7 @@
   }
 
   /** gitbook **/
-  span.token.comment {                                  /* comment code */
+  span.token.comment {                                        /* comment code */
     font-style: italic !important;
     color: #586e75 !important;
   }
@@ -1465,7 +1466,7 @@
   .panel-default>.panel-heading {
     color: #eee8d5;
   }
-  .code-wrapper pre > code > span.code-line:before {    /* line number */
+  .code-wrapper pre > code > span.code-line:before {          /* line number */
     font-family: var(--font-family-mono) !important;
   }
 } /** @-moz-document regexp : github.com && github.io **/
