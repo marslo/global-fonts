@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.36
+@version        3.0.37
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -12,15 +12,16 @@
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
-@-moz-document regexp("https?://([^/]*jenkins([^/]*)/?.*|0.0.0.0|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com).*") {
+@-moz-document regexp("https?://([^/]*jenkins((?!gitpod)[^/])*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|ci.jenkins.io).*") {
 
   /*******************
    * jenkins controllers
   *******************/
 
   /**********************************************************
-   * reg:
-   * - https?://(.*jenkins.?(?:-staging)?(?:-dev)?(?:-ip.+)?(?:-ccs.+)?\\.[^\\.]+\\.com|0.0.0.0|34.233..*.*|3.230.*.*|10.69.*|imarslo.jenkins.com).*
+   * reg exclude:
+   *  - jenkins jira: https://issues.jenkins.io/browse/JENKINS-69549
+   *  - jenkins gitpod : https://frankie139506-jenkins-xwx3gpif1fu.ws-us117.gitpod.io/bb
   **********************************************************/
 
   html {
@@ -190,8 +191,8 @@
     font-style: italic !important;
   }
 
-  [class*="ace_"],
-  [class*="ace_"] *,
+  [class*="ace_"]:not([class*="workspace"]),
+  [class*="ace_"]:not([class*="workspace"]) *,
   textarea.ace_text-input,
   .ace_active-line, .ace_editor,
   cursor,
@@ -291,12 +292,12 @@
   .css-9l3uo3 {
     font-family: var(--font-family-mono) !important;
     font-style: italic !important;
-    color: #c7c7c7 !important;
+    /** color: #c7c7c7 !important; **/
     font-size: 16px;
   }
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("^((?!.*(.*jenkins.?(?:-dev)?(?:-staging)?(?:-ip.+)?(?:-ccs.+)?)\\.[^\\.]+\\.com|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|imarslo.jenkins.com|programmingfonts|34.233..*.*|3.230.*.*|.*re-dashboard|jqplay.org).)*$") {
+@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|ci.jenkins.io).*|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|programmingfonts|.*re-dashboard|jqplay.org).).*") {
 
   /*******************
    * non-jenkins domains
@@ -447,7 +448,7 @@
   div[class*=".comment"] code,
   [class*="code"]:not([class*="vs-code"], [class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
   [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
-  [class*="terminal"] *:not([class*="icon"], [class*="num-votes"]), #terminal *:not([class*="icon"]),
+  [class*="terminal"] *:not([class*="icon"], [class*="num-votes"], [class*="xterm-"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
@@ -491,8 +492,13 @@
   /****************************************************************************************
    * https://bootsnipp.com/
    * ace_
+   * :not([class*="workspace"])                 slack
   ****************************************************************************************/
-  [class*="ace_"], [class*="ace_"]~div, [class*="ace_"]~div, [class*="ace_"]+div, [class*="ace_"] *,
+  [class*="ace_"]:not([class*="workspace"]),
+  [class*="ace_"]:not([class*="workspace"])~div,
+  [class*="ace_"]:not([class*="workspace"])~div,
+  [class*="ace_"]:not([class*="workspace"])+div,
+  [class*="ace_"]:not([class*="workspace"]) *,
   div#playground-container * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
@@ -699,7 +705,7 @@
   /* ol li, */
   /* td ol, */
   *:not([class*="is-fullwidt"], [class*="gerrit"]):not(p) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"]),
-  input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"]),
+  input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"], [id*="gs_displayName"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
   pre.span *, pre *, #confluenceTd, .blockInner,                         /* confluence */
@@ -1077,6 +1083,18 @@
   article.doc {
     max-width: 1288px !important;
   }
+
+  /** groupid.marve11.com **/
+  .gid-input-text-field, #ssp-requests-filter .ssp-rf-form-control {
+    padding: .65rem .65rem !important;
+    border-radius: 1px;
+    font-size: .75rem !important;
+    height: 50px !important;
+  }
+  .ui-jqgrid .ui-jqgrid-htable th div {
+    height: 30px !important;
+  }
+
 
   /****************************************************************************************
    * icons settings:
