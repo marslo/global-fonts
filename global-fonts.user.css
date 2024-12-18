@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.37
+@version        3.0.38
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -302,6 +302,12 @@
   /*******************
    * non-jenkins domains
   *******************/
+  /** -apple-system **/
+  @font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
@@ -704,8 +710,8 @@
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  *:not([class*="is-fullwidt"], [class*="gerrit"]):not(p) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"]),
-  input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"], [id*="gs_displayName"]),
+  *:not([class*="is-fullwidt"], [class*="custom-select"], [class*="gerrit"]):not(p) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"]),
+  input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"], [id*="gs_displayName"], [class*="text"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
   pre.span *, pre *, #confluenceTd, .blockInner,                         /* confluence */
