@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.38
+@version        3.0.39
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -9,10 +9,10 @@
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
-@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
+@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
-@-moz-document regexp("https?://([^/]*jenkins((?!gitpod)[^/])*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|ci.jenkins.io).*") {
+@-moz-document regexp("https?://([^/]*jenkins((?!gitpod)[^/])*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|.*ci.jenkins.io).*") {
 
   /*******************
    * jenkins controllers
@@ -88,7 +88,8 @@
   label.attach-previous.setting-checkbox,
   [class*="jenkins-checkbox"] *,
   div.textarea-preview-container,
-  :root:not([class*="ace"]):not(pre>code *):not([class*="jenkins-input"]) {
+  :root:not([class*="ace"]):not(pre>code *):not([class*="jenkins-input"]),
+  .css-yuu8jj .MuiTreeItem-label {
     font-family: var(--font-family-sans) !important;
   }
 
@@ -407,27 +408,114 @@
   }
 
 
+
+  /****************************************************************************************
+   * global settings
+   *   button#btnSubmit, div.k-widget.k-grid *      projecttracker
+   *   div.breadcrumbs *, ul.one-third *,         ⌍
+   *   [class*="grepper_answer_button"] *,        ⋮
+   *   [class*="answer_title"],                   ⋮
+   *   ul.code_language_large *, .a-center        ⌏ https://www.codegrepper.com/
+   *   aui-dropdown2                                jira
+   *   text-xs, text-sm                             https://app.codecov.io/gh/jenkinsci/code-coverage-api-plugin
+  ****************************************************************************************/
+  p, h1, h2, h3, h4, h5,
+  code :where(h1, h2, h3, h4, h5),
+  pre :is(h1, h2, h3, h4, h5),
+  button#btnSubmit, div.k-widget.k-grid *,
+  div.breadcrumbs *, ul.one-third *,
+  ul.code_language_large *, .a-center,
+  [class*="grepper_answer_button"] *,
+  [class*="answer_title"] {
+    font-family: var(--font-family-sans) !important;
+  }
+  /** .page-header, **/
+  h1.page-header :not([class*="hidden-"]),
+  h1 > code, h1 > a > code,
+  h1 span.pre,                                                /** python doc, i.e.: https://docs.python.org/3/library/netrc.html **/
+  /** *:not([class*="content"]) > h1 > a:not([class*="btn"]), **/
+  [class*="header"]:not([class*="content"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
+  h1#gh-pages code,
+  .markdown-body h1, .markdown-section h1,
+  div[class*="headline"]:not([class*="container__"]) *:not([class*="btn"], [class*="timestamp"], [class*="container__"], [class*="headline__"], [class*="byline__"]),
+  div#click-to-connect > div > :not(h1):not(h2),
+  div[class*="style_CardRow"] h1 {
+    font-size: var(--font-size-h1) !important;
+    font-weight: 500 !important;
+  }
+
+  /* *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]), */
+  .header h1[data-v-03dd129c],                                /* ⌍               */
+  .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],     /* ⌏  artifactory  */
+  h2[dir*="auto"] > code,                                     /* https://plugins.jenkins.io/kubernetes/ */
+  /**
+   * [class*="innerCell"]: confluence page
+  **/
+  *:not(blockquote):not([class*="-card-"]):not([class*="innerCell"]) >
+    h2:not([id*="directions-mode-group"], [dir*="auto"], [class*="panel-title"], [id*="blob-path"], [class*="spanh2"], [class*="fontBodyMedium"], [class*="css-"], [class*="text-sm"], [class*="t-"], [class*="style-name"], [id*="blob-path"], [class*="spanh2"], [id*="directions-mode-group-"]):not([data-v-0b7a2eac]) >
+    :is(a:not([class*="btn"], [class*="css-"]),
+        span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
+        *:not(code)
+       ),
+  h2#gitbook-cli > code, h2#gh-pages code,
+  .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
+  .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
+  .markdown-section h2 > mark,
+  .markdown-section h2 > a:not([class*="btn"]),
+  h2 > code, h2 > a > code {
+    font-size: var(--font-size-h2) !important;
+    font-weight: 400 !important;
+  }
+  h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"], [class*="truncate"]),
+  h3 > code, h3 > a > code, h3#gh-pages code,
+  .content h2,                                                /* https://plugins.jenkins.io/kubernetes/ */
+  .markdown-section h2 > code,
+  .markdown-body h3 *,
+  .markdown-section h3,
+  .markdown-section h3 code,
+  .markdown-section h3 > mark,
+  .markdown-section h3 > a:not([class*="btn"]) {
+    font-size: var(--font-size-h3) !important;
+    font-weight: 400 !important;
+  }
+  div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],                 /* artifactory repo name */
+  .c-title.t.tts-title a,                                     /* baidu title */
+  h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]):not([class*="name-copy"]),
+  h4 > code, h4 > a > code, h4#gh-pages code,
+  section[role*="region"] h3,
+  .blockList > h3,
+  .markdown-section h3 > code,
+  .markdown-body h4 *,
+  .markdown-section h4 *,
+  .markdown-section h4 > mark,
+  .markdown-section h4 > a:not([class*="btn"]) {
+    font-size: var(--font-size-h4) !important;
+    font-weight: 400 !important;
+  }
+
+
   /****************************************************************************************
    * code block:
    *   textarea
-   *   .editor,                             Github Codeblock
-   *   div.ace_content                      Gitlab Diff content ; Jenkins Script Box
-   *   .solarized-dark,                     http://www.myregexp.com
-   *   .js-file-line *,                     http://thisdavej.com
-   *   .changeset-message,                  Jenkins Console Editor
-   *   .node-log-frame,                     Jenkins Change list
-   *   #terminal *                          Jenkins Stage View
+   *   .editor,                              Github Codeblock
+   *   div.ace_content                       Gitlab Diff content ; Jenkins Script Box
+   *   .solarized-dark,                      http://www.myregexp.com
+   *   .js-file-line *,                      http://thisdavej.com
+   *   .changeset-message,                   Jenkins Console Editor
+   *   .node-log-frame,                      Jenkins Change list
+   *   #terminal *                           Jenkins Stage View
    *   shellcheck
-   *   .lines-content *                     LeetCode-cn
+   *   .lines-content *                      LeetCode-cn
    *   markdown-body *:is(pre, pre *),
    *   [class*="line-"] *, #content,
-   *   pre span, pre span *                 handled by pre *
-   *   [class*="escape"]                    https://en.wikipedia.org/wiki/ANSI_escape_code
-   *   [id*="breadcrumbs"] *,               ╮
-   *   [class*="toolbar-split"] *,          ├ confluence edit page
-   *   [class*="macro"]                     ╯
-   *   .cm-editor *,                        https://gwc-experiment.appspot.com Groovy Web Console
+   *   pre span, pre span *                  handled by pre *
+   *   [class*="escape"]                     https://en.wikipedia.org/wiki/ANSI_escape_code
+   *   [id*="breadcrumbs"] *,                ╮
+   *   [class*="toolbar-split"] *,           ├ confluence edit page
+   *   [class*="macro"]                      ╯
+   *   .cm-editor *,                         https://gwc-experiment.appspot.com Groovy Web Console
    *   .CodeBlock pre[class*=language-]>code https://docs.nvidia.com
+   *   [class*="bar__title"]                 https://gogh-co.github.io/Gogh/
   ****************************************************************************************/
   kbd,
   pre, pre *, pre.code *,
@@ -452,10 +540,11 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="vs-code"], [class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
-  [class*="linenumber"] *, [class*="markdown"] code, [class*="blob"] code,
-  [class*="terminal"] *:not([class*="icon"], [class*="num-votes"], [class*="xterm-"]), #terminal *:not([class*="icon"]),
-  .CodeBlock pre[class*=language-]>code * {
+  [class*="code"]:not([class*="vs-code"], [class*="vscode"], [class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
+  [class*="linenumber"] *, [class*="markdown"]:not([class*="markdown-section"]) code, [class*="blob"] code,
+  [class*="terminal"] *:not([class*="icon"], [class*="num-votes"], [class*="xterm-"], [class*="bar__title"]), #terminal *:not([class*="icon"]),
+  .CodeBlock pre[class*=language-]>code *,
+  .cheatsheet .cmd {                                          /** https://tmuxcheatsheet.com **/
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
@@ -710,7 +799,7 @@
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  *:not([class*="is-fullwidt"], [class*="custom-select"], [class*="gerrit"]):not(p) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"]),
+  *:not([class*="is-fullwidt"], [class*="custom-select"], [class*="gerrit"]):not(p) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"], [id*="billing"], [name*="psize"]),
   input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"], [id*="gs_displayName"], [class*="text"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
@@ -1024,7 +1113,8 @@
   ul.blockListLast > li.blockList,                            /* groovy doc */
   time-ago,
   td.colLast > div.block,                                     /* https://javadoc.jenkins.io */
-  h4.line * {
+  h4.line *,
+  .terminal .bar .bar__title {                                /* https://gogh-co.github.io/Gogh */
     font-family: var(--font-family-sans) !important;
   }
   /* https://www.wikiwand.com/en/Web_colors */
@@ -1148,91 +1238,6 @@
   /** for zoom.us video control bar **/
   .video-js .vjs-control-bar {
     font-family: var(--font-family-mono) !important;
-  }
-
-
-  /****************************************************************************************
-   * global settings
-   *   button#btnSubmit, div.k-widget.k-grid *      projecttracker
-   *   div.breadcrumbs *, ul.one-third *,         ⌍
-   *   [class*="grepper_answer_button"] *,        ⋮
-   *   [class*="answer_title"],                   ⋮
-   *   ul.code_language_large *, .a-center        ⌏ https://www.codegrepper.com/
-   *   aui-dropdown2                                jira
-   *   text-xs, text-sm                             https://app.codecov.io/gh/jenkinsci/code-coverage-api-plugin
-  ****************************************************************************************/
-  p, h1, h2, h3, h4, h5,
-  code :where(h1, h2, h3, h4, h5),
-  pre :is(h1, h2, h3, h4, h5),
-  button#btnSubmit, div.k-widget.k-grid *,
-  div.breadcrumbs *, ul.one-third *,
-  ul.code_language_large *, .a-center,
-  [class*="grepper_answer_button"] *,
-  [class*="answer_title"] {
-    font-family: var(--font-family-sans) !important;
-  }
-  /** .page-header, **/
-  h1.page-header :not([class*="hidden-"]),
-  h1 > code,
-  h1 span.pre,                                                /** python doc, i.e.: https://docs.python.org/3/library/netrc.html **/
-  /** *:not([class*="content"]) > h1 > a:not([class*="btn"]), **/
-  [class*="header"]:not([class*="content"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
-  h1#gh-pages code,
-  .markdown-body h1, .markdown-section h1,
-  div[class*="headline"]:not([class*="container__"]) *:not([class*="btn"], [class*="timestamp"], [class*="container__"], [class*="headline__"], [class*="byline__"]),
-  div#click-to-connect > div > :not(h1):not(h2),
-  div[class*="style_CardRow"] h1 {
-    font-size: var(--font-size-h1) !important;
-    font-weight: 500 !important;
-  }
-
-  /* *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]), */
-  .header h1[data-v-03dd129c],                                /* ⌍               */
-  .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],     /* ⌏  artifactory  */
-  h2[dir*="auto"] > code,                                     /* https://plugins.jenkins.io/kubernetes/ */
-  /**
-   * [class*="innerCell"]: confluence page
-  **/
-  *:not(blockquote):not([class*="-card-"]):not([class*="innerCell"]) >
-    h2:not([id*="directions-mode-group"], [dir*="auto"], [class*="panel-title"], [id*="blob-path"], [class*="spanh2"], [class*="fontBodyMedium"], [class*="css-"], [class*="text-sm"], [class*="t-"], [class*="style-name"], [id*="blob-path"], [class*="spanh2"], [id*="directions-mode-group-"]):not([data-v-0b7a2eac]) >
-    :is(a:not([class*="btn"], [class*="css-"]),
-        span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
-        *:not(code)
-       ),
-  h2#gitbook-cli > code, h2#gh-pages code,
-  .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
-  .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
-  .markdown-section h2 > mark,
-  .markdown-section h2 > a:not([class*="btn"]),
-  h2 > code {
-    font-size: var(--font-size-h2) !important;
-    font-weight: 400 !important;
-  }
-  h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"], [class*="truncate"]),
-  h3 > code, h3#gh-pages code,
-  .content h2,                                                /* https://plugins.jenkins.io/kubernetes/ */
-  .markdown-section h2 > code,
-  .markdown-body h3 *,
-  .markdown-section h3,
-  .markdown-section h3 code,
-  .markdown-section h3 > mark,
-  .markdown-section h3 > a:not([class*="btn"]) {
-    font-size: var(--font-size-h3) !important;
-    font-weight: 400 !important;
-  }
-  div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],                 /* artifactory repo name */
-  .c-title.t.tts-title a,                                     /* baidu title */
-  h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]):not([class*="name-copy"]),
-  h4 > code, h4#gh-pages code,
-  section[role*="region"] h3,
-  .blockList > h3,
-  .markdown-section h3 > code,
-  .markdown-body h4 *,
-  .markdown-section h4 *,
-  .markdown-section h4 > mark,
-  .markdown-section h4 > a:not([class*="btn"]) {
-    font-size: var(--font-size-h4) !important;
-    font-weight: 400 !important;
   }
 
 } /** @-moz-document regexp : for non jenkins hosts **/
@@ -1453,7 +1458,7 @@
    * for content: "\f19d":
    * .fa i.fa-clone, i.fa-check
   ****************************************************************************************/
-  .markdown-section *:not(mark):not(span):not(h1):not(h2):not(h3):not(h4) {
+  .markdown-section *:not(mark, span, h1, h2, h3, h4, a>code) {
     font-size: 16px !important;
   }
   .markdown-section a,
