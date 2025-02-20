@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.39
+@version        3.0.40
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -14,9 +14,9 @@
 
 @-moz-document regexp("https?://([^/]*jenkins((?!gitpod)[^/])*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|.*ci.jenkins.io).*") {
 
-  /*******************
-   * jenkins controllers
-  *******************/
+  /************************
+   * jenkins controllers *
+  ************************/
 
   /**********************************************************
    * reg exclude:
@@ -298,11 +298,12 @@
   }
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|ci.jenkins.io).*|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|font.+\\.com|.*sharepoint.com|programmingfonts|.*re-dashboard|jqplay.org).).*") {
+@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|ci.jenkins.io).*|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|.*fonts?.+\\.(com|org)|.*sharepoint.com|programmingfonts|.*re-dashboard|jqplay.org).).*") {
 
-  /*******************
-   * non-jenkins domains
-  *******************/
+  /************************
+   * non-jenkins domains *
+  ************************/
+
   /** -apple-system **/
   @font-face {
     font-family: "San Francisco";
@@ -1244,13 +1245,11 @@
 
 @-moz-document domain("gwc-experiment.appspot.com") {
 
-  /*******************
-   * groovy web console
-  *******************/
+  /***********************
+   * groovy web console *
+  ***********************/
 
-  html {
-    --font-size-big-mono: 22px;
-  }
+  html { --font-size-big-mono: 22px; }
 
   .cm-editor *,
   div[class^="cm-"] *,
@@ -1272,9 +1271,9 @@
 
 @-moz-document regexp("https?://[^\\/]*github\\.(com|io)((?!\\/login\\/device.*).)*$") {
 
-  /*******************
-   * github.com/github.io
-  *******************/
+  /*************************
+   * github.com/github.io *
+  *************************/
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
@@ -1502,9 +1501,9 @@
 
 @-moz-document regexp("https?://(ewiki\\.).+\\.com.*") {
 
-  /*******************
-   * confluence pages
-  *******************/
+  /*********************
+   * confluence pages *
+  *********************/
 
   html {
     color: #172b4d !important;
@@ -1541,9 +1540,9 @@
 
 @-moz-document regexp("https?://(.+-re-dashboard.+|10.110.136.104).+") {
 
-  /*******************
-   * re dashboard pages
-  *******************/
+  /***********************
+   * re dashboard pages *
+  ***********************/
 
   html {
     --bs-font-sans-serif: /*[[font-family-sans]]*/;
@@ -1568,9 +1567,9 @@
 
 @-moz-document regexp("^https?://jqplay.org.*$") {
 
-  /*******************
-   * jq online player
-  *******************/
+  /*********************
+   * jq online player *
+  *********************/
 
   :host, html {
     /** https://jqplay.org **/
@@ -1590,3 +1589,25 @@
     /** line-height: 1em !important; **/
   }
 } /** @-moz-document regexp("^https?://jqplay.org.*$") **/
+
+@-moz-document regexp("^https?://.*programmingfonts.org.*$") {
+
+  /**********************
+   * programming fonts *
+  **********************/
+
+  .cm-comment { font-style: italic !important; }
+} /** @-moz-document regexp("https?://.*programmingfonts.org*$") **/
+
+@-moz-document regexp("^https?://.*/plugins/gitblit.*$") {
+
+  /*********************
+   * gerrit - gitblit *
+  *********************/
+
+  @media (min-width: 1200px) {
+    .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
+        width: 1380px !important;
+    }
+  }
+} /** @-moz-document regexp("^https?://plugins/gitblit*$") **/
