@@ -1,18 +1,18 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.40
+@version        3.0.41
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
-@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol""
-@advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas"
+@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Yoshe Shayufeite Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
+@advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
-@-moz-document regexp("https?://([^/]*jenkins((?!gitpod)[^/])*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|.*ci.jenkins.io).*") {
+@-moz-document regexp("https?://([^/]*jenkins((?!gitpod)[^/])*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|.*ci\\.jenkins\\.io).*") {
 
   /************************
    * jenkins controllers *
@@ -298,7 +298,7 @@
   }
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*.com/?.*|34.233.*|3.230.*|10.69.*|imarslo.jenkins.com|ci.jenkins.io).*|.*Monitor/$|.*sabacloud.com|.*detail.*pipeline|shields.io|127.0.0.1|0.0.0.0|localhost|.*fonts?.+\\.(com|org)|.*sharepoint.com|programmingfonts|.*re-dashboard|jqplay.org).).*") {
+@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org).).*") {
 
   /************************
    * non-jenkins domains *
@@ -1538,7 +1538,7 @@
   }
 } /** @-moz-document regexp : for ewiki hosts -- private hostname **/
 
-@-moz-document regexp("https?://(.+-re-dashboard.+|10.110.136.104).+") {
+@-moz-document regexp("https?://(.+-re-dashboard.+|10\\.110\\.136\\.104).+") {
 
   /***********************
    * re dashboard pages *
@@ -1565,7 +1565,7 @@
   }
 } /** @-moz-document regexp("https?://(.+-re-dashboard.+|10.110.136.104).+") **/
 
-@-moz-document regexp("^https?://jqplay.org.*$") {
+@-moz-document regexp("^https?://jqplay\\.org.*$") {
 
   /*********************
    * jq online player *
@@ -1590,7 +1590,7 @@
   }
 } /** @-moz-document regexp("^https?://jqplay.org.*$") **/
 
-@-moz-document regexp("^https?://.*programmingfonts.org.*$") {
+@-moz-document regexp("^https?://.*programmingfonts\\.org.*$") {
 
   /**********************
    * programming fonts *
@@ -1599,7 +1599,7 @@
   .cm-comment { font-style: italic !important; }
 } /** @-moz-document regexp("https?://.*programmingfonts.org*$") **/
 
-@-moz-document regexp("^https?://.*/plugins/gitblit.*$") {
+@-moz-document regexp("^https?://.*/plugins/gitblit/.*") {
 
   /*********************
    * gerrit - gitblit *
