@@ -1,16 +1,20 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.41
+@version        3.0.42
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
 @homepageURL    https://github.com/marslo/global-fonts
 @updateURL      https://github.com/marslo/global-fonts/raw/main/global-fonts.user.css
-@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Yoshe Shayufeite Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
+@advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "Yoshe Shayufeite Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
 @advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
+
+@import url('http://fonts.googleapis.com/css?family=Overlock:400,700,400italic,700italic|Calligraffitti');
+@import url('https://fonts.googleapis.com/css2?family=Victor+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=LXGW+WenKai+Mono+TC:wght@400;700&display=swap');
 
 @-moz-document regexp("https?://([^/]*jenkins((?!gitpod)[^/])*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|.*ci\\.jenkins\\.io).*") {
 
@@ -435,7 +439,7 @@
   h1 > code, h1 > a > code,
   h1 span.pre,                                                /** python doc, i.e.: https://docs.python.org/3/library/netrc.html **/
   /** *:not([class*="content"]) > h1 > a:not([class*="btn"]), **/
-  [class*="header"]:not([class*="content"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
+  [class*="header"]:not([class*="content"], [class*="navbar-"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
   div[class*="headline"]:not([class*="container__"]) *:not([class*="btn"], [class*="timestamp"], [class*="container__"], [class*="headline__"], [class*="byline__"]),
@@ -519,7 +523,7 @@
    *   [class*="bar__title"]                 https://gogh-co.github.io/Gogh/
   ****************************************************************************************/
   kbd,
-  pre, pre *, pre.code *,
+  pre:not([class*="dashboard-break-word"]), pre:not([class*="dashboard-break-word"]) *, pre.code *,
   code, code *, * code *, .code-line,
   .code *:not([class*="expand"], [class*="hide"]), .command,  /** commandlineful.com **/
   input :where(code, pre),
@@ -541,9 +545,9 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="vs-code"], [class*="vscode"], [class*="react"], [class*="select-sm"], [class*="codebook"], [class*="nicode"], [class*="escape"], [class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"], [class*="iconfont"], [class*="codicon"], [class*="step"], [class*="docon"], [class*="con"], [class*="fa"], [class*="btn"], [class*="select"], input[class*="s-btn"], [class*="s-btn"] > span, a[class*="snippet-expand-"]),
+  [class*="code"]:not([class*="vs-code"]):not([class*="vscode"]):not([class*="react"]):not([class*="select-sm"]):not([class*="codebook"]):not([class*="nicode"]):not([class*="zip"]):not([class*="&_code_"]):not([class*="escape"]):not([class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"]):not([class*="iconfont"]):not([class*="codicon"]):not([class*="step"]):not([class*="docon"]):not([class*="con"]):not([class*="fa"]):not([class*="btn"]):not([class*="select"]):not(input[class*="s-btn"]):not([class*="s-btn"] > span):not(a[class*="snippet-expand-"]),
   [class*="linenumber"] *, [class*="markdown"]:not([class*="markdown-section"]) code, [class*="blob"] code,
-  [class*="terminal"] *:not([class*="icon"], [class*="num-votes"], [class*="xterm-"], [class*="bar__title"]), #terminal *:not([class*="icon"]),
+  [class*="terminal"] *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code *,
   .cheatsheet .cmd {                                          /** https://tmuxcheatsheet.com **/
     font-family: var(--font-family-mono) !important;
@@ -696,7 +700,7 @@
   div.textarea-container *,
   div.gr-editable-content a[rel*="noopener"],
   div#cgit a.ls-blob, div#cgit a.ls-dir, div#cgit .ls-mod,    /** https://git.yoctoproject.org/meta-arm/tree/meta-arm-toolchain/recipes-devtools/external-arm-toolchain?h=dunfell **/
-  .hidden-phone,                                              /** gitblit blame sha1 **/
+  div.commitHeader .hidden-phone, span.sha1, span.sha1 a, span.sha1 a span, .commit_message, span.shortsha1, td.sha1, td.sha256, /** gitblit blame sha1 **/
   .lineCommit, .lineNumber > span, .lineContent.sha1 {        /** gitblit blame **/
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
@@ -804,7 +808,8 @@
   input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"], [id*="gs_displayName"], [class*="text"]),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
-  pre.span *, pre *, #confluenceTd, .blockInner,                         /* confluence */
+  /*pre.span *, pre *,*/
+  #confluenceTd, .blockInner,                         /* confluence */
   .jsonpOpener, .timestamp:not([class*="timestamp-top"], [data-cy*="post-timestamp"], [data-uri*="cnn.com"]),    /* Json Viewer; not in discussions.apple.com */
   li.blockList {
     font-family: var(--font-family-mono) !important;
@@ -1192,6 +1197,47 @@
     height: 30px !important;
   }
 
+  /** https://crontab.guru **/
+  div.human-readable > i > span {
+    font-family: var(--font-family-mono) !important;
+  }
+
+  /**
+   * flexera: https://flexera5new01.sample.com/codeinsight/FNCI#myprojectdetails/?id=702&tab=projectInventory&severity=HIGH&pinv=14884
+   *
+   * -  #combo-2183-labelEl { padding-right: 1.2em !important; }
+  **/
+  tr.x-grid-row *,
+  div.version-display-box {
+    font-family: var(--font-family-mono) !important;
+  }
+  .x-body * {
+    font-family: var(--font-family-sans) !important;
+  }
+  .x-panel-header-title-default * {
+    font-size: var(--font-size-normal-sans) !important;
+  }
+  /**
+   * tips:
+   *   div#ext-quicktips-tip-innerCt *
+   *   div.x-autocontainer-innerCt *
+   *   <div id="ext-quicktips-tip-body" data-ref="body" class="x-tip-body x-tip-body-default x-noborder-trbl inherited-styles-for-exported-element" role="presentation" style="left: 0px; top: 0px; width: 237px; height: 23px;">
+  **/
+  div#ext-quicktips-tip-body * {
+    font-family: var(--font-family-mono) !important;
+    font-size: 10px !important;
+  }
+  div:has(> div > .version-display-box) {
+    width: 45% !important;
+  }
+  .x-html-editor-tb .x-font-select {
+    font-family: inherit !important;
+  }
+
+  div.ribbon-menu-text {
+    font-size: 12px !important;
+  }
+
 
   /****************************************************************************************
    * icons settings:
@@ -1232,7 +1278,7 @@
   div#course-details i[class*="fa"],
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
   .button:not([class*="aui-"]),
-  .btn:not([class*="form_"], [class*="-link"], [class*="text-"], [class*="-outline-"], [data-toggle="charmap"]) {
+  .btn:not([class*="form_"], [class*="-link"], [class*="text-"], [class*="-outline-"], [data-toggle="charmap"], [id*="_zoom_us"]) {
     font-family: var(--font-family-icon) !important;
   }
 
@@ -1344,9 +1390,18 @@
     font-size: var(--font-size-github-mono) !important;
     font-family: var(--font-family-mono) !important;
   }
+  span.prc-Button-Label-pTQ3x,
+  .commit-desc pre > p,                                       /* Popover js-hovercard-content position-absolute */
   table.js-code-nav-container > tbody *,
-  .QueryBuilder-StyledInputContainer * {                      /* github search/query input */
+  .QueryBuilder-StyledInputContainer *,                       /* github search/query input */
+  span:is([class*="color-fg-"]) {                             /* Popover .color-fg-success, .color-fg-danger */
     font-family: var(--font-family-mono) !important;
+  }
+  .lh-condensed > a {
+    /* font-family: var(--font-family-mono) !important; */
+    font-family: 'Victor Mono', 'LXGW WenKai Mono TC',  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    font-weight: bold;
+    /* font-style: italic; */
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"],
   header.pagehead h1,
@@ -1607,7 +1662,11 @@
 
   @media (min-width: 1200px) {
     .container, .navbar-fixed-top .container, .navbar-fixed-bottom .container {
-        width: 1380px !important;
+       /* width: 1380px !important; */
+       width: 1170px;
     }
+  }
+  td#nums {
+    width: 5% !important;
   }
 } /** @-moz-document regexp("^https?://plugins/gitblit*$") **/
