@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.42
+@version        3.0.43
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -456,12 +456,27 @@
   /**
    * [class*="innerCell"]: confluence page
   **/
-  *:not(blockquote):not([class*="-card-"]):not([class*="innerCell"]) >
-    h2:not([id*="directions-mode-group"], [dir*="auto"], [class*="panel-title"], [id*="blob-path"], [class*="spanh2"], [class*="fontBodyMedium"], [class*="css-"], [class*="text-sm"], [class*="t-"], [class*="style-name"], [id*="blob-path"], [class*="spanh2"], [id*="directions-mode-group-"]):not([data-v-0b7a2eac]) >
-    :is(a:not([class*="btn"], [class*="css-"]),
+*:not(blockquote):not([class*="-card-"]):not([class*="innerCell"]) >
+    h2:not(
+      [id*="directions-mode-group"],
+      [dir*="auto"],
+      [class*="panel-title"],
+      [id*="blob-path"],
+      [class*="spanh2"],
+      [class*="fontBodyMedium"],
+      [class*="css-"],
+      [class*="text-sm"],
+      [class*="t-"],
+      [class*="style-name"],
+      [id*="blob-path"],
+      [class*="spanh2"],
+      [id*="directions-mode-group-"]
+   ):not([data-v-0b7a2eac]) >
+    :is(
+        a:not([class*="btn"], [class*="css-"]),
         span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
         *:not(code)
-       ),
+   ):not(a[data-hydro-click]),                                /* data-hydro-click: https://github.com/trending */
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
@@ -545,7 +560,33 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
-  [class*="code"]:not([class*="vs-code"]):not([class*="vscode"]):not([class*="react"]):not([class*="select-sm"]):not([class*="codebook"]):not([class*="nicode"]):not([class*="zip"]):not([class*="&_code_"]):not([class*="escape"]):not([class*="macro"]) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not([class*="fa"]):not([class*="iconfont"]):not([class*="codicon"]):not([class*="step"]):not([class*="docon"]):not([class*="con"]):not([class*="fa"]):not([class*="btn"]):not([class*="select"]):not(input[class*="s-btn"]):not([class*="s-btn"] > span):not(a[class*="snippet-expand-"]),
+  [class*="code"]:not(
+    [class*="vs-code"],
+    [class*="vscode"],
+    [class*="react"],
+    [class*="select-sm"],
+    [class*="codebook"],
+    [class*="nicode"],
+    [class*="zip"],
+    [class*="&_code_"],
+    [class*="escape"],
+    [class*="macro"],
+    [class*="docs-"]
+  ) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not(
+    [class*="fa"],
+    [class*="iconfont"],
+    [class*="codicon"],
+    [class*="step"],
+    [class*="docon"],
+    [class*="con"],
+    [class*="fa"],
+    [class*="btn"],
+    [class*="select"],
+    input[class*="s-btn"],
+    [class*="s-btn"] > span,
+    a[class*="snippet-expand-"],
+    [class*="cm-help-"]
+  ),
   [class*="linenumber"] *, [class*="markdown"]:not([class*="markdown-section"]) code, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code *,
@@ -568,7 +609,7 @@
   ****************************************************************************************/
   .CodeMirror-line, *.CodeMirror-lines *, *.CodeMirror *, .CodeMirror *,
   span.target, details.sections-list li, h2.style-name *,
-  div[class*="CodeMirror-"] *, pre[class*="s-code-"] *, div[class^="cm-"] * {
+  div[class*="CodeMirror-"] *, pre[class*="s-code-"] *, div[class^="cm-"] *:not([class*="cm-help-"]) {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
@@ -593,12 +634,13 @@
    * https://bootsnipp.com/
    * ace_
    * :not([class*="workspace"])                 slack
+   * :not([class*="face_"])                     github : UnderlineTabbedInterface_*
   ****************************************************************************************/
-  [class*="ace_"]:not([class*="workspace"]),
-  [class*="ace_"]:not([class*="workspace"])~div,
-  [class*="ace_"]:not([class*="workspace"])~div,
-  [class*="ace_"]:not([class*="workspace"])+div,
-  [class*="ace_"]:not([class*="workspace"]) *,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"]),
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"])~div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"])~div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"])+div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"]) *,
   div#playground-container * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
@@ -675,7 +717,7 @@
   blockquote[class*="gr-formatted-text"] *,
   input[id*="b_signin"],
   td.link, td.selflink,
-  [class*="com-google-gerrit"] select,
+  /* [class*="com-google-gerrit"] select,*/
   [class*="com-google-gerrit"] button div {
     font-family: var(--font-family-sans) !important;
   }
@@ -804,18 +846,48 @@
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
-  *:not([class*="is-fullwidt"], [class*="custom-select"], [class*="gerrit"]):not(p) > select:not([class*="form-select"], [id*="version"], [id*="astPhase"], [id*="select-ember"], [id*="dropdown"], [class*="searchDropdown"], [class*="select"], [id*="billing"], [name*="psize"]),
-  input:not([class*="button"], [type*="button"], [type*="submit"], [name*="summary"], [id*="user-code-"], [class*="P2c8Dd"], [name*="searchString"], [id*="f_user"], [id*="f_pass"], [id*="gs_displayName"], [class*="text"]),
+  *:not(
+    [class*="is-fullwidt"],
+    [class*="custom-select"],
+    [class*="gerrit"]
+  ):not(p) > select:not(
+    [class*="form-select"], [class*="select"], [id*="select-ember"],
+    [class*="com-google-gerrit"],
+    [id*="version"],
+    [id*="astPhase"],
+    [id*="dropdown"],
+    [class*="searchDropdown"],
+    [id*="billing"],
+    [name*="psize"]
+  ),
+  input:not(
+    [class*="button"],
+    [type*="button"],
+    [type*="submit"],
+    [name*="summary"],
+    [id*="user-code-"],
+    [class*="P2c8Dd"],
+    [name*="searchString"],
+    [id*="f_user"],
+    [id*="f_pass"],
+    [id*="gs_displayName"],
+    [class*="text"]
+  ),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
   /*pre.span *, pre *,*/
-  #confluenceTd, .blockInner,                         /* confluence */
-  .jsonpOpener, .timestamp:not([class*="timestamp-top"], [data-cy*="post-timestamp"], [data-uri*="cnn.com"]),    /* Json Viewer; not in discussions.apple.com */
+  #confluenceTd, .blockInner,                                            /* confluence */
+  .jsonpOpener, .timestamp:not(
+    [class*="timestamp-top"],
+    [data-cy*="post-timestamp"],
+    [data-uri*="cnn.com"]
+  ),                                                                     /* Json Viewer; not in discussions.apple.com */
   li.blockList {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
+
   /**
   .form-control {                                             / service now - Incident /
     padding: 1px 9px !important;
@@ -860,7 +932,7 @@
   div[class*="-ad-"] *,
   div[id*="user-panel"] a,
   [role*="tooltip"],
-  [type*="button"] {
+  [type*="button"]:not([class*="icon"]) {
     font-family: var(--font-family-sans) !important;
   }
   .comment-body code,
@@ -1238,6 +1310,12 @@
     font-size: 12px !important;
   }
 
+  /** google meeting: https://meet.google.com **/
+  .iOzk7.JEC3ae .VbkSUe {                                                     /** captions **/
+    font-family: var(--font-family-sans) !important;
+    font-size: 16px !important;
+  }
+
 
   /****************************************************************************************
    * icons settings:
@@ -1394,10 +1472,14 @@
   .commit-desc pre > p,                                       /* Popover js-hovercard-content position-absolute */
   table.js-code-nav-container > tbody *,
   .QueryBuilder-StyledInputContainer *,                       /* github search/query input */
-  span:is([class*="color-fg-"]) {                             /* Popover .color-fg-success, .color-fg-danger */
+  span:is([class*="color-fg-"]):not([class*="ws-normal"]) {   /* Popover .color-fg-success, .color-fg-danger */
     font-family: var(--font-family-mono) !important;
   }
-  .lh-condensed > a {
+  a:is([class*="-author"], [class*="user"]) {
+    font-family: var(--font-family-handwritten) !important;
+    font-size: var(--font-size-normal-sans);
+  }
+  .lh-condensed > a:not([data-hydro-click], [data-hovercard-url]) {
     /* font-family: var(--font-family-mono) !important; */
     font-family: 'Victor Mono', 'LXGW WenKai Mono TC',  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
     font-weight: bold;
@@ -1407,7 +1489,8 @@
   header.pagehead h1,
   span.js-repo-root,
   div.vcard-names-container h1 .vcard-fullname,
-  [data-hovercard-type="user"]  span.AppHeader-context-item-label {
+  [data-hovercard-type="user"]  span.AppHeader-context-item-label,
+  span:is([class^="AppHeader-context-item-label"]) {
     font-family: var(--font-family-handwritten) !important;
     font-size: 24px !important;
   }
