@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.43
+@version        3.0.44
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -53,7 +53,7 @@
   ::placeholder { font-style: italic !important; font-family: var(--font-family-mono) !important; }
   ::-ms-input-placeholder { font-style: italic !important; font-family: var(--font-family-mono) !important; }
 
-  *:not(pre):not(code):not(textarea):not(button):not(select):not(option):not(kbd):not(icon):not(input):not(i):not(cursor):not(::before):not(::after):not([role=presentation]):not(pre code):not(pre code *):not(li code):not(li code *):not(code *):not(textarea *):not(* code):not(* pre *):not(* code *):not(div.ace_editor):not([class*="ace_"]):not([class*="ace_"] *):not(canvas.graph-cursor-pointer):not([class*="icon"]):not([class*="fa-"]):not([class*="octicon"]):not([class*="win-icon"]):not([class*="icon-"]):not([class*="ico"]):not([class*="pc"]):not([class*="DPvwYc"]):not([class*="para"]):not([class*="ms-Icon"]):not([class*="sort-caret"]):not([class*="Da"]):not([class*="drop"]):not([class*="bowtie-"]):not([class*="view-"]):not([class*="pl-"]):not([class*=".fa-clone"]):not([class*=".fa-check"]):not([class*="avatar-"]):not([class*='wysiwyg-macro-*']):not([class*="-line"]):not([class*="CodeMirror-"]):not([class*="cm-"]):not([class*="setting-"]):not([class*="gr-"]):not([class*="s-code-"]):not([class*="code"]):not([class*="w3-"]):not([class*="language-"]):not([class*="hljs"]):not([class*="post-"]):not([class*="code"]):not([clas*="line"]):not([class*="js-post"]):not([class*="editor"]):not([class="setting-main"]):not([class*="resizable"]) {
+  *:not(pre):not(code):not(textarea):not(button):not(select):not(option):not(kbd):not(icon):not(input):not(i):not(cursor):not(::before):not(::after):not([role=presentation]):not(pre code):not(pre code *):not(li code):not(li code *):not(code *):not(textarea *):not(* code):not(* pre *):not(* code *):not(div.ace_editor):not([class*="ace_"]):not([class*="ace_"] *):not(canvas.graph-cursor-pointer):not([class*="icon"]):not([class*="fa-"]):not([class*="octicon"]):not([class*="win-icon"]):not([class*="icon-"]):not([class*="ico"]):not([class*="pc"]):not([class*="DPvwYc"]):not([class*="para"]):not([class*="ms-Icon"]):not([class*="sort-caret"]):not([class*="Da"]):not([class*="drop"]):not([class*="bowtie-"]):not([class*="view-"]):not([class*="pl-"]):not([class*=".fa-clone"]):not([class*=".fa-check"]):not([class*="avatar-"]):not([class*='wysiwyg-macro-*']):not([class*="-line"]):not([class*="CodeMirror-"]):not([class*="cm-"]):not([class*="setting-"]):not([class*="gr-"]):not([class*="s-code-"]):not([class*="w3-"]):not([class*="language-"]):not([class*="hljs"]):not([class*="post-"]):not([class*="code"]):not([clas*="line"]):not([class*="js-post"]):not([class*="editor"]):not([class="setting-main"]):not([class*="resizable"]) {
     font-family: var(--font-family-sans) !important;
   }
 
@@ -380,7 +380,7 @@
    * :is(), :not(), :where(), :any()             Pseudo-classes https://developer.mozilla.org/en-US/docs/Web/CSS
   **/
 
-  *:not(pre):not(code):not(textarea):not(button):not(select):not(option):not(cursor):not(kbd):not(icon):not(input):not(i):not(hl):not(nav):not(::before):not(::after):not(button *):not(pre code):not(pre code *):not(li code):not(li code *):not(code *):not(textarea *):not(* code):not(* pre *):not(* code *):not(div.ace_editor):not(div[class*="ace_"]):not(div[class*="ace_"] *):not(canvas.graph-cursor-pointer):not([class*="icon"]):not([class*="fa-"]):not([class*="octicon"]):not([class*="win-icon"]):not([class*="icon-"]):not([class*="ace_"]):not([class*="ico"]):not([class*="pc"]):not([class*="DPvwYc"]):not([class*="para"]):not([class*="ms-Icon"]):not([class*="sort-caret"]):not([class*="Da"]):not([class*="drop"]):not([class*="bowtie-"]):not([class*="view-"]):not([class*="pl-"]):not([class*="fa-"]):not([class*="avatar-"]):not([class*='wysiwyg-macro-*']):not([class*="-line"]):not([class*="CodeMirror-"]):not([class*="cm-"]):not([class*="setting-"]):not([class*="gr-"]):not([class*="s-code-"]):not([class*="code"]):not([class*="w3-"]):not([class*="language-"]):not([class*="hljs"]):not([class*="post-"]):not([class*="code"]):not([class*="line"]):not([class*="js-post"]):not([role=presentation]):not([class*="btn"]):not([class*="w3-button"]):not([class*="QueryBuilder-"]),
+  *:not(pre):not(code):not(textarea):not(button):not(select):not(option):not(cursor):not(kbd):not(icon):not(input):not(i):not(hl):not(nav):not(::before):not(::after):not(button *):not(pre code):not(pre code *):not(li code):not(li code *):not(code *):not(textarea *):not(* code):not(* pre *):not(* code *):not(div.ace_editor):not(div[class*="ace_"]):not(div[class*="ace_"] *):not(canvas.graph-cursor-pointer):not([class*="icon"]):not([class*="fa-"]):not([class*="octicon"]):not([class*="win-icon"]):not([class*="icon-"]):not([class*="ace_"]):not([class*="ico"]):not([class*="pc"]):not([class*="DPvwYc"]):not([class*="para"]):not([class*="ms-Icon"]):not([class*="sort-caret"]):not([class*="Da"]):not([class*="drop"]):not([class*="bowtie-"]):not([class*="view-"]):not([class*="pl-"]):not([class*="fa-"]):not([class*="avatar-"]):not([class*='wysiwyg-macro-*']):not([class*="-line"]):not([class*="CodeMirror-"]):not([class*="cm-"]):not([class*="setting-"]):not([class*="gr-"]):not([class*="s-code-"]):not([class*="w3-"]):not([class*="language-"]):not([class*="hljs"]):not([class*="post-"]):not([class*="code"]):not([class*="line"]):not([class*="js-post"]):not([role=presentation]):not([class*="btn"]):not([class*="w3-button"]):not([class*="QueryBuilder-"]),
   .gr-app, .sidebar, div[class*="timeline"],
   div#book-search-input > input, span.algolia-autocomplete > input {
     font-family: var(--font-family-sans) !important;
@@ -424,6 +424,11 @@
    *   aui-dropdown2                                jira
    *   text-xs, text-sm                             https://app.codecov.io/gh/jenkinsci/code-coverage-api-plugin
   ****************************************************************************************/
+
+  p:is([node="[object Object]"]) {
+    font-family: var(--font-family-mono) !important;
+  }
+
   p, h1, h2, h3, h4, h5,
   code :where(h1, h2, h3, h4, h5),
   pre :is(h1, h2, h3, h4, h5),
@@ -442,40 +447,52 @@
   [class*="header"]:not([class*="content"], [class*="navbar-"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
-  div[class*="headline"]:not([class*="container__"]) *:not([class*="btn"], [class*="timestamp"], [class*="container__"], [class*="headline__"], [class*="byline__"]),
+  div[class*="headline"]:not(
+    [class*="container__"],
+    [class*="-view-model"]
+  ) *:not(
+    [class*="btn"],
+    [class*="timestamp"],
+    [class*="container__"],
+    [class*="headline__"],
+    [class*="byline__"]
+  ),
   div#click-to-connect > div > :not(h1):not(h2),
   div[class*="style_CardRow"] h1 {
     font-size: var(--font-size-h1) !important;
     font-weight: 500 !important;
   }
 
-  /* *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]), */
+  /**
+   *   * [class*="innerCell"]: confluence page
+   *   *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]),
+  **/
   .header h1[data-v-03dd129c],                                /* ⌍               */
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],     /* ⌏  artifactory  */
   h2[dir*="auto"] > code,                                     /* https://plugins.jenkins.io/kubernetes/ */
-  /**
-   * [class*="innerCell"]: confluence page
-  **/
-*:not(blockquote):not([class*="-card-"]):not([class*="innerCell"]) >
-    h2:not(
-      [id*="directions-mode-group"],
-      [dir*="auto"],
-      [class*="panel-title"],
-      [id*="blob-path"],
-      [class*="spanh2"],
-      [class*="fontBodyMedium"],
-      [class*="css-"],
-      [class*="text-sm"],
-      [class*="t-"],
-      [class*="style-name"],
-      [id*="blob-path"],
-      [class*="spanh2"],
-      [id*="directions-mode-group-"]
-   ):not([data-v-0b7a2eac]) >
-    :is(
-        a:not([class*="btn"], [class*="css-"]),
-        span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
-        *:not(code)
+  *:not(blockquote):not(
+    [class*="-card-"],
+    [class*="innerCell"]
+  ) > h2:not(
+    [dir*="auto"],
+    [class*="panel-title"],
+    [class*="spanh2"],
+    [class*="fontBodyMedium"],
+    [class*="css-"],
+    [class*="text-sm"],
+    [class*="t-"],
+    [class*="style-name"],
+    [class*="spanh2"],
+    [class*="Overlay-"],
+    [id*="directions-mode-group"],
+    [id*="blob-path"],
+    [id*="blob-path"],
+    [id*="directions-mode-group-"],
+    [data-v-0b7a2eac]
+   ) > :is(
+    a:not([class*="btn"], [class*="css-"]),
+    span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
+    *:not(code)
    ):not(a[data-hydro-click]),                                /* data-hydro-click: https://github.com/trending */
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
@@ -537,14 +554,25 @@
    *   .CodeBlock pre[class*=language-]>code https://docs.nvidia.com
    *   [class*="bar__title"]                 https://gogh-co.github.io/Gogh/
   ****************************************************************************************/
+  .markdown-body :is(code, code *),
+  [class*="markdown"]:not([class*="markdown-section"]) code {
+    font-family: var(--font-family-mono) !important;
+  }
+
+  /** vault **/
+  textarea.input.masked-value {
+    font-family: var(--font-family-mono) !important;
+  }
+
   kbd,
-  pre:not([class*="dashboard-break-word"]), pre:not([class*="dashboard-break-word"]) *, pre.code *,
+  pre:not([class*="dashboard-break-word"], [class*="masked-font"]),
+  pre:not([class*="dashboard-break-word"], [class*="masked-font"]) *, pre.code *,
+  .markdown-body :is(pre, pre *),
   code, code *, * code *, .code-line,
   .code *:not([class*="expand"], [class*="hide"]), .command,  /** commandlineful.com **/
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
-  .markdown-body :is(code, code *, pre, pre *),
   .highlight :is(pre, code),
   .blob-code, .blob-code-inner, .blob-num,
   .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *):not([class*="aui-"] *),
@@ -571,15 +599,16 @@
     [class*="&_code_"],
     [class*="escape"],
     [class*="macro"],
-    [class*="docs-"]
-  ) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not(
+    [class*="docs-"],
+    [class*="button"],
+    [class*="qrcode"]
+  ) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not(p):not(
     [class*="fa"],
     [class*="iconfont"],
     [class*="codicon"],
     [class*="step"],
     [class*="docon"],
     [class*="con"],
-    [class*="fa"],
     [class*="btn"],
     [class*="select"],
     input[class*="s-btn"],
@@ -587,7 +616,7 @@
     a[class*="snippet-expand-"],
     [class*="cm-help-"]
   ),
-  [class*="linenumber"] *, [class*="markdown"]:not([class*="markdown-section"]) code, [class*="blob"] code,
+  [class*="linenumber"] *, [class*="blob"] code,
   [class*="terminal"] *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code *,
   .cheatsheet .cmd {                                          /** https://tmuxcheatsheet.com **/
@@ -743,7 +772,8 @@
   div.gr-editable-content a[rel*="noopener"],
   div#cgit a.ls-blob, div#cgit a.ls-dir, div#cgit .ls-mod,    /** https://git.yoctoproject.org/meta-arm/tree/meta-arm-toolchain/recipes-devtools/external-arm-toolchain?h=dunfell **/
   div.commitHeader .hidden-phone, span.sha1, span.sha1 a, span.sha1 a span, .commit_message, span.shortsha1, td.sha1, td.sha256, /** gitblit blame sha1 **/
-  .lineCommit, .lineNumber > span, .lineContent.sha1 {        /** gitblit blame **/
+  .lineCommit, .lineNumber > span, .lineContent.sha1,         /** gitblit blame **/
+  div:is([class*="-shell-command"]) input {                   /** URL copy **/
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
@@ -864,6 +894,7 @@
     [class*="button"],
     [type*="button"],
     [type*="submit"],
+    [type*="text"],
     [name*="summary"],
     [id*="user-code-"],
     [class*="P2c8Dd"],
@@ -871,7 +902,9 @@
     [id*="f_user"],
     [id*="f_pass"],
     [id*="gs_displayName"],
-    [class*="text"]
+    [class*="text"],
+    [class*="UnstyledTextInput"],
+    [class*="gb_pe"]
   ),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
@@ -1159,13 +1192,24 @@
   /** dark mode **/
   @media (prefers-color-scheme: dark) {
     body:not([data-theme="light"]) .highlight .go {
-        color: #878787 !important;
+      color: #878787 !important;
     }
   }
 
   /** light mode **/
   .highlight .go {
-     color: #686868 !important;
+    color: #686868 !important;
+  }
+
+  /****************************************************************************************
+   * https://cloud.siliconflow.cn/playground/chat
+  ****************************************************************************************/
+  .katex .mathnormal {
+    font-family: 'FantasqueSansM Nerd Font' !important;
+  }
+  p[node="[object Object]"] + ol > li,
+  p[node="[object Object]"] + ul > li {
+    font-family: 'LXGW WenKai Mono TC' !important;
   }
 
   /****************************************************************************************
@@ -1209,10 +1253,6 @@
   div[ng-show*="::!isViewNative"] div.logo-name {
     font-family: var(--font-family-handwritten) !important;
     font-size: 1.25em !important;
-  }
-  /** vault **/
-  textarea.input.masked-value {
-    font-family: var(--font-family-mono) !important;
   }
   /** zoom.us **/
   h1.r-title * {
@@ -1355,7 +1395,7 @@
   **/
   div#course-details i[class*="fa"],
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
-  .button:not([class*="aui-"]),
+  .button:not([class*="aui-"]):not([value]),
   .btn:not([class*="form_"], [class*="-link"], [class*="text-"], [class*="-outline-"], [data-toggle="charmap"], [id*="_zoom_us"]) {
     font-family: var(--font-family-icon) !important;
   }
@@ -1464,26 +1504,44 @@
   [class*='react-line'],
   [class*='react-code'],
   div[class*="styled-input-content"],                         /* github issue search */
-  .react-code-lines * {
+  .react-code-lines *,
+  div.form-group textarea,
+  [name^="ssh_key"],
+  input:is([readonly="readonly"]),
+  input.FormControl-input:is([aria-controls^="query-builder-"]) {
     font-size: var(--font-size-github-mono) !important;
     font-family: var(--font-family-mono) !important;
   }
-  span.prc-Button-Label-pTQ3x,
+
+  /** github: go to file **/
+  .HVNDY { font-family: var(--font-family-sans) !important; }
+  div.Box-sc-g0xbh4-0.hLbjXI, div.ewmGxV { font-family: var(--font-family-mono) !important; }
+
+
+  /** span.prc-Button-Label-pTQ3x, **/                        /* github button */
   .commit-desc pre > p,                                       /* Popover js-hovercard-content position-absolute */
   table.js-code-nav-container > tbody *,
-  .QueryBuilder-StyledInputContainer *,                       /* github search/query input */
-  span:is([class*="color-fg-"]):not([class*="ws-normal"]) {   /* Popover .color-fg-success, .color-fg-danger */
+  span:is([class*="color-fg-"]):not(
+    [class*="ws-normal"],                                     /* Popover .color-fg-success, .color-fg-danger */
+    [class*="color-fg-muted"],
+    [id*="-heading"]
+  ),
+  .prc-Button-ButtonBase-c50BI:where([data-size=small]) .prc-Button-Label-pTQ3x,     /* github revision number */
+  .Link--secondary span {
     font-family: var(--font-family-mono) !important;
   }
   a:is([class*="-author"], [class*="user"]) {
     font-family: var(--font-family-handwritten) !important;
     font-size: var(--font-size-normal-sans);
   }
-  .lh-condensed > a:not([data-hydro-click], [data-hovercard-url]) {
-    /* font-family: var(--font-family-mono) !important; */
+  .lh-condensed > a:not(
+    [data-hydro-click],
+    [data-hovercard-url],
+    [class*="color-fg-"]
+  ) {
     font-family: 'Victor Mono', 'LXGW WenKai Mono TC',  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
     font-weight: bold;
-    /* font-style: italic; */
+    /* font-style: italic;*/
   }
   .d-flex.flex-wrap.flex-justify-end [rel*="author"],
   header.pagehead h1,
@@ -1544,14 +1602,18 @@
   div.eIjUrw, div.qQkTK,                                      /* github search repositories */
   .line-number, .gr-diff,                                     /* github codeblock */
   .line:not([id*="table"]),                                   /* github codeblock && https://codeberg.org/vhs/jekyll-money **/
-  div.QueryBuilder-StyledInputContainer {                     /* github search input box */
+  div.QueryBuilder-StyledInputContainer,                      /* github search/query input box */
+  .QueryBuilder-StyledInputContainer *  {                     /* github search/query input box */
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
   }
-  .form-control {                                             /* icon in search box */
-    padding: 1px 1em !important;
-  }
+  /* icon in search box */
+  /**
+   * .form-control {
+   *   padding: 1px 1em !important;
+   * }
+  **/
  .AppHeader-search-kbd {
     align-content: center !important;
     height: var(--font-size-big-mono) !important;
