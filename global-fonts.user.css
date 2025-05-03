@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.44
+@version        3.0.45
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -212,20 +212,6 @@
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
-  }
-
-  /* buttons in system configuration */
-  .yui-button button, button, .url-button {
-    display: inline-block !important;
-    font-size: 0.75rem !important;
-  }
-  /** 2.462.1+ console output `Copy` button **/
-  .jenkins-button {
-    display: inline-flex !important;
-  }
-  /* 2.361.3+ copy button */
-  button.jenkins-button > span {
-   display: block !important;
   }
 
   /* Metrics plugin: Timings table */
