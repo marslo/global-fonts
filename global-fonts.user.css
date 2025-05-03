@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.45
+@version        3.0.46
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -441,7 +441,8 @@
     [class*="timestamp"],
     [class*="container__"],
     [class*="headline__"],
-    [class*="byline__"]
+    [class*="byline__"],
+    [class*="bot-status-badge"]
   ),
   div#click-to-connect > div > :not(h1):not(h2),
   div[class*="style_CardRow"] h1 {
@@ -459,26 +460,25 @@
   *:not(blockquote):not(
     [class*="-card-"],
     [class*="innerCell"]
-  ) > h2:not(
-    [dir*="auto"],
-    [class*="panel-title"],
-    [class*="spanh2"],
-    [class*="fontBodyMedium"],
-    [class*="css-"],
-    [class*="text-sm"],
-    [class*="t-"],
-    [class*="style-name"],
-    [class*="spanh2"],
-    [class*="Overlay-"],
-    [id*="directions-mode-group"],
-    [id*="blob-path"],
-    [id*="blob-path"],
-    [id*="directions-mode-group-"],
-    [data-v-0b7a2eac]
-   ) > :is(
-    a:not([class*="btn"], [class*="css-"]),
-    span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
-    *:not(code)
+  ) >
+    h2:not(
+      [id*="directions-mode-group"],
+      [dir*="auto"],
+      [class*="panel-title"],
+      [id*="blob-path"],
+      [class*="spanh2"],
+      [class*="fontBodyMedium"],
+      [class*="css-"],
+      [class*="text-sm"],
+      [class*="t-"],
+      [class*="style-name"],
+      [class*="spanh2"],
+      [class*="Overlay-"]
+   ):not([data-v-0b7a2eac]) >
+    :is(
+      a:not([class*="btn"], [class*="css-"]),
+      span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
+      *:not(code)
    ):not(a[data-hydro-click]),                                /* data-hydro-click: https://github.com/trending */
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
@@ -615,6 +615,13 @@
   span[class*="glyphicon-usd"]::before {
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
+  }
+
+  /** https://git-scm.com/docs **/
+  #documentation #main div.verseblock pre.content,
+  #documentation #main dt.hdlist1,
+  #documentation #main p em {
+    font-family: var(--font-family-mono) !important;
   }
 
 
@@ -874,7 +881,8 @@
     [id*="dropdown"],
     [class*="searchDropdown"],
     [id*="billing"],
-    [name*="psize"]
+    [name*="psize"],
+    [class*="ic-field-required"]
   ),
   input:not(
     [class*="button"],
@@ -1382,7 +1390,17 @@
   div#course-details i[class*="fa"],
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
   .button:not([class*="aui-"]):not([value]),
-  .btn:not([class*="form_"], [class*="-link"], [class*="text-"], [class*="-outline-"], [data-toggle="charmap"], [id*="_zoom_us"]) {
+  .btn:not(a):not(
+    :is(.d-flex > .btn),
+    :is(.threat-hunting-homepage-button-group > .btn)
+  ):not(
+    [class*="form_"],
+    [class*="-link"],
+    [class*="text-"],
+    [class*="-outline-"],
+    [data-toggle="charmap"],
+    [id*="_zoom_us"]
+  ) {
     font-family: var(--font-family-icon) !important;
   }
 
@@ -1505,13 +1523,16 @@
 
 
   /** span.prc-Button-Label-pTQ3x, **/                        /* github button */
-  .commit-desc pre > p,                                       /* Popover js-hovercard-content position-absolute */
-  table.js-code-nav-container > tbody *,
-  span:is([class*="color-fg-"]):not(
-    [class*="ws-normal"],                                     /* Popover .color-fg-success, .color-fg-danger */
-    [class*="color-fg-muted"],
-    [id*="-heading"]
-  ),
+  /**
+   * .commit-desc pre > p,                                       / Popover js-hovercard-content position-absolute /
+   * table.js-code-nav-container > tbody *,
+   * span[class*="color-fg-"]:not(
+   *   [class*="ws-normal"],                                     / Popover .color-fg-success, .color-fg-danger /
+   *   [class*="color-fg-muted"],
+   *   [id*="-heading"],
+   *   [class*="text-normal"]
+   * ),
+  **/
   .prc-Button-ButtonBase-c50BI:where([data-size=small]) .prc-Button-Label-pTQ3x,     /* github revision number */
   .Link--secondary span {
     font-family: var(--font-family-mono) !important;
