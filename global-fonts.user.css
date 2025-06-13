@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.47
+@version        3.0.48
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -27,6 +27,20 @@
    *  - jenkins jira: https://issues.jenkins.io/browse/JENKINS-69549
    *  - jenkins gitpod : https://frankie139506-jenkins-xwx3gpif1fu.ws-us117.gitpod.io/bb
   **********************************************************/
+
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: italic;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
+  }
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
@@ -308,6 +322,20 @@
     font-family: "San Francisco";
     font-weight: 400;
     src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
+
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: italic;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
   }
 
   html {
@@ -1451,6 +1479,20 @@
   /*************************
    * github.com/github.io *
   *************************/
+
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: normal;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-Light.otf') format('opentype');
+  }
+
+  @font-face {
+    font-family: 'OperatorMonoSSmLig Nerd Font Mono';
+    font-weight: 300;
+    font-style: italic;
+    src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
+  }
 
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
