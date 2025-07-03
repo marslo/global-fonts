@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.48
+@version        3.0.49
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -9,7 +9,7 @@
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "Yoshe Shayufeite Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
-@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
+@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
 @import url('http://fonts.googleapis.com/css?family=Overlock:400,700,400italic,700italic|Calligraffitti');
@@ -27,6 +27,11 @@
    *  - jenkins jira: https://issues.jenkins.io/browse/JENKINS-69549
    *  - jenkins gitpod : https://frankie139506-jenkins-xwx3gpif1fu.ws-us117.gitpod.io/bb
   **********************************************************/
+  @font-face {
+    font-family: "San Francisco";
+    font-weight: 400;
+    src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-regular-webfont.woff");
+  }
 
   @font-face {
     font-family: 'OperatorMonoSSmLig Nerd Font Mono';
@@ -47,11 +52,15 @@
     --font-family-mono: /*[[font-family-mono]]*/;
     --font-family-handwritten: /*[[font-family-handwritten]]*/;
     --font-family-icon: /*[[font-family-icon]]*/;
-    --font-size-normal-sans: 20px;
-    --font-size-normal-mono: 17px;
-    --font-size-small-mono: 15px;
-    --font-size-big-mono: 19px;
+
     --font-size-big-sans: 22px;
+    --font-size-normal-sans: 19px;
+    --font-size-small-sans: 15px;
+
+    --font-size-big-mono: 18px;
+    --font-size-normal-mono: 16px;
+    --font-size-small-mono: 15px;
+
     --font-size-h1: 34px;
     --font-size-h2: 26px;
     --font-size-h3: 24px;
@@ -343,14 +352,21 @@
     --font-family-mono: /*[[font-family-mono]]*/;
     --font-family-handwritten: /*[[font-family-handwritten]]*/;
     --font-family-icon: /*[[font-family-icon]]*/;
-    --font-size-normal-sans: 20px;
-    --font-size-normal-mono: 17px;
-    --font-size-small-mono: 16px;
-    --font-size-big-mono: 19px;
+
+    --font-size-big-sans: 22px;
+    --font-size-normal-sans: 19px;
+    --font-size-small-sans: 15px;
+
+    --font-size-big-mono: 18px;
+    --font-size-normal-mono: 16px;
+    --font-size-small-mono: 15px;
+
+
     --font-size-h1: 34px;
     --font-size-h2: 26px;
     --font-size-h3: 24px;
     --font-size-h4: 20px;
+    --font-size-h5: 16px;
   }
 
   /** https://javadoc.jenkins.i **/
@@ -464,10 +480,24 @@
   }
   /** .page-header, **/
   h1.page-header :not([class*="hidden-"]),
-  h1 > code, h1 > a > code,
   h1 span.pre,                                                /** python doc, i.e.: https://docs.python.org/3/library/netrc.html **/
   /** *:not([class*="content"]) > h1 > a:not([class*="btn"]), **/
-  [class*="header"]:not([class*="content"], [class*="navbar-"]) > h1 :not(button):not(button+div):not(a[class*="tab"]):not(a[class*="btn"]):not(a[class*="Tab"]):not(i[class*="fa"]):not([class*="text-xs"]):not([class*="aui-dropdown2"] *):not([class*="text-normal"] *):not([class*="btn"], [class*="logo"]),
+  [class*="header"]:not(
+    [class*="content"],
+    [class*="navbar-"]
+  ) > h1:not(
+    [title="Class Descriptor"]
+  ) :not(button):not(button+div):not(
+    a[class*="tab"],
+    a[class*="btn"],
+    a[class*="Tab"],
+    i[class*="fa"],
+    [class*="text-xs"],
+    [class*="aui-dropdown2"] *,
+    [class*="text-normal"] *,
+    [class*="btn"],
+    [class*="logo"]
+  ),
   h1#gh-pages code,
   .markdown-body h1, .markdown-section h1,
   div[class*="headline"]:not(
@@ -491,12 +521,15 @@
    *   * [class*="innerCell"]: confluence page
    *   *:not([class*="confluence"]):not([class*="tablesorter-header-inner"]):not(em) > strong:not([class*="final-path"]),
   **/
+   h1 > code, h1 > a > code,
+  .markdown-section h1 > code,
   .header h1[data-v-03dd129c],                                /* ⌍               */
   .app-layout-wrapper .title-wrapper h1[data-v-32d38c0c],     /* ⌏  artifactory  */
   h2[dir*="auto"] > code,                                     /* https://plugins.jenkins.io/kubernetes/ */
   *:not(blockquote):not(
     [class*="-card-"],
-    [class*="innerCell"]
+    [class*="innerCell"],
+    [class*="title"]
   ) >
     h2:not(
       [id*="directions-mode-group"],
@@ -521,27 +554,26 @@
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2 > mark,
-  .markdown-section h2 > a:not([class*="btn"]),
-  h2 > code, h2 > a > code {
+  .markdown-section h2 > a:not([class*="btn"]) {
     font-size: var(--font-size-h2) !important;
     font-weight: 400 !important;
   }
-  h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"], [class*="truncate"]),
-  h3 > code, h3 > a > code, h3#gh-pages code,
-  .content h2,                                                /* https://plugins.jenkins.io/kubernetes/ */
+  h2 > code, h2 > a > code,
   .markdown-section h2 > code,
+  h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"], [class*="truncate"]),
+  .content h2,                                                /* https://plugins.jenkins.io/kubernetes/ */
   .markdown-body h3 *,
   .markdown-section h3,
-  .markdown-section h3 code,
   .markdown-section h3 > mark,
   .markdown-section h3 > a:not([class*="btn"]) {
     font-size: var(--font-size-h3) !important;
     font-weight: 400 !important;
   }
+  h3 > code, h3 > a > code, h3#gh-pages code,
+  .markdown-section h3 code,
   div[data-v-0b7a2eac] > h2[data-v-0b7a2eac],                 /* artifactory repo name */
   .c-title.t.tts-title a,                                     /* baidu title */
   h4:not([class*="btn"]):not([class*="panel-title"]):not([class*="flex-1"]):not([class*="name-copy"]),
-  h4 > code, h4 > a > code, h4#gh-pages code,
   section[role*="region"] h3,
   .blockList > h3,
   .markdown-section h3 > code,
@@ -550,6 +582,12 @@
   .markdown-section h4 > mark,
   .markdown-section h4 > a:not([class*="btn"]) {
     font-size: var(--font-size-h4) !important;
+    font-weight: 400 !important;
+  }
+
+  h4 > code, h4 > a > code, h4#gh-pages code,
+  .markdown-section h4 > code {
+    font-size: var(--font-size-h5);
     font-weight: 400 !important;
   }
 
@@ -589,10 +627,10 @@
 
   kbd,
   pre:not([class*="dashboard-break-word"], [class*="masked-font"]),
-  pre:not([class*="dashboard-break-word"], [class*="masked-font"]) *, pre.code *,
+  pre:not([class*="dashboard-break-word"], [class*="masked-font"]) *,
   .markdown-body :is(pre, pre *),
-  code, code *, * code *, .code-line,
-  .code *:not([class*="expand"], [class*="hide"]), .command,  /** commandlineful.com **/
+  pre.code *, code, code *, * code *, .code-line,
+  .command,                                                   /** commandlineful.com **/
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
@@ -612,6 +650,7 @@
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
   [class*="code"]:not(
+    [class*="CodeMirror"],
     [class*="vs-code"],
     [class*="vscode"],
     [class*="react"],
@@ -624,7 +663,8 @@
     [class*="macro"],
     [class*="docs-"],
     [class*="button"],
-    [class*="qrcode"]
+    [class*="qrcode"],
+    [class*="tag-refactoring-code"]
   ) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not(p):not(
     [class*="fa"],
     [class*="iconfont"],
@@ -637,10 +677,12 @@
     input[class*="s-btn"],
     [class*="s-btn"] > span,
     a[class*="snippet-expand-"],
-    [class*="cm-help-"]
+    [class*="cm-help-"],
+    [class*="expand"],
+    [class*="hide"]
   ),
   [class*="linenumber"] *, [class*="blob"] code,
-  [class*="terminal"] *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
+  [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code *,
   .cheatsheet .cmd {                                          /** https://tmuxcheatsheet.com **/
     font-family: var(--font-family-mono) !important;
@@ -785,6 +827,7 @@
   gr-commit-info *,
   gr-date-formatter *,
   gr-diff *,
+  div.changeId,                      /* for - No Change-Id in commit message */
   a.gr-change-view,
   a.gr-diff-view,
   h3.gr-access-section,
@@ -903,6 +946,7 @@
    * name*="searchString"           : ⌍ jira
    * class*="select"                : ⌏ jira dropdown list
    * id="f_user|f_pass"             : gerrit
+   * select [id*="repo-select"], [id*="org-select"]  : https://app.sourcery.ai
   ****************************************************************************************/
   /* ol li, */
   /* td ol, */
@@ -919,7 +963,8 @@
     [class*="searchDropdown"],
     [id*="billing"],
     [name*="psize"],
-    [class*="ic-field-required"]
+    [class*="ic-field-required"],
+    [id*="repo-select"], [id*="org-select"]
   ),
   input:not(
     [class*="button"],
@@ -935,7 +980,8 @@
     [id*="gs_displayName"],
     [class*="text"],
     [class*="UnstyledTextInput"],
-    [class*="gb_pe"]
+    [class*="gb_pe"],
+    [role*="combobox"]
   ),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
@@ -1182,7 +1228,7 @@
   section#terminal.terminal-container *,
   div.xterm-screen canvas,
   canvas.xterm-text-layer .terminal *,
-  .terminal-container, .terminal, .terminal[style],
+  .terminal-container, .terminal[style],
   #xterm-text-layer * {
     font-family: var(--font-family-mono) !important;
     /* font-size: 1.25em !important; */
@@ -1348,9 +1394,9 @@
   /**
    * flexera: https://flexera5new01.sample.com/codeinsight/FNCI#myprojectdetails/?id=702&tab=projectInventory&severity=HIGH&pinv=14884
    *
-   * -  #combo-2183-labelEl { padding-right: 1.2em !important; }
+   * - #combo-2183-labelEl { padding-right: 1.2em !important; }
+   * - tr.x-grid-row * : tree list
   **/
-  tr.x-grid-row *,
   div.version-display-box {
     font-family: var(--font-family-mono) !important;
   }
@@ -1417,6 +1463,7 @@
   .codicon[class*="codicon-"],                                /** gitpod **/
   span[class^="icon"]::before,                                /** https://www4.benefitsolver.com/benefits/BenefitSolverView **/
   div.content-post-body-content p,
+  .google-symbols,
   .docon {                                                    /** microsoft doc **/
     font-family: var(--font-family-icon) !important;
   }
@@ -1499,11 +1546,15 @@
     --font-family-mono: /*[[font-family-mono]]*/;
     --font-family-handwritten: /*[[font-family-handwritten]]*/;
     --font-family-icon: /*[[font-family-icon]]*/;
-    --font-size-normal-sans: 18px;
-    --font-size-normal-mono: 18px;
-    --font-size-small-mono: 16px;
+
+    --font-size-big-sans: 22px;
+    --font-size-normal-sans: 19px;
     --font-size-small-sans: 15px;
-    --font-size-big-mono: 19px;
+
+    --font-size-big-mono: 18px;
+    --font-size-normal-mono: 16px;
+    --font-size-small-mono: 15px;
+
     --font-size-h1: 34px;
     --font-size-h2: 26px;
     --font-size-h3: 24px;
@@ -1568,6 +1619,11 @@
     font-family: var(--font-family-mono) !important;
   }
 
+  /** issue comments **/
+  .NewMarkdownViewer-module__safe-html-box--cRsz0 {
+    font-size: 17px !important;
+  }
+
   /** github: go to file **/
   .HVNDY { font-family: var(--font-family-sans) !important; }
   div.Box-sc-g0xbh4-0.hLbjXI, div.ewmGxV { font-family: var(--font-family-mono) !important; }
@@ -1575,10 +1631,10 @@
 
   /** span.prc-Button-Label-pTQ3x, **/                        /* github button */
   /**
-   * .commit-desc pre > p,                                       / Popover js-hovercard-content position-absolute /
+   * .commit-desc pre > p,                                    / Popover js-hovercard-content position-absolute /
    * table.js-code-nav-container > tbody *,
    * span[class*="color-fg-"]:not(
-   *   [class*="ws-normal"],                                     / Popover .color-fg-success, .color-fg-danger /
+   *   [class*="ws-normal"],                                  / Popover .color-fg-success, .color-fg-danger /
    *   [class*="color-fg-muted"],
    *   [id*="-heading"],
    *   [class*="text-normal"]
@@ -1740,21 +1796,14 @@
     font-style: italic !important;
     color: #586e75 !important;
   }
-  span.token.punctuation {
-    color: #93a1a1 !important;
-  }
-  .page-inner {
-    max-width: 90% !important;
-  }
-  .token.entity {
-    background: #2d3143;
-  }
-  .panel-default>.panel-heading {
-    color: #eee8d5;
-  }
+  span.token.punctuation { color: #93a1a1 !important; }
+  .page-inner { max-width: 90% !important; }
+  .panel-default>.panel-heading { color: #eee8d5; }
   .code-wrapper pre > code > span.code-line:before {          /* line number */
     font-family: var(--font-family-mono) !important;
   }
+  /* .token.entity { background: #2d3143; }                    gitbook dark mode */
+
 } /** @-moz-document regexp : github.com && github.io **/
 
 @-moz-document regexp("https?://(ewiki\\.).+\\.com.*") {
