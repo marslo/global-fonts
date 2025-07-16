@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.49
+@version        3.0.50
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -318,6 +318,12 @@
     /** color: #c7c7c7 !important; **/
     font-size: 16px;
   }
+  .css-3wafqk {
+    font-family: var(--font-family-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
+    white-space: pre-wrap !important;
+  }
+
 } /** @-moz-document regexp : for jenkins hosts **/
 
 @-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org).).*") {
@@ -367,6 +373,9 @@
     --font-size-h3: 24px;
     --font-size-h4: 20px;
     --font-size-h5: 16px;
+
+    /* for app.glean */
+    --font-family-override: /*[[font-family-sans]]*/;
   }
 
   /** https://javadoc.jenkins.i **/
@@ -529,7 +538,9 @@
   *:not(blockquote):not(
     [class*="-card-"],
     [class*="innerCell"],
-    [class*="title"]
+    [class*="title"],
+    [id="tinymce"],
+    [class*="panel"]
   ) >
     h2:not(
       [id*="directions-mode-group"],
@@ -626,8 +637,20 @@
   }
 
   kbd,
-  pre:not([class*="dashboard-break-word"], [class*="masked-font"]),
-  pre:not([class*="dashboard-break-word"], [class*="masked-font"]) *,
+  pre:not(.pm4ll46 > pre):not(#char-bar pre):not(
+    [class*="dashboard-break-word"],
+    [class*="masked-font"],
+    [class*="_13"]
+  ),
+  pre:not(.pm4ll46 > pre):not(#char-bar pre):not(
+    [class*="dashboard-break-word"],
+    [class*="masked-font"],
+    [class*="_13"]
+  ) *:not(ul):not(ol):not(
+    p[class*="paragraph"],
+    [class*="heading"],
+    [class*="_1t"] *
+  ),
   .markdown-body :is(pre, pre *),
   pre.code *, code, code *, * code *, .code-line,
   .command,                                                   /** commandlineful.com **/
@@ -964,7 +987,8 @@
     [id*="billing"],
     [name*="psize"],
     [class*="ic-field-required"],
-    [id*="repo-select"], [id*="org-select"]
+    [id*="repo-select"], [id*="org-select"],
+    [name="securityQuestion"]
   ),
   input:not(
     [class*="button"],
@@ -1473,8 +1497,8 @@
   **/
   div#course-details i[class*="fa"],
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
-  .button:not([class*="aui-"]):not([value]),
-  .btn:not(a):not(
+  .button:not([class*="aui-"], [value], [href="#"]),
+  .btn:not([a], [class*="mb-3"]):not(
     :is(.d-flex > .btn),
     :is(.threat-hunting-homepage-button-group > .btn)
   ):not(
@@ -1798,11 +1822,14 @@
   }
   span.token.punctuation { color: #93a1a1 !important; }
   .page-inner { max-width: 90% !important; }
-  .panel-default>.panel-heading { color: #eee8d5; }
+
   .code-wrapper pre > code > span.code-line:before {          /* line number */
     font-family: var(--font-family-mono) !important;
   }
-  /* .token.entity { background: #2d3143; }                    gitbook dark mode */
+  /*
+  .token.entity { background: #2d3143; }
+  .panel-default>.panel-heading { color: #eee8d5; }           * gitbook dark mode *
+  */
 
 } /** @-moz-document regexp : github.com && github.io **/
 
