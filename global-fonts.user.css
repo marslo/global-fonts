@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.50
+@version        3.0.51
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -84,6 +84,27 @@
 
   ::placeholder { font-style: italic !important; font-family: var(--font-family-mono) !important; }
   ::-ms-input-placeholder { font-style: italic !important; font-family: var(--font-family-mono) !important; }
+
+  /**
+   * fix the Pipeline Graph View plugin ( 340.v28cecee8b_25f ) svg icon issue
+  **/
+  /* base: avoid clipping + fix negative x/y everywhere */
+  svg.svg-icon {
+    overflow: visible !important;
+    x: 0 !important;
+    y: 0 !important;
+  }
+  /* exception: ONLY pipeline graph nodes → 24px (circle + checkmark/dots) */
+  .PWGx-pipeline-node .build-status-icon__outer > svg.svg-icon,
+  .PWGx-pipeline-node .build-status-icon__wrapper > svg.svg-icon {
+    width: 24px !important;
+    height: 24px !important;
+  }
+  /* default: everything else → 20px */
+  svg.svg-icon {
+    width: 20px !important;
+    height: 20px !important;
+  }
 
   *:not(pre):not(code):not(textarea):not(button):not(select):not(option):not(kbd):not(icon):not(input):not(i):not(cursor):not(::before):not(::after):not([role=presentation]):not(pre code):not(pre code *):not(li code):not(li code *):not(code *):not(textarea *):not(* code):not(* pre *):not(* code *):not(div.ace_editor):not([class*="ace_"]):not([class*="ace_"] *):not(canvas.graph-cursor-pointer):not([class*="icon"]):not([class*="fa-"]):not([class*="octicon"]):not([class*="win-icon"]):not([class*="icon-"]):not([class*="ico"]):not([class*="pc"]):not([class*="DPvwYc"]):not([class*="para"]):not([class*="ms-Icon"]):not([class*="sort-caret"]):not([class*="Da"]):not([class*="drop"]):not([class*="bowtie-"]):not([class*="view-"]):not([class*="pl-"]):not([class*=".fa-clone"]):not([class*=".fa-check"]):not([class*="avatar-"]):not([class*='wysiwyg-macro-*']):not([class*="-line"]):not([class*="CodeMirror-"]):not([class*="cm-"]):not([class*="setting-"]):not([class*="gr-"]):not([class*="s-code-"]):not([class*="w3-"]):not([class*="language-"]):not([class*="hljs"]):not([class*="post-"]):not([class*="code"]):not([clas*="line"]):not([class*="js-post"]):not([class*="editor"]):not([class="setting-main"]):not([class*="resizable"]) {
     font-family: var(--font-family-sans) !important;
@@ -228,8 +249,8 @@
     font-style: italic !important;
   }
 
-  [class*="ace_"]:not([class*="workspace"]),
-  [class*="ace_"]:not([class*="workspace"]) *,
+  [class*="ace_"]:not([class*="workspace"], [class*="workplace__"]),
+  [class*="ace_"]:not([class*="workspace"], [class*="workplace__"]) *,
   textarea.ace_text-input,
   .ace_active-line, .ace_editor,
   cursor,
@@ -240,7 +261,8 @@
   div#main-panel>pre, div#main-panel>pre *, div#main-panel>pre code, div#main-panel>pre code *,
   .CodeMirror-lines *, div.CodeMirror-lines *,
   .CodeMirror, .CodeMirror *, .CodeMirror pre,
-  .lineNum, .code-line {
+  .lineNum, .code-line,
+  .file-source * {                                             /** UT converage **/
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
     line-height: 1.5em !important;
@@ -302,6 +324,7 @@
   }
   .console-output span.timestamp b {                          /** console output timestamp **/
     color: #696969 !important;
+    font-style: italic !important;
   }
   /**
    * input:not([type="file" i], [type="image" i], [type="checkbox" i], [type="radio" i]) {
@@ -508,7 +531,6 @@
     [class*="logo"]
   ),
   h1#gh-pages code,
-  .markdown-body h1, .markdown-section h1,
   div[class*="headline"]:not(
     [class*="container__"],
     [class*="-view-model"]
@@ -521,7 +543,8 @@
     [class*="bot-status-badge"]
   ),
   div#click-to-connect > div > :not(h1):not(h2),
-  div[class*="style_CardRow"] h1 {
+  div[class*="style_CardRow"] h1,
+  .markdown-body h1, .markdown-section h1 {
     font-size: var(--font-size-h1) !important;
     font-weight: 500 !important;
   }
@@ -554,13 +577,14 @@
       [class*="t-"],
       [class*="style-name"],
       [class*="spanh2"],
-      [class*="Overlay-"]
-   ):not([data-v-0b7a2eac]) >
+      [class*="Overlay-"],
+      [data-v-0b7a2eac]
+   ) >
     :is(
       a:not([class*="btn"], [class*="css-"]),
       span:not([class*="PpN7xc"], [class*="-name"], [class*="btn"], [class*="separator"], [class*="js-path"]),
       *:not(code)
-   ):not(a[data-hydro-click]),                                /* data-hydro-click: https://github.com/trending */
+   ):not(a[data-hydro-click],[role*="button"]),               /* data-hydro-click: https://github.com/trending */
   h2#gitbook-cli > code, h2#gh-pages code,
   .markdown-body h2:not([class*="btn"]):not([dir*="auto"]),
   .markdown-section h2:not([class*="btn"]):not([dir*="auto"]),
@@ -571,7 +595,15 @@
   }
   h2 > code, h2 > a > code,
   .markdown-section h2 > code,
-  h3:not([class*="btn"]):not([class*="ghx-name"]):not([class*="gr-access-section"]):not([class*="f5"]) div:not([class*="react-directory-truncate"], [class*="truncate"]),
+  h3:not(
+    [class*="btn"],
+    [class*="ghx-name"],
+    [class*="gr-access-section"],
+    [class*="f5"]
+  ):not(:has(button)) div:not(
+    [class*="react-directory-truncate"],
+    [class*="truncate"]
+  ),
   .content h2,                                                /* https://plugins.jenkins.io/kubernetes/ */
   .markdown-body h3 *,
   .markdown-section h3,
@@ -687,7 +719,8 @@
     [class*="docs-"],
     [class*="button"],
     [class*="qrcode"],
-    [class*="tag-refactoring-code"]
+    [class*="tag-refactoring-code"],
+    [name*="code_owner"], [class*="code-owner"]
   ) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not(p):not(
     [class*="fa"],
     [class*="iconfont"],
@@ -733,7 +766,8 @@
   ****************************************************************************************/
   .CodeMirror-line, *.CodeMirror-lines *, *.CodeMirror *, .CodeMirror *,
   span.target, details.sections-list li, h2.style-name *,
-  div[class*="CodeMirror-"] *, pre[class*="s-code-"] *, div[class^="cm-"] *:not([class*="cm-help-"]) {
+  div[class*="CodeMirror-"] *, pre[class*="s-code-"] *,
+  div[class^="cm-"] *:not([class*="cm-help-"]) {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
   }
@@ -760,11 +794,11 @@
    * :not([class*="workspace"])                 slack
    * :not([class*="face_"])                     github : UnderlineTabbedInterface_*
   ****************************************************************************************/
-  [class*="ace_"]:not([class*="workspace"], [class*="face_"]),
-  [class*="ace_"]:not([class*="workspace"], [class*="face_"])~div,
-  [class*="ace_"]:not([class*="workspace"], [class*="face_"])~div,
-  [class*="ace_"]:not([class*="workspace"], [class*="face_"])+div,
-  [class*="ace_"]:not([class*="workspace"], [class*="face_"]) *,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"]),
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"])~div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"])~div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"])+div,
+  [class*="ace_"]:not([class*="workspace"], [class*="face_"], [class*="workplace_"]) *,
   div#playground-container * {
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-normal-mono) !important;
@@ -991,10 +1025,9 @@
     [name="securityQuestion"]
   ),
   input:not(
-    [class*="button"],
-    [type*="button"],
+    [class*="button"], [type*="button"],
     [type*="submit"],
-    [type*="text"],
+    [type*="text"], [class*="txt"],
     [name*="summary"],
     [id*="user-code-"],
     [class*="P2c8Dd"],
@@ -1225,6 +1258,9 @@
   .wysiwyg-macro-body>pre, div.codeContent td.code * {
     font-family: var(--font-family-mono) !important;
   }
+  [class*="confluence"] code * {
+    font-size: var(--font-size-big-mono) !important;
+  }
   input#content-title {
     font-size: 1.25em !important;
   }
@@ -1234,8 +1270,10 @@
     padding: 12px 0 0px 0px;
     font-family: var(--font-family-handwritten) !important
   }
-  code.bash.comments {
+  code.bash.comments,
+  .syntaxhighlighter.sh-rdark .preprocessor {
     font-style: italic !important;
+    /* color: #435a5f !important */
   }
 
   /****************************************************************************************
@@ -1675,7 +1713,8 @@
   .lh-condensed > a:not(
     [data-hydro-click],
     [data-hovercard-url],
-    [class*="color-fg-"]
+    [class*="color-fg-"],
+    [class*="Link--"]
   ) {
     font-family: 'Victor Mono', 'LXGW WenKai Mono TC',  ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
     font-weight: bold;
@@ -1741,6 +1780,7 @@
   .line-number, .gr-diff,                                     /* github codeblock */
   .line:not([id*="table"]),                                   /* github codeblock && https://codeberg.org/vhs/jekyll-money **/
   div.QueryBuilder-StyledInputContainer,                      /* github search/query input box */
+  input:is([id="repos-list-filter-input"]),
   .QueryBuilder-StyledInputContainer *  {                     /* github search/query input box */
     font-family: var(--font-family-mono) !important;
     font-size: var(--font-size-big-mono) !important;
