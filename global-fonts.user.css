@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.51
+@version        3.0.52
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -206,17 +206,23 @@
   }**/
 
   /**
+   * for chrome plugin: JSON Viewer Pro
+  **/
+  .jv-code-editor { font-size: 20px !important;  }
+
+  /**
    * #main-panel>pre, #main-panel>pre *, pre#main-panel, pre#main-panel *, div#main-panel>pre, div#main-panel>pre *, div#main-panel>pre code, div#main-panel>pre code *,
    * :root,
+   * pre:not(#json-viewer)   - for chrome plugin: JSON Viewer Pro ( exclude )
   **/
   ::marker,
   kbd,
   option, option *,
   canvas, canvas *,
-  pre, pre *:not([class*="console-output"]),
+  pre:not(#json-viewer) , pre:not(#json-viewer) *:not([class*="console-output"]),
   pre code, pre code *,
   pre code ul li *,
-  pre span, pre span *,
+  pre:not(#json-viewer) span, pre:not(#json-viewer) span *,
   code, code *,
   input :where(code, pre),
   select, select *,
@@ -349,7 +355,7 @@
 
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org).).*") {
+@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev).).*") {
 
   /************************
    * non-jenkins domains *
@@ -943,7 +949,7 @@
   gr-endpoint-decorator.gr-main-header *,
   .bigTitle,
   h1.gr-repo {
-    color: #e2e2e2;
+    /* color: #e2e2e2; */
     font-size: 2.25rem !important;
     text-decoration: none;
   }
@@ -1512,7 +1518,7 @@
   ****************************************************************************************/
   i[class*="fa-"],
   span[class*="glyphicon"],
-  span[class*="style_Navbar"], span[class*="avatar"], span[class*="icon-"],
+  span[class*="style_Navbar"], span[class*="avatar"]:not([class*="gravatar-text"]), span[class*="icon-"],
   i[class*="s-fa-"],
   i[class*="material-icons-"],
   i[class*="google-material-icons"],
@@ -1535,7 +1541,14 @@
   **/
   div#course-details i[class*="fa"],
   .fa, .section-directions, .fontHeadlineLarge, .file-name-idw,
-  .button:not([class*="aui-"], [value], [href="#"]),
+   /**
+    * button--:           pypi
+    * :not(:is( ... ))    to exclude parent elements
+   **/
+  .button:not(a):not([class*="aui-"], [value], [href="#"], [class*="button--"]):not(
+    :is([class*="gravatar-form__content"] .button),
+    :is([class*="table__align"] .button)
+  ),
   .btn:not([a], [class*="mb-3"]):not(
     :is(.d-flex > .btn),
     :is(.threat-hunting-homepage-button-group > .btn)
