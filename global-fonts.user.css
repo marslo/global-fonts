@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.52
+@version        3.0.53
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -219,10 +219,10 @@
   kbd,
   option, option *,
   canvas, canvas *,
-  pre:not(#json-viewer) , pre:not(#json-viewer) *:not([class*="console-output"]),
+  /*pre:not(#json-viewer) , pre:not(#json-viewer) *:not([class*="console-output"]) span,
+  pre:not(#json-viewer) span, pre:not(#json-viewer) span *, */
   pre code, pre code *,
   pre code ul li *,
-  pre:not(#json-viewer) span, pre:not(#json-viewer) span *,
   code, code *,
   input :where(code, pre),
   select, select *,
@@ -669,8 +669,8 @@
     font-family: var(--font-family-mono) !important;
   }
 
-  /** vault **/
-  textarea.input.masked-value {
+  /** vault - .masked-font { font-family: obscure,text-security-square }  **/
+  textarea.input.masked-value:not(.masked-font) {
     font-family: var(--font-family-mono) !important;
   }
 
