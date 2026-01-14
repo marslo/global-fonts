@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.53
+@version        3.0.54
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -140,7 +140,7 @@
   ul.permalinks-list *,
   table.fileList *,
   td a,
-  td *,
+  td *:not(code):not(pre),
   div.signupIntroDefault :is(div, p),
   label.attach-previous.setting-checkbox,
   [class*="jenkins-checkbox"] *,
@@ -223,7 +223,7 @@
   pre:not(#json-viewer) span, pre:not(#json-viewer) span *, */
   pre code, pre code *,
   pre code ul li *,
-  code, code *,
+  code:not(h1 code, h2 code, h3 code, h4 code), code:not(h1 code, h2 code, h3 code, h4 code) *,
   input :where(code, pre),
   select, select *,
   script, script *,
@@ -355,7 +355,7 @@
 
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev).).*") {
+@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com).).*") {
 
   /************************
    * non-jenkins domains *
@@ -1044,7 +1044,8 @@
     [class*="text"],
     [class*="UnstyledTextInput"],
     [class*="gb_pe"],
-    [role*="combobox"]
+    [role*="combobox"],
+    [id="Password"]
   ),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
