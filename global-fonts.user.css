@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.54
+@version        3.0.55
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -188,10 +188,12 @@
    * "ace_"                                            Jenkins Pipeline Script Textarea
    * div.setting-main *
    * div.pretty-print                                  config.xml
-   *
+   * .jenkins-form-label                               config
   **/
-  div.setting-main *:not(label.attach-previous.setting-checkbox),
-  .jenkins-form-label,
+  div.setting-main:not([class*="help-sibling"]) *:not(
+    label.attach-previous.setting-checkbox,
+    [class*="repeated-chunk"]
+  ),
   .setting-main > textarea,
   td.setting-main,
   div.pretty-print,
@@ -304,9 +306,7 @@
     font-size: var(--font-size-big-sans) !important;
   }
 
-  /**
-   * bluetooth
-  **/
+  /** bluetooth **/
   .result-item-label,
   .TruncatingLabel,
   [class*="RunDetailsHeader"] *,
@@ -355,7 +355,7 @@
 
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com).).*") {
+@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com|artifactory\\..+\\.com/.*/groovydoc/.*).).*") {
 
   /************************
    * non-jenkins domains *
@@ -395,7 +395,7 @@
     --font-size-big-mono: 18px;
     --font-size-normal-mono: 16px;
     --font-size-small-mono: 15px;
-
+    --font-size-xsmall-mono: 13px;
 
     --font-size-h1: 34px;
     --font-size-h2: 26px;
@@ -441,12 +441,6 @@
   }
 
   /**
-   * td, span, p {
-   *   font-family: var(--font-family-sans) !important;
-   * }
-  **/
-
-  /**
    * kbd, pre, code:                             html tag
    *                                             e.g.: <kbd></kbd>, <pre></pre>
    * pre *, code *, div.line-numbers, div.code   html tag with class.
@@ -463,12 +457,14 @@
     font-family: var(--font-family-sans) !important;
   }
 
+
   /****************************************************************************************
    * TFS Log Content
   ****************************************************************************************/
   span.vsts-build-log {
     font-family: var(--font-family-mono) !important;
   }
+
 
   /****************************************************************************************
    * https://help.obsidian.md/
@@ -488,7 +484,6 @@
   div[class*="style_CTAList"] * {
     font-family: var(--font-family-sans) !important;
   }
-
 
 
   /****************************************************************************************
@@ -569,7 +564,9 @@
     [class*="innerCell"],
     [class*="title"],
     [id="tinymce"],
-    [class*="panel"]
+    [class*="panel"],
+    [class*="MW9GI"],
+    [class*="InlineReview"]
   ) >
     h2:not(
       [id*="directions-mode-group"],
@@ -690,13 +687,26 @@
     [class*="_1t"] *
   ),
   .markdown-body :is(pre, pre *),
-  pre.code *, code, code *, * code *, .code-line,
+  pre.code *,
+  code:not(
+    [class*="confluence"] code,
+    [class*="innerCell"] code,
+    [class*="TimelineItem-body"] code,
+    [class*="macro-param-desc"] code
+  ),
+  code:not(
+    [class*="confluence"] code,
+    [class*="innerCell"] code,
+    [class*="TimelineItem-body"] code,
+    [class*="macro-param-desc"] code
+  ) *,
+  .code-line,
   .command,                                                   /** commandlineful.com **/
   input :where(code, pre),
   textarea :where(code, pre),
   [class*="highlight"] :where(pre, code),
   .highlight :is(pre, code),
-  .blob-code, .blob-code-inner, .blob-num,
+  .blob-code, .blob-code-inner, .blob-num,                    /** github **/
   .editor *:not(span):not([class*="confluence"]):not([id*="breadcrumbs"] *):not([class*="toolbar-split"] *):not([class*="aui-"] *),
   div.ace_content,
   .blob-code-addition *, .blob-code-inner *,
@@ -710,6 +720,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
+  /**
   [class*="code"]:not(
     [class*="CodeMirror"],
     [class*="vs-code"],
@@ -726,7 +737,9 @@
     [class*="button"],
     [class*="qrcode"],
     [class*="tag-refactoring-code"],
-    [name*="code_owner"], [class*="code-owner"]
+    [name*="code_owner"], [class*="code-owner"],
+    [class*="codeBlockContainer"], [class*="codeContent"],
+    [class*="font-size-inherit"]
   ) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not(p):not(
     [class*="fa"],
     [class*="iconfont"],
@@ -743,6 +756,7 @@
     [class*="expand"],
     [class*="hide"]
   ),
+  **/
   [class*="linenumber"] *, [class*="blob"] code,
   [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code *,
@@ -995,6 +1009,7 @@
     margin: 0px;
   }
 
+
   /****************************************************************************************
    * .editor, * div.ace_content * {
    *   font-family: var(--font-family-mono) !important;
@@ -1045,7 +1060,8 @@
     [class*="UnstyledTextInput"],
     [class*="gb_pe"],
     [role*="combobox"],
-    [id="Password"]
+    [id="Password"],
+    [name="limit"]
   ),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
@@ -1063,15 +1079,16 @@
   }
 
   /**
-  .form-control {                                             / service now - Incident /
+  .form-control {                                                        / service now - Incident /
     padding: 1px 9px !important;
   }
   **/
 
   textarea:is([class*="background--black"]),
-  .monospaced {                                               /** artifactory log **/
+  .monospaced {                                                          /** artifactory log **/
     font-family: var(--font-family-mono) !important;
   }
+
 
   /****************************************************************************************
    * stackoverflow
@@ -1116,7 +1133,7 @@
     font-family: var(--font-family-mono) !important;
   }
   /** comments in stackoverflow && Jira code block **/
-  .hljs-comment {
+  .hljs-comment, .code-comment {
     font-style: italic !important;
     color: darkgray;
   }
@@ -1137,6 +1154,7 @@
     font-size: 12px !important;
     font-family: var(--font-family-sans) !important;
   }
+
 
   /****************************************************************************************
    * slack
@@ -1185,7 +1203,7 @@
   .ajax_autocomplete input.long-field,
   div.cke_contents textarea,
   h1#summary-val,
-  div#attachmentmodule *,
+  div#attachmentmodule *:not([class*="icon-"]),
   input.aui-ss-field,
   div.user-content-block *:not(tt):not(code):not(pre):not(pre>code *),   /** jira **/
   [class*="dashboard-item"] iframe *,
@@ -1244,6 +1262,7 @@
     font-family: var(--font-family-handwritten) !important;
   }
 
+
   /****************************************************************************************
    * confluence
   body.page-edit :is(h1, h2, h3, h4, h5, li, p, a, span) *,
@@ -1266,7 +1285,7 @@
     font-family: var(--font-family-mono) !important;
   }
   [class*="confluence"] code * {
-    font-size: var(--font-size-big-mono) !important;
+    font-size: var(--font-size-normal-mono) !important;
   }
   input#content-title {
     font-size: 1.25em !important;
@@ -1282,6 +1301,7 @@
     font-style: italic !important;
     /* color: #435a5f !important */
   }
+
 
   /****************************************************************************************
    * kubernetes.io
@@ -1323,6 +1343,7 @@
     font-size: 20px !important;
   }
 
+
   /****************************************************************************************
    * Play With Kubernetes
    * https://labs.play-with-k8s.com/
@@ -1330,6 +1351,7 @@
   div.terminal-instance * {
     font-family: var(--font-family-mono) !important;
   }
+
 
   /****************************************************************************************
    * pypi doc
@@ -1347,6 +1369,7 @@
     color: #686868 !important;
   }
 
+
   /****************************************************************************************
    * https://cloud.siliconflow.cn/playground/chat
   ****************************************************************************************/
@@ -1357,6 +1380,7 @@
   p[node="[object Object]"] + ul > li {
     font-family: 'LXGW WenKai Mono TC' !important;
   }
+
 
   /****************************************************************************************
    * others:
@@ -1684,7 +1708,7 @@
   /** for selection dismatches issue [class*="code"]:not([class*="react"]) **/
   textarea#read-only-cursor-text-area,
   [class*='react-line'],
-  [class*='react-code'],
+  [class*='react-code']:not([class*="-view"]),
   div[class*="styled-input-content"],                         /* github issue search */
   .react-code-lines *,
   div.form-group textarea,
@@ -1693,6 +1717,17 @@
   input.FormControl-input:is([aria-controls^="query-builder-"]) {
     font-size: var(--font-size-github-mono) !important;
     font-family: var(--font-family-mono) !important;
+  }
+
+  /**  [class="TimelineItem-body"] code * **/
+  div[class*="code-scanning-"]:not(
+    [class*="js-"],
+    [class*="timeline"]
+  ) {
+     font-family: 'FantasqueSansM Nerd Font', 'RecMonoCasual Nerd Font Mono', 'VictorMono Nerd Font Mono', 'LXGW WenKai Mono TC', ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace !important;
+    /** font-family: var(--font-family-mono) !important; **/
+    font-size: var(--font-size-github-mono) !important;
+    /** font-style: italic;**/
   }
 
   /** issue comments **/
@@ -1705,8 +1740,8 @@
   div.Box-sc-g0xbh4-0.hLbjXI, div.ewmGxV { font-family: var(--font-family-mono) !important; }
 
 
-  /** span.prc-Button-Label-pTQ3x, **/                        /* github button */
   /**
+   * span.prc-Button-Label-pTQ3x                              / github button /
    * .commit-desc pre > p,                                    / Popover js-hovercard-content position-absolute /
    * table.js-code-nav-container > tbody *,
    * span[class*="color-fg-"]:not(
@@ -1896,7 +1931,12 @@
   html {
     color: #172b4d !important;
   }
+
+  [class*="macro-param-desc"] code, [class*="macro-param-desc"] code * {
+    line-height: unset !important;
+  }
   code, code *,
+  div.codeContent *,
   pre, pre *,
   [class*="highlight"] :where(pre, code),
   body:not(.specificity-inc):not(.specificity-inc):not(.specificity-inc) .wiki-edit-content textarea.wiki-textfield {
