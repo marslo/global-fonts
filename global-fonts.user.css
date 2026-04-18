@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.55
+@version        3.0.56
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -9,7 +9,7 @@
 @advanced       text font-family-sans        "Sans Fonts"        ""Titillium Nerd Font Upright", "Titillium Nerd Font", "Gisha Nerd Font", "Recursive Sans Casual Static Nerd Font", "Yoshe Shayufeite Nerd Font", "MicrosoftYaHei Nerd Font", "LXGWBright Nerd Font", "Qian Li Jiang Shan Nerd Font", "MFeltPenPRC Nerd Font", "MFeltPenHKSemi Nerd Font", "Grandstander Nerd Font", "Ubuntu", "Candara Nerd Font", "Titillium Up", Titillium, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Font Text""
 @advanced       text font-family-mono        "Mono Fonts"        ""OperatorMonoSSmLig Nerd Font Mono", "OperatorMonoLig Nerd Font Mono", "OperatorMono Nerd Font Mono", "JetBrainsMono Nerd Font Mono", "RecMonoCasual Nerd Font Mono", "Monaco Nerd Font Mono", Menlo, "Andale Mono", "Ubuntu Mono", "Monofur Nerd Font Mono", Consolas, "Yozai Nerd Font""
 @advanced       text font-family-handwritten "Handwritten Fonts" ""Papyrus Nerd Font", fantasy"
-@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
+@advanced       text font-family-icon        "Icon Fonts"        ""Google Material Icons", "Material Icons Extended", entypo, "Adgs Icons", "Google Symbols", "Font Awesome 7 Pro", "Font Awesome 5 Free", "Font Awesome 5 Pro", "Font Awesome 6 Free", "Font Awesome 6 Pro", FontAwesome, "Glyphicons Halflings", ReadMe-Icons, StructureFontAwesome, VideoJS, codicon, controlIcons, iconfont, iconfont-luckysheet, icozoom, retina_icons, streamline, union-design-icons, yunfont, okticon, docons, zipformplus, "Font Awesome 6 Brands", octicons, perforceIcons, FontADP, "Support MDL2 Assets", geico, marvell-icons, icomoon, element-icons, olive-icons, "SF Pro Icons", Iconochive-Regular, sans-serif"
 ==/UserStyle== */
 
 @import url('http://fonts.googleapis.com/css?family=Overlock:400,700,400italic,700italic|Calligraffitti');
@@ -355,10 +355,12 @@
 
 } /** @-moz-document regexp : for jenkins hosts **/
 
-@-moz-document regexp("https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com|artifactory\\..+\\.com/.*/groovydoc/.*).).*") {
+
+@-moz-document regexp("(?:https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com|artifactory.*\\.com/.*/groovydoc/.*).).*)|file://.*/git-doc/.+\\.html") {
 
   /************************
    * non-jenkins domains *
+   * local git-doc html  *
   ************************/
 
   /** -apple-system **/
@@ -671,7 +673,7 @@
     font-family: var(--font-family-mono) !important;
   }
 
-  kbd,
+  /** kbd, **/
   pre:not(.pm4ll46 > pre):not(#char-bar pre):not(
     [class*="dashboard-break-word"],
     [class*="masked-font"],
@@ -681,7 +683,7 @@
     [class*="dashboard-break-word"],
     [class*="masked-font"],
     [class*="_13"]
-  ) *:not(ul):not(ol):not(
+  ) *:not(ul):not(ol):not(kbd):not(
     p[class*="paragraph"],
     [class*="heading"],
     [class*="_1t"] *
@@ -720,6 +722,7 @@
   tr.line_holder *,
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
+  [class="code"],
   /**
   [class*="code"]:not(
     [class*="CodeMirror"],
@@ -803,7 +806,7 @@
   div.options-column > div.option,
   input[type*="search"],
   span[id*="share"],
-  div[class*="share"] * {
+  div[class*="share"] *:not(mat-icon) {
     font-family: var(--font-family-sans) !important;
   }
 
@@ -1043,7 +1046,8 @@
     [name*="psize"],
     [class*="ic-field-required"],
     [id*="repo-select"], [id*="org-select"],
-    [name="securityQuestion"]
+    [name="securityQuestion"],
+    [id*="ups-"], [class*="ups-"]
   ),
   input:not(
     [class*="button"], [type*="button"],
@@ -1061,7 +1065,12 @@
     [class*="gb_pe"],
     [role*="combobox"],
     [id="Password"],
-    [name="limit"]
+    [name="limit"],
+    [class*="el-input__"]
+  ),
+  input:is(
+    [data-cy="apiKeyInput"],
+    [data-cy="encryptedPasswordInput"]
   ),
   a.jstree-anchor, pre.console-output,
   div.line-numbers *, .line-numbers, .js-line-number,                    /* artifactory tree list */
@@ -1570,20 +1579,34 @@
     * button--:           pypi
     * :not(:is( ... ))    to exclude parent elements
    **/
-  .button:not(a):not([class*="aui-"], [value], [href="#"], [class*="button--"]):not(
+  .button:not(a):not(
+    [class*="aui-"],
+    [value],
+    [href="#"],
+    [class*="button--"]
+  ):not(
     :is([class*="gravatar-form__content"] .button),
     :is([class*="table__align"] .button)
   ),
-  .btn:not([a], [class*="mb-3"]):not(
-    :is(.d-flex > .btn),
-    :is(.threat-hunting-homepage-button-group > .btn)
-  ):not(
+  .btn:not(
+    a,
+    .btn-default,
+    [class*="mb-3"],
     [class*="form_"],
     [class*="-link"],
     [class*="text-"],
     [class*="-outline-"],
     [data-toggle="charmap"],
-    [id*="_zoom_us"]
+    [id*="_zoom_us"],
+    [class*="animated"]
+  ):not(
+    :is(.d-flex > .btn),
+    :is(.threat-hunting-homepage-button-group > .btn),
+    :is(.btn-group > .btn),
+    :is(.text-right > .btn),
+    :is(.modal-body > .btn),
+    :has(~ [class*="fossa"]),
+    :is([class*="card"] .btn)
   ) {
     font-family: var(--font-family-icon) !important;
   }
@@ -1704,7 +1727,6 @@
   input:is([id*="password"], [id*="login"]) {
     font-family: var(--font-family-sans) !important;
   }
-  .markdown-body code { border-radius: 6px !important; }
   /** for selection dismatches issue [class*="code"]:not([class*="react"]) **/
   textarea#read-only-cursor-text-area,
   [class*='react-line'],
@@ -1714,7 +1736,8 @@
   div.form-group textarea,
   [name^="ssh_key"],
   input:is([readonly="readonly"]),
-  input.FormControl-input:is([aria-controls^="query-builder-"]) {
+  input.FormControl-input:is([aria-controls^="query-builder-"]),
+  textarea#secret_value, input#secret_name {
     font-size: var(--font-size-github-mono) !important;
     font-family: var(--font-family-mono) !important;
   }
@@ -1877,6 +1900,12 @@
     font-weight: 400 !important;
   }
 
+  /* GitHub：hidden「xxx had recent pushes」*/
+  /* [class*="RecentlyTouchedBranches-module__Flash"] { display: none !important; } */
+  div[class*="RecentlyTouchedBranches-module__Flash"][data-variant="warning"] {
+    display: none;
+  }
+
   /****************************************************************************************
    * github.io                                      github pager
    * https://idratherbewriting.com/documentation-theme-jekyll/index.html
@@ -1907,7 +1936,8 @@
   /** gitbook **/
   span.token.comment {                                        /* comment code */
     font-style: italic !important;
-    color: #586e75 !important;
+    /** color: #586e75 !important; **/
+    color: #b9b9b9 !important;
   }
   span.token.punctuation { color: #93a1a1 !important; }
   .page-inner { max-width: 90% !important; }
@@ -2043,3 +2073,25 @@
     width: 5% !important;
   }
 } /** @-moz-document regexp("^https?://plugins/gitblit*$") **/
+
+
+@-moz-document regexp("^https?://app.fossa.com/.*") {
+
+  /*********************
+   * fossa            *
+  *********************/
+
+  [class*="fossa-list__row--center"],
+  [class*="fossa-list__row--column"],
+  [class*="fossa-list__row__title"],
+  [class*="fossa-list__row__details__item"],
+  [class*="fossa-list__row__details__item__trailing"] div,
+  [class*="PD5ga73ugCA7Oc38"] div {
+    /* font-family: Ellipsis, "Open Sauce Two", "Open Sauce", "Helvetica Neue", Helvetica, Arial, sans-serif !important; */
+    font-family: var(--font-family-sans) !important;
+  }
+
+  div.margin-bottom-lg > p {
+    font-family: Ellipsis,iA Writer Quattro,SF Mono,Menlo,Liberation Mono,DejaVu Sans Mono,Consolas,monospace !important;
+  }
+}
