@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.56
+@version        3.0.57
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -356,7 +356,7 @@
 } /** @-moz-document regexp : for jenkins hosts **/
 
 
-@-moz-document regexp("(?:https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com|artifactory.*\\.com/.*/groovydoc/.*).).*)|file://.*/git-doc/.+\\.html") {
+@-moz-document regexp("(?:https?://((?!([^/]*jenkins(?!gitpod)[^/]*\\.com/?.*|34\\.233.*|3\\.230.*|10\\.69.*|imarslo\\.jenkins\\.com|ci\\.jenkins\\.io).*|.*Monitor/$|.*sabacloud\\.com|.*detail.*pipeline|shields\\.io|127\\.0\\.0\\.1|0\\.0\\.0\\.0|localhost|.*fonts?.+\\.(com|org|net)|.*fonts?.(cn|netlify)|.*zijia.com.cn|.*sharepoint\\.com|programmingfonts|.*re-dashboard|jqplay\\.org|.*\\.github\\.dev|.*\\.w3schools\\.com|artifactory.*\\.com/.*/groovydoc/.*|.*Iosevka.*).).*)|file://.*/git-doc/.+\\.html") {
 
   /************************
    * non-jenkins domains *
@@ -1424,6 +1424,10 @@
   .entry pre>code {
     font-family: var(--font-family-mono) !important;
   }
+  /* one.digicert.com */
+  .Fields_hideShow__2EBZY {
+    font-family: var(--font-family-mono) !important;
+  }
   .wm_content__0bruk div {
     font-family: var(--font-family-sans) !important;
   }
@@ -1664,6 +1668,26 @@
     src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
   }
 
+  /* ── wide layout ─── Added into Refined Github Plugin ──── *
+  [class*="PageLayoutRoot"] {
+    max-width: min(65vw, 100%) !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+  }
+  [class*="PageLayoutWrapper"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  [data-width="large"] {
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+  */
+  /* ── disable token warning ──── for refined github plugin ── */
+  [class*="rgh-"] .flash.flash-error {
+    display: none !important;
+  }
+
   html {
     --font-family-sans: /*[[font-family-sans]]*/;
     --font-family-mono: /*[[font-family-mono]]*/;
@@ -1900,9 +1924,12 @@
     font-weight: 400 !important;
   }
 
-  /* GitHub：hidden「xxx had recent pushes」*/
-  /* [class*="RecentlyTouchedBranches-module__Flash"] { display: none !important; } */
-  div[class*="RecentlyTouchedBranches-module__Flash"][data-variant="warning"] {
+  /**
+   * hidden GitHub：hidden「xxx had recent pushes」
+   * check details in : https://github.com//${OWNRE}/${REPO}/show_partial?partial=tree%2Frecently_touched_branches_list
+  **/
+  div[class*="RecentlyTouchedBranches-module__Flash"][data-variant="warning"],
+  div[data-url*="recently_touched_branches_list"] {
     display: none;
   }
 
