@@ -1,6 +1,6 @@
 /* ==UserStyle==
 @name           global fonts ( marslo )
-@version        3.0.57
+@version        3.0.58
 @namespace      github.com/marslo
 @description    global-wild font customization
 @author         marslo.jiao@gmail.com
@@ -723,43 +723,6 @@
   div[class*="hljs-"] *,
   div[class*=".comment"] code,
   [class="code"],
-  /**
-  [class*="code"]:not(
-    [class*="CodeMirror"],
-    [class*="vs-code"],
-    [class*="vscode"],
-    [class*="react"],
-    [class*="select-sm"],
-    [class*="codebook"],
-    [class*="nicode"],
-    [class*="zip"],
-    [class*="&_code_"],
-    [class*="escape"],
-    [class*="macro"],
-    [class*="docs-"],
-    [class*="button"],
-    [class*="qrcode"],
-    [class*="tag-refactoring-code"],
-    [name*="code_owner"], [class*="code-owner"],
-    [class*="codeBlockContainer"], [class*="codeContent"],
-    [class*="font-size-inherit"]
-  ) *:not(h1):not(h2):not(h3):not(h4):not(h5):not(a):not(button):not(p):not(
-    [class*="fa"],
-    [class*="iconfont"],
-    [class*="codicon"],
-    [class*="step"],
-    [class*="docon"],
-    [class*="con"],
-    [class*="btn"],
-    [class*="select"],
-    input[class*="s-btn"],
-    [class*="s-btn"] > span,
-    a[class*="snippet-expand-"],
-    [class*="cm-help-"],
-    [class*="expand"],
-    [class*="hide"]
-  ),
-  **/
   [class*="linenumber"] *, [class*="blob"] code,
   [class*="terminal"]:not([class*="main-view"]) *:not([class*="icon"]):not([class*="num-votes"]):not([class*="xterm-"]):not([class*="bar__title"]), #terminal *:not([class*="icon"]),
   .CodeBlock pre[class*=language-]>code *,
@@ -1668,22 +1631,7 @@
     src: url('https://github.com/marslo/fonts/raw/fonts/Operator/OperatorMonoSSmLigNF/otf/OperatorMonoSSmLigNerdFontMono-LightItalic.otf') format('opentype');
   }
 
-  /* ── wide layout ─── Added into Refined Github Plugin ──── *
-  [class*="PageLayoutRoot"] {
-    max-width: min(65vw, 100%) !important;
-    margin-left: auto !important;
-    margin-right: auto !important;
-  }
-  [class*="PageLayoutWrapper"] {
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-  [data-width="large"] {
-    max-width: 100% !important;
-    width: 100% !important;
-  }
-  */
-  /* ── disable token warning ──── for refined github plugin ── */
+  /* ── disable token warning ───────────────────────────────────── */
   [class*="rgh-"] .flash.flash-error {
     display: none !important;
   }
@@ -1735,6 +1683,25 @@
    * # for first line in code text-area
    * .ePiodO { line-height: 0.8 !important; }
   ****************************************************************************************/
+
+  /* ── PR review comment code: smaller font ────────────────────── */
+  /* conversation page (uses standard .blob-code classes) */
+  .review-thread-component .blob-code-inner,
+  .review-thread-component .blob-code-inner *,
+  .review-thread-component .blob-code,
+  .review-thread-component .blob-code *,
+  .review-thread-component .blob-num,
+  /* diff page: copilot suggestion cards */
+  [class*="AutomatedReview"] [class*="DiffLines"],
+  [class*="AutomatedReview"] [class*="DiffLines"] *,
+  [class*="AutomatedReview"] .blob-code-inner,
+  [class*="AutomatedReview"] .blob-code-inner *,
+  [class*="AutomatedReview"] .blob-code,
+  [class*="AutomatedReview"] .blob-code *,
+  [class*="AutomatedReview"] .blob-num {
+    font-size: var(--font-size-small-mono) !important;
+  }
+
   .markdown-title,
   .markdown-section :is(p, h1, h2, h3, h4),
   .markdown-body, .markdown-body :is(p, h1, h2, h3, h4),
