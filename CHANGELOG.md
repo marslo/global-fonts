@@ -1,3 +1,9 @@
+## [4.0.1](https://github.com/marslo/global-fonts/compare/v4.0.0...v4.0.1) (2026-05-13)
+
+### Others
+
+* **pypi:** widen pypi package page for 85vw ([8730b50](https://github.com/marslo/global-fonts/commit/8730b50ccfc292a78e17173ecc9a6b01d3372898))
+
 ## [4.0.0](https://github.com/marslo/global-fonts/compare/v3.0.58...v4.0.0) (2026-05-13)
 
 ### ⚠ BREAKING CHANGES
